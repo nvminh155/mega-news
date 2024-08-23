@@ -7,19 +7,17 @@
     --background: 120 100% 100%;
     --foreground: 120 5% 10%;
 
-    --card: 120 50% 100%;
-    --card-foreground: 120 5% 15%;
-
     --popover: 120 100% 100%;
     --popover-foreground: 120 100% 10%;
 
-    --primary: 120 36.4% 21%;
+    --primary: 350, 94%, 53%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 111 48% 95%;
+    --secondary: 15, 98%, 51%;
     --secondary-foreground: 0 0% 0%;
 
-    --tertiary: 101 47% 56%;
+    --tertiary: 0, 11% 22%;
+
 
     --muted: 216 12% 84%;
     --muted-foreground: 218 11% 65%;
@@ -35,6 +33,7 @@
     --ring: 120 36.4% 21%;
     --radius: 0.5rem;
   }
+
   .dark {
     --background: 120 50% 5%;
     --foreground: 120 5% 90%;
@@ -65,4 +64,10 @@
     --ring: 120 36.4% 21%;
     --radius: 0.5rem;
   }
+}
+
+
+
+body {
+  font-family: Roboto, sans-serif;
 }
