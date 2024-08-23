@@ -21,6 +21,8 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          10: "hsla(var(--primary), 0.1)",
+          75: "hsla(var(--primary), 0.75)",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -49,6 +51,16 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+      },
+      fontSize: {
+        xs: "13px",
+        sm: "14px",
+        md: "16px",
+        lg: "20px",
+        xl: "25px",
+        "2xl": "31px",
+        "3xl": "36px",
+        overline: "10px",
       },
       borderRadius: {
         lg: "var(--radius)",
