@@ -3,18 +3,19 @@ import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import "@/styles/globals.css";
+import "@/i18n";
 
-import Home from "@/pages/default/home";
+import { store } from "@/stores";
+import { Provider as ReduxProvider } from "react-redux";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />,
-  },
-]);
+import { router } from "./routes";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <ReduxProvider store={store}>
+      <div className="w-[1400px]">
+        <RouterProvider router={createBrowserRouter(router)} />
+      </div>
+    </ReduxProvider>
   </StrictMode>
 );
