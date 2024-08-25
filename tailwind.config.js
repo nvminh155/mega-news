@@ -30,6 +30,8 @@ export default {
         },
         tertiary: {
           DEFAULT: "hsl(var(--tertiary))",
+          10: "hsla(var(--tertiary), 0.1)",
+          75: "hsla(var(--tertiary), 0.75)",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",

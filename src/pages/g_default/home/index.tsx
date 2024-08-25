@@ -1,6 +1,7 @@
 import { useRedux } from "@/hooks/useRedux";
 import useTrans from "@/hooks/useTrans";
 import AppLink from "@/components/AppLink";
+import AppButton from "@/components/button";
 
 const Home = () => {
   const t = useTrans();
@@ -15,6 +16,7 @@ const Home = () => {
         alsdfljsaf
       </div>
       <AppLink to="/news">à</AppLink>
+      <AppButton>s</AppButton>
     </div>
   );
 };

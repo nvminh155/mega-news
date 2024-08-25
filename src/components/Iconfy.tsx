@@ -10,17 +10,14 @@ import { cn } from "@/lib/cn";
 
 const iconVariants = cva("inline-flex", {
   variants: {
-    variant: {
-      primary: "text-primary",
-      tertiary: "text-tertiary hover:text-primary",
-    },
+    variant: {},
     size: {
       sm: "h-4 w-4",
       md: "h-5 w-5",
       lg: "h-6 w-6",
     },
     bg: {
-      no: "bg-transparent rounded-none",
+      no: "",
       sm: "p-2 rounded-md",
       md: "p-3 rounded-md",
       lg: "p-4 rounded-md",
@@ -28,6 +25,7 @@ const iconVariants = cva("inline-flex", {
   },
   defaultVariants: {
     // variant: "primary",
+    bg: "no",
     size: "md",
   },
 });
@@ -51,7 +49,7 @@ const Iconfy = React.forwardRef<IconifyIconHTMLElement, IconfyProps>(
             variant,
             size,
             className,
-            bg: size,
+            bg: background ? size : "no",
           })
         )}
         {...props}
