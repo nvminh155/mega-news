@@ -1,16 +1,14 @@
-import { ReactNode, useEffect } from "react";
-import { Navigate, redirect, useLocation, useNavigate } from "react-router-dom";
+import { ReactNode } from "react";
 
-import useLocale from "@/hooks/useLocale";
 import {
   ProtectedRouteAdmin,
   ProtectedRouteUser,
 } from "@/components/ProtectedRoute";
-import NotFound from "@/pages/NotFound";
 // import { locales } from "@/config";
 
 import Home from "@/pages/g_default/home";
 import News from "@/pages/g_default/news";
+import NotFound from "@/pages/NotFound";
 
 export enum ERolePath {
   ADMIN = 2,
