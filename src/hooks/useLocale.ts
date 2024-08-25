@@ -1,10 +1,7 @@
-import { useParams } from "react-router-dom";
-
 const useLocale = () => {
-  const params = useParams();
-  const locale = params.locale;
+  const locale = localStorage.getItem("i18n-lng");
 
-  return locale;
+  return locale ?? "en";
 };
 
 export default useLocale;

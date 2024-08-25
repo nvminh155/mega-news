@@ -1,13 +1,16 @@
-import { ReactNode } from "react";
+import { ReactNode, useEffect } from "react";
+import { Navigate, redirect, useLocation, useNavigate } from "react-router-dom";
 
+import useLocale from "@/hooks/useLocale";
 import {
   ProtectedRouteAdmin,
   ProtectedRouteUser,
 } from "@/components/ProtectedRoute";
+import NotFound from "@/pages/NotFound";
 // import { locales } from "@/config";
 
-import Home from "@/pages/s_locale/g_default/home";
-import News from "@/pages/s_locale/g_default/news";
+import Home from "@/pages/g_default/home";
+import News from "@/pages/g_default/news";
 
 export enum ERolePath {
   ADMIN = 2,
@@ -31,7 +34,7 @@ export const createRoute = (
   }
 
   return {
-    path: "/:locale" + path,
+    path,
     element,
   };
 };
@@ -40,6 +43,10 @@ export const router = [
   createRoute("/", <Home />, ERolePath.USER),
   createRoute("/news", <News />, ERolePath.ADMIN),
   createRoute("/news/:id", <News />, ERolePath.ADMIN),
+  {
+    path: "*",
+    element: <NotFound />,
+  },
 ];
 const paths = {
   "/": ["/"],
