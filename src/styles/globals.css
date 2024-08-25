@@ -62,7 +62,7 @@
     --border: 120 30% 18%;
     --input: 120 30% 18%;
     --ring: 120 36.4% 21%;
-    --radius: 0.5rem;
+    --radius: 12px;
   }
 }
 
@@ -70,4 +70,5 @@
 
 body {
   font-family: Roboto, sans-serif;
+  width: 100vw;
 }

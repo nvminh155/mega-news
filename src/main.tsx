@@ -8,13 +8,19 @@ import "@/i18n";
 import { store } from "@/stores";
 import { Provider as ReduxProvider } from "react-redux";
 
+import Footer from "./components/footer";
+import Header from "./components/header";
 import { router } from "./routes";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ReduxProvider store={store}>
-      <div className="w-[1400px]">
-        <RouterProvider router={createBrowserRouter(router)} />
+      <div className="flex min-h-screen min-w-[1024px] flex-col px-5">
+        <Header />
+        <div className="flex-1">
+          <RouterProvider router={createBrowserRouter(router)} />
+        </div>
+        <Footer />
       </div>
     </ReduxProvider>
   </StrictMode>
