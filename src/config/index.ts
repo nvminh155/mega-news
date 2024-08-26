@@ -1,3 +1,3 @@
-export const locales = ["vi", "en"] as const;
+export const locales = ["en", "vi"] as const;
+export type TLocale = (typeof locales)[number];
 export const default_locale = "en";
-export const namespace = "translation";
