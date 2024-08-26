@@ -13,11 +13,7 @@ const Home = () => {
       >
         alsdfljsaf
       </div>
-      <AppLink
-        to="/"
-      >
-        à
-      </AppLink>
+      <AppLink to="/">à</AppLink>
       <AppButton className="text-xl text-primary-75">s</AppButton>
       <Iconfy
         icon={"fa6-brands:facebook"}
