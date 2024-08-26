@@ -6,8 +6,7 @@ import {
 } from "@/components/ProtectedRoute";
 // import { locales } from "@/config";
 
-import Home from "@/pages/g_default/home";
-import News from "@/pages/g_default/news";
+import Home from "@/pages/default/home";
 import NotFound from "@/pages/NotFound";
 
 export enum ERolePath {
@@ -39,8 +38,6 @@ export const createRoute = (
 
 export const router = [
   createRoute("/", <Home />, ERolePath.USER),
-  createRoute("/news", <News />, ERolePath.ADMIN),
-  createRoute("/news/:id", <News />, ERolePath.ADMIN),
   {
     path: "*",
     element: <NotFound />,
@@ -48,7 +45,6 @@ export const router = [
 ];
 const paths = {
   "/": ["/"],
-  news: ["/news", "/news/:id"],
 } as const;
 
 export type TRoutePaths = (typeof paths)[keyof typeof paths][number];

@@ -23,7 +23,6 @@ i18n
   // .use(LanguageDetector)
   .init({
     resources,
-    ns: locales,
     lng: locales[0],
     debug: true,
     fallbackLng: defaultNS,
