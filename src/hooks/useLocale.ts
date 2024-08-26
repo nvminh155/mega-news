@@ -1,7 +1,9 @@
-const useLocale = () => {
-  const locale = localStorage.getItem("i18n-lng");
+import { locales } from "@/config";
 
-  return locale ?? "en";
+const useLocale = () => {
+  const locale = localStorage.getItem("i18n-Lng");
+
+  return locale ?? locales[0];
 };
 
 export default useLocale;
