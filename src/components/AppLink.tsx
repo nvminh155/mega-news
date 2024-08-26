@@ -8,7 +8,7 @@ type TAppLinkProps = Omit<LinkProps, "to"> & {
 };
 
 const AppLink: React.FC<TAppLinkProps> = ({ to, params, ...props }) => {
-  const path = to;
+  let path = to as string;
 
   if (path.includes(":") && !params) {
     throw new Error("Missing params for path: " + path);
@@ -16,7 +16,9 @@ const AppLink: React.FC<TAppLinkProps> = ({ to, params, ...props }) => {
 
   if (params) {
     Object.keys(params).forEach((key) => {
-      if (params[key]) path.replace(`:${key}`, params[key]);
+      if (params[key]) {
+        path = path.replace(`:${key}`, params[key]);
+      }
     });
   }
 

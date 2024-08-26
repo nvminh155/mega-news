@@ -17,7 +17,7 @@ createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ReduxProvider store={store}>
       <ConfigAntd>
-        <div className="flex min-h-screen min-w-[1024px] flex-col px-5">
+        <div className="flex min-h-screen w-screen flex-col px-5">
           <Header />
           <div className="flex-1">
             <RouterProvider router={createBrowserRouter(router)} />
