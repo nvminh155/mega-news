@@ -1,5 +1,7 @@
 import { ReactNode } from "react";
 
+import AvatarOne from "@/components/avartar/AvatarOne";
+import AvatarTwo from "@/components/avartar/AvatarTwo";
 import {
   ProtectedRouteAdmin,
   ProtectedRouteUser,
@@ -41,6 +43,14 @@ export const router = [
   {
     path: "*",
     element: <NotFound />,
+  },
+  {
+    path: "/Tuan-avatarOne",
+    element: <AvatarOne />,
+  },
+  {
+    path: "/Tuan-avatarTwo",
+    element: <AvatarTwo />,
   },
 ];
 const paths = {
