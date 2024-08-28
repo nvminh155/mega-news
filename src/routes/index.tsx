@@ -7,8 +7,9 @@ import {
 // import { locales } from "@/config";
 
 import Home from "@/pages/default/home";
-import NotFound from "@/pages/NotFound";
+import Minh from "@/pages/default/Minh";
 import { Phuoc } from "@/pages/default/Phuoc";
+import NotFound from "@/pages/NotFound";
 
 export enum ERolePath {
   ADMIN = 2,
@@ -40,6 +41,10 @@ export const createRoute = (
 export const router = [
   createRoute("/", <Home />, ERolePath.USER),
   {
+    path: "/minh",
+    element: <Minh />,
+  },
+  {
     path: "/Phuoc",
     element: <Phuoc />,
   },
@@ -48,6 +53,7 @@ export const router = [
     element: <NotFound />,
   },
 ];
+
 const paths = {
   "/": ["/"],
 } as const;

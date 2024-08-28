@@ -53,7 +53,7 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        Gray:{
+        gray:{
           DEFAULT:"#F5F5F5",
         }
       },
