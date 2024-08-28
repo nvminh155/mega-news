@@ -53,6 +53,9 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        Gray:{
+          DEFAULT:"#F5F5F5",
+        }
       },
       fontSize: {
         xs: "13px",
