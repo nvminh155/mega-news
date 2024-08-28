@@ -9,6 +9,7 @@ export const ConfigAntd = ({ children }: { children: React.ReactNode }) => {
         },
         components: {
           Button: {},
+       
         },
       }}
     >
