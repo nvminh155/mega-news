@@ -43,11 +43,9 @@ export const TabItem: React.FC<ITabItemProps> = ({
         TabItemVariants({ size, className })
       )}
     >
-      {status === "enabled" ? (
+      {status === "enabled" && (
         <Iconfy icon="mdi:dot" className="items-center text-primary" />
-      ) : (
-        ""
-      )}{" "}
+      )}
       {text}
     </div>
   );
