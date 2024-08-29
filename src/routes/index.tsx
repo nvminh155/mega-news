@@ -8,6 +8,7 @@ import {
 
 import Home from "@/pages/default/home";
 import Minh from "@/pages/default/Minh";
+import Thang from "@/pages/default/Thang";
 import NotFound from "@/pages/NotFound";
 
 export enum ERolePath {
@@ -39,6 +40,10 @@ export const createRoute = (
 
 export const router = [
   createRoute("/", <Home />, ERolePath.USER),
+  {
+    path: "/thang",
+    element: <Thang />,
+  },
   {
     path: "/minh",
     element: <Minh />,
