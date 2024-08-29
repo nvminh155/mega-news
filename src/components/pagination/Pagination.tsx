@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGreaterThan } from '@fortawesome/free-solid-svg-icons';
+import { Icon } from '@iconify-icon/react/dist/iconify.mjs';
+import { cn } from '@/lib/cn';
 
-const Pagination: React.FC = () => {
-  // Configuration
-  const totalPages = 9;
-  const initialPage = 1;
-  const buttonsToShow = 4;
+interface PaginationProps {
+  totalPages: number;
+}
+
+const Pagination: React.FC<PaginationProps> = ({ totalPages }) => {
+
+  const initialPage = 1; //trang  ban dau
+  const buttonsToShow = 4; // so nut măc dinh
 
   // State for enabling/disabling pagination
-  const [isEnabled] = useState(true);
+  const isEnabled = true;
 
   // State for active page
   const [activePage, setActivePage] = useState(initialPage);
@@ -80,9 +83,10 @@ const Pagination: React.FC = () => {
           ) : (
             <p
               key={index}
-              className={`items-center justify-center flex flex-row items-start p-2 gap-2.5 w-[40px] h-[40px] rounded-[12px] cursor-pointer ${
-                activePage === item ? 'bg-[#F5F5F5]' : ''
-              }`}
+              className={cn(
+                "items-center justify-center flex flex-row items-start p-2 gap-2.5 w-[40px] h-[40px] rounded-[12px] cursor-pointer",
+                { 'bg-[#F5F5F5]': activePage === item }
+              )}
               onClick={() => handlePageChange(item as number)}
             >
               {item}
@@ -90,13 +94,16 @@ const Pagination: React.FC = () => {
           )
         ))}
         <div
-          className={`flex items-center justify-center p-2 gap-2.5 w-[80px] h-[40px] rounded-[12px] cursor-pointer bg-[#F5F5F5] ${
-            activePage === numberOfPages[numberOfPages.length - 1] || !isEnabled ? 'cursor-not-allowed' : ''
-          }`}
+          className={cn(
+            "flex items-center justify-center p-2 gap-2.5 w-[80px] h-[40px] rounded-[12px] cursor-pointer bg-[#F5F5F5]",
+            {
+              'cursor-not-allowed': activePage === numberOfPages[numberOfPages.length - 1] || !isEnabled
+            }
+          )}
           onClick={() => handlePageChange(activePage + 1)}
         >
           <p className="text-[#3E3232]">Next</p>
-          <FontAwesomeIcon icon={faGreaterThan} style={{ color: "#3E3232", width: "9px" }} />
+          <Icon icon="tabler:math-greater" className=" h-4 font-fa-solid text-black/50 " />
         </div>
       </div>
     </div>
