@@ -48,11 +48,11 @@ export const ElementMenu: React.FC<ElementMenuProps> = ({
           icon="pepicons-pop:line-y"
           className="items-center text-primary"
         />
-      ) : status === "MenItemIcon" ? (
-        <Iconfy icon="lucide:smile" className="items-center" />
       ) : (
-        ""
-      )}{" "}
+        status === "MenItemIcon" && (
+          <Iconfy icon="lucide:smile" className="items-center" />
+        )
+      )}
       {text}
     </div>
   );
