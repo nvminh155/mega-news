@@ -43,15 +43,14 @@ export const ElementMenu: React.FC<ElementMenuProps> = ({
 }) => {
   return (
     <div className={cn(ElementMenuVariants({ status, size, className }))}>
-      {status === "MegaMenItem" ? (
+      {status === "MegaMenItem" && (
         <Iconfy
           icon="pepicons-pop:line-y"
           className="items-center text-primary"
         />
-      ) : (
-        status === "MenItemIcon" && (
-          <Iconfy icon="lucide:smile" className="items-center" />
-        )
+      )}
+      {status === "MenItemIcon" && (
+        <Iconfy icon="lucide:smile" className="items-center" />
       )}
       {text}
     </div>

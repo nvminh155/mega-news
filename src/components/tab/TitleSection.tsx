@@ -38,15 +38,14 @@ export const TitleSection: React.FC<TitleSectionProps> = ({
 }) => {
   return (
     <div className={cn(TitleSectionVariants({ size, className }))}>
-      {status === "default" ? (
+      {status === "default" && (
         <Iconfy
           icon="pepicons-pop:line-y"
           className="items-center text-primary"
         />
-      ) : (
-        status === "dot" && (
-          <Iconfy icon="mdi:dot" className="items-center text-primary" />
-        )
+      )}
+      {status === "dot" && (
+        <Iconfy icon="mdi:dot" className="items-center text-primary" />
       )}
       {text}
     </div>
