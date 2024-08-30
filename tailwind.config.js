@@ -49,6 +49,9 @@ export default {
           DEFAULT: "hsla(var(--card))",
           foreground: "hsla(var(--card-foreground))",
         },
+        gray:{
+          DEFAULT:"#F5F5F5",
+        }
       },
       fontSize: {
         xs: "13px",

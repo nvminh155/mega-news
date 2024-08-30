@@ -8,6 +8,7 @@ import {
 
 import Home from "@/pages/default/home";
 import Minh from "@/pages/default/Minh";
+import { Phuoc } from "@/pages/default/Phuoc";
 import NotFound from "@/pages/NotFound";
 
 export enum ERolePath {
@@ -42,6 +43,10 @@ export const router = [
   {
     path: "/minh",
     element: <Minh />,
+  },
+  {
+    path: "/Phuoc",
+    element: <Phuoc />,
   },
   {
     path: "*",
