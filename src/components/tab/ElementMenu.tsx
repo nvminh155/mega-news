@@ -34,7 +34,6 @@ interface ElementMenuProps
   className?: string;
   text: string;
 }
-
 export const ElementMenu: React.FC<ElementMenuProps> = ({
   className,
   size = "default",
@@ -43,15 +42,18 @@ export const ElementMenu: React.FC<ElementMenuProps> = ({
 }) => {
   return (
     <div className={cn(ElementMenuVariants({ status, size, className }))}>
-      {status === "MegaMenItem" && (
+      {(status === "MegaMenItem" || status === "MenItemIcon") && (
         <Iconfy
-          icon="pepicons-pop:line-y"
-          className="items-center text-primary"
+          icon={
+            status === "MegaMenItem" ? "pepicons-pop:line-y" : "lucide:smile"
+          }
+          className={cn(
+            status === "MegaMenItem" && "text-primary",
+            "items-center"
+          )}
         />
       )}
-      {status === "MenItemIcon" && (
-        <Iconfy icon="lucide:smile" className="items-center" />
-      )}
+
       {text}
     </div>
   );
