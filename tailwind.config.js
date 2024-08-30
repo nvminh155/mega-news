@@ -13,46 +13,45 @@ export default {
     },
     extend: {
       colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        border: "hsla(var(--border))",
+        input: "hsla(var(--input))",
+        ring: "hsla(var(--ring))",
+        background: "hsla(var(--background))",
+        foreground: "hsla(var(--foreground))",
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-          10: "hsla(var(--primary), 0.1)",
-          75: "hsla(var(--primary), 0.75)",
+          DEFAULT: "hsla(var(--primary))",
+          foreground: "hsla(var(--primary-foreground))",
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+          DEFAULT: "hsla(var(--secondary))",
+          foreground: "hsla(var(--secondary-foreground))",
         },
         tertiary: {
-          DEFAULT: "hsl(var(--tertiary))",
-          10: "hsla(var(--tertiary), 0.1)",
-          75: "hsla(var(--tertiary), 0.75)",
+          DEFAULT: "hsla(var(--tertiary))",
         },
         destructive: {
-          DEFAULT: "hsl(var(--destructive))",
+          DEFAULT: "hsla(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
         },
         muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
+          DEFAULT: "hsla(var(--muted))",
+          foreground: "hsla(var(--muted-foreground))",
         },
         accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
+          DEFAULT: "hsla(var(--accent))",
+          foreground: "hsla(var(--accent-foreground))",
         },
         popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
+          DEFAULT: "hsla(var(--popover))",
+          foreground: "hsla(var(--popover-foreground))",
         },
         card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
+          DEFAULT: "hsla(var(--card))",
+          foreground: "hsla(var(--card-foreground))",
         },
+        gray:{
+          DEFAULT:"#F5F5F5",
+        }
       },
       fontSize: {
         xs: "13px",
@@ -65,6 +64,7 @@ export default {
         overline: "10px",
       },
       borderRadius: {
+        xs: "calc(var(--radius) - 6px)",
         sm: "calc(var(--radius) - 4px)",
         md: "var(--radius)",
         lg: "calc(var(--radius) + 4px)",

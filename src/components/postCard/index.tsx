@@ -2,21 +2,17 @@ import React from "react";
 
 import { cn } from "@/lib/cn";
 
-import Action from "./action";
-import Author from "./author";
+import Action, { TAction } from "./action";
+import Author, { TAuthor } from "./author";
 
 export type TPostCardProps = {
   imageUrl?: string;
   title: string;
   description?: string;
-  authorName?: string;
-  authorTitle?: string;
-  authorAvatarUrl?: string;
+  author?: TAuthor;
   size?: "lg" | "md";
   type?: "horizontal" | "vertical" | "widget";
-  showAction?: boolean;
-  viewers?: string[];
-  stars?: string[];
+  actions?: TAction;
 };
 
 const getSize = (type: string, size: string) => {
@@ -43,16 +39,12 @@ const getSize = (type: string, size: string) => {
 
 const PostCard: React.FC<TPostCardProps> = ({
   imageUrl = "/not-found.png",
-  title = "Title",
+  title,
   description,
-  authorName,
-  authorTitle,
-  authorAvatarUrl,
+  author,
   size = "lg",
   type = "vertical",
-  showAction = false,
-  viewers = [],
-  stars = [],
+  actions,
 }) => {
   const [imageClassName, postCardWidth] = getSize(type, size);
 
@@ -102,7 +94,7 @@ const PostCard: React.FC<TPostCardProps> = ({
                 "text-sm text-[#3E3232BF]",
                 type === "vertical" && "line-clamp-2",
                 type === "horizontal" &&
-                  (!authorName || !authorTitle || !authorAvatarUrl)
+                  (!author)
                   ? "line-clamp-6"
                   : "line-clamp-2",
                 type === "widget" && "line-clamp-1 text-[12px]"
@@ -112,14 +104,16 @@ const PostCard: React.FC<TPostCardProps> = ({
             </p>
           </div>
         )}
-        {authorName && authorTitle && authorAvatarUrl && (
+        {author && (
           <Author
-            name={authorName}
-            title={authorTitle}
-            avatarUrl={authorAvatarUrl}
+            name={author.name}
+            title={author.title}
+            avatarUrl={author.avatarUrl}
           />
         )}
-        {showAction && <Action viewers={viewers} stars={stars} />}
+        {actions && (
+          <Action viewers={actions.viewers || []} stars={actions.stars || []} />
+        )}
       </div>
     </div>
   );

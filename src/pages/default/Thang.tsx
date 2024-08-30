@@ -28,7 +28,9 @@ const Thang: React.FC = () => {
               imageUrl="/background.jfif"
               title="Kayaking Adventure"
               description="Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor"
-              showAction={true}
+              actions={{
+                viewers: ["1", "2", "3"],
+              }}
             />
           </div>
         </div>
@@ -41,9 +43,10 @@ const Thang: React.FC = () => {
               imageUrl="/background.jfif"
               title="Kayaking Adventure"
               description="Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor"
-              authorName="Jane Doe"
-              authorTitle="Adventure Enthusiast"
-              authorAvatarUrl="/avatar.svg"
+              author={{
+                name: "Jane Doe",
+                title: "Adventure Enthusiast",
+              }}
             />
           </div>
           <div>
@@ -57,9 +60,11 @@ const Thang: React.FC = () => {
             <PostCard
               imageUrl="/background.jfif"
               title="Kayaking Adventure"
-              authorName="Jane Doe"
-              authorTitle="Adventure Enthusiast"
-              authorAvatarUrl="/avatar.svg"
+              author={{
+                name: "Jane Doe",
+                title: "Adventure Enthusiast",
+                avatarUrl: "/avatar.svg",
+              }}
             />
           </div>
           <div>
@@ -76,9 +81,11 @@ const Thang: React.FC = () => {
               imageUrl="/background.jfif"
               title="Kayaking Adventure"
               description="Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor"
-              authorName="Jane Doe"
-              authorTitle="Adventure Enthusiast"
-              authorAvatarUrl="/avatar.svg"
+              author={{
+                name: "Jane Doe",
+                title: "Adventure Enthusiast",
+                avatarUrl: "/avatar.svg",
+              }}
             />
           </div>
           <div>
@@ -94,9 +101,11 @@ const Thang: React.FC = () => {
               size="md"
               imageUrl="/background.jfif"
               title="Kayaking Adventure"
-              authorName="Jane Doe"
-              authorTitle="Adventure Enthusiast"
-              authorAvatarUrl="/avatar.svg"
+              author={{
+                name: "Jane Doe",
+                title: "Adventure Enthusiast",
+                avatarUrl: "/avatar.svg",
+              }}
             />
           </div>
           <div>
@@ -116,9 +125,11 @@ const Thang: React.FC = () => {
               imageUrl="https://www.vietnamworks.com/hrinsider/wp-content/uploads/2023/12/hinh-nen-3d-thien-nhien-003.jpg"
               title="Kayaking Adventure"
               description="Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor"
-              authorName="Jane Doe"
-              authorTitle="Adventure Enthusiast"
-              authorAvatarUrl="/avatar.svg"
+              author={{
+                name: "Jane Doe",
+                title: "Adventure Enthusiast",
+                avatarUrl: "/avatar.svg",
+              }}
               type="horizontal"
             />
           </div>
@@ -141,9 +152,11 @@ const Thang: React.FC = () => {
               imageUrl="https://www.vietnamworks.com/hrinsider/wp-content/uploads/2023/12/hinh-nen-3d-thien-nhien-003.jpg"
               title="Kayaking Adventure Kayaking Adventure Kayaking Adventure Kayaking Adventure"
               description="Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor"
-              authorName="Jane Doe"
-              authorTitle="Subhead"
-              authorAvatarUrl="/avatar.svg"
+              author={{
+                name: "Jane Doe",
+                title: "Adventure Enthusiast",
+                avatarUrl: "/avatar.svg",
+              }}
               type="horizontal"
             />
           </div>

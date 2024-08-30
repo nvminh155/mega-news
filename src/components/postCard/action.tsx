@@ -2,12 +2,12 @@ import React from "react";
 
 import { Iconfy } from "../Iconfy";
 
-type ActionProps = {
+export type TAction = {
   viewers?: string[];
   stars?: string[];
 };
 
-const Action: React.FC<ActionProps> = ({ ...props }) => {
+const Action: React.FC<TAction> = ({ ...props }) => {
   return (
     <div className="flex w-full items-center justify-between rounded-[12px] bg-[#F5F5F5] px-[16px] py-[13px]">
       <div className="flex gap-3">
