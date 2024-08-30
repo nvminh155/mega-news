@@ -18,9 +18,9 @@ const iconVariants = cva("inline-flex", {
     },
     bg: {
       no: "",
-      sm: "p-2 rounded-md",
-      md: "p-3 rounded-md",
-      lg: "p-4 rounded-md",
+      sm: "rounded-xs",
+      md: "rounded-sm",
+      lg: "rounded-md",
     },
   },
   defaultVariants: {
@@ -34,26 +34,47 @@ export interface IconfyProps
   extends Omit<IconifyIconProps, "size" | "ref">,
     VariantProps<typeof iconVariants> {
   background?: boolean;
+  containerProps?: React.HTMLAttributes<HTMLDivElement>;
 }
 
 const Iconfy = React.forwardRef<IconifyIconHTMLElement, IconfyProps>(
-  ({ className, variant, size, background = false, icon, ...props }, ref) => {
+  (
+    {
+      className,
+      variant,
+      size = "md",
+      background = false,
+      icon,
+      containerProps,
+      ...props
+    },
+    ref
+  ) => {
     return (
-      <Icon
-        icon={icon}
-        ref={ref}
-        height="none"
+      <div
         className={cn(
-          { "bg-[#f5f5f5": background },
-          iconVariants({
-            variant,
-            size,
-            className,
-            bg: background ? size : "no",
-          })
+          "flex h-max w-max items-center justify-center",
+          {
+            "rounded-md !bg-[#f5f5f5] p-2": background,
+          },
+          containerProps?.className
         )}
-        {...props}
-      />
+      >
+        <Icon
+          icon={icon}
+          ref={ref}
+          height="none"
+          className={cn(
+            iconVariants({
+              variant,
+              size,
+              className,
+              bg: background ? size : "no",
+            })
+          )}
+          {...props}
+        />
+      </div>
     );
   }
 );
