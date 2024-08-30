@@ -1,116 +1,60 @@
-import React from "react";
-
 import { cn } from "@/lib/cn";
 
-import Action, { TAction } from "./action";
-import Author, { TAuthor } from "./author";
+import Action from "./Action";
+import Author from "./Author";
+import Background from "./Background";
+import Description from "./Description";
+import Title from "./Title";
+import { EPostCardSize, EPostCardType, TAuthor, TPostCard } from "./type";
+import { imageVariants, postCardVariants } from "./variants";
 
-export type TPostCardProps = {
-  imageUrl?: string;
-  title: string;
-  description?: string;
-  author?: TAuthor;
-  size?: "lg" | "md";
-  type?: "horizontal" | "vertical" | "widget";
-  actions?: TAction;
-};
-
-const getSize = (type: string, size: string) => {
-  let imageClassName = "w-full ";
-  let postCardWidth = "w-full max-w-[488px] ";
-
-  if (type === "vertical" && size === "lg") {
-    imageClassName += "h-[327px]";
-  } else if (type === "vertical" && size === "md") {
-    imageClassName += "h-[190px]";
-    postCardWidth += "max-w-[360px]";
-  } else if (type === "horizontal" && size === "lg") {
-    imageClassName += "h-[190px] max-w-[340px]";
-    postCardWidth += "max-w-[744px]";
-  } else if (type === "horizontal" && size === "md") {
-    imageClassName += "h-[190px] max-w-[190px]";
-  } else {
-    imageClassName += "h-[87px] max-w-[87px]";
-    postCardWidth += "max-w-[320px]";
-  }
-
-  return [imageClassName, postCardWidth];
-};
+type TPostCardProps = TPostCard;
 
 const PostCard: React.FC<TPostCardProps> = ({
   imageUrl = "/not-found.png",
   title,
   description,
   author,
-  size = "lg",
-  type = "vertical",
+  size = EPostCardSize.large,
+  type = EPostCardType.vertical,
   actions,
 }) => {
-  const [imageClassName, postCardWidth] = getSize(type, size);
-
   return (
     <div
       className={cn(
-        type === "widget" ? "flex" : "flex rounded-lg p-[10px] shadow-md",
-        postCardWidth,
-        type === "vertical" ? "flex-col" : "flex-row gap-[10px]"
+        type === EPostCardType.widget
+          ? "flex"
+          : "flex rounded-lg p-[10px] shadow-md",
+        postCardVariants({
+          postCardWidth: `${type}-${size}` as keyof typeof postCardVariants,
+        }),
+        type === EPostCardType.vertical ? "flex-col" : "flex-row gap-[10px]"
       )}
     >
-      <img
-        src={imageUrl}
-        alt={title}
-        className={cn(
-          "rounded-[12px] object-cover",
-          imageClassName,
-          type !== "vertical" && "flex-shrink-0"
-        )}
+      <Background
+        type={type}
+        title={title}
+        imageUrl={imageUrl}
+        imageClassName={imageVariants({
+          imageClassName: `${type}-${size}` as keyof typeof imageVariants,
+        })}
       />
       <div
         className={cn(
           "flex flex-col",
-          type === "widget" && "items-center justify-center"
+          type === EPostCardType.widget && "items-center justify-center",
+          type === EPostCardType.horizontal && "h-[190px]"
         )}
       >
-        <div className={cn(type !== "widget" && "py-4 pl-[6px] pr-4")}>
-          <p
-            className={cn(
-              "w-full font-semibold",
-              type === "widget" ? "line-clamp-2 text-[13px]" : "line-clamp-1"
-            )}
-          >
-            {title}
-          </p>
-        </div>
+        <Title type={type} title={title} />
         {description && (
-          <div
-            className={cn(
-              "w-full",
-              type === "vertical" && "pb-4 pl-[6px] pr-4",
-              type === "horizontal" && "pb-[26px] pl-[6px] pr-4"
-            )}
-          >
-            <p
-              className={cn(
-                "text-sm text-[#3E3232BF]",
-                type === "vertical" && "line-clamp-2",
-                type === "horizontal" &&
-                  (!author)
-                  ? "line-clamp-6"
-                  : "line-clamp-2",
-                type === "widget" && "line-clamp-1 text-[12px]"
-              )}
-            >
-              {description}
-            </p>
-          </div>
-        )}
-        {author && (
-          <Author
-            name={author.name}
-            title={author.title}
-            avatarUrl={author.avatarUrl}
+          <Description
+            type={type}
+            description={description}
+            author={author as TAuthor}
           />
         )}
+        {author && <Author {...author} />}
         {actions && (
           <Action viewers={actions.viewers || []} stars={actions.stars || []} />
         )}

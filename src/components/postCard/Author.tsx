@@ -2,16 +2,13 @@ import React from "react";
 
 import Avatar from "../avatar/Avatar";
 import { Iconfy } from "../Iconfy";
+import { TAuthor } from "./type";
 
-export type TAuthor = {
-  avatarUrl?: string;
-  name?: string;
-  title?: string;
-};
+type TAuthorProps = TAuthor;
 
-const Author: React.FC<TAuthor> = ({ ...props }) => {
+const Author: React.FC<TAuthorProps> = ({ ...props }) => {
   return (
-    <div className="flex items-center justify-between rounded-[12px] bg-[#F5F5F5] px-[16px] py-[13px]">
+    <div className="flex h-auto items-center justify-between rounded-[12px] bg-gray-100 px-[16px] py-[13px]">
       <div className="flex items-center">
         <Avatar
           avatar={props.avatarUrl}
@@ -27,7 +24,7 @@ const Author: React.FC<TAuthor> = ({ ...props }) => {
       <Iconfy
         icon={"bi:bookmark"}
         size={"md"}
-        className="cursor-pointer text-[#3E323280]"
+        className="cursor-pointer text-tertiary/50"
       />
     </div>
   );
