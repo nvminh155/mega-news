@@ -7,6 +7,8 @@ import {
 // import { locales } from "@/config";
 
 import Home from "@/pages/default/home";
+import Minh from "@/pages/default/Minh";
+import { Phuoc } from "@/pages/default/Phuoc";
 import NotFound from "@/pages/NotFound";
 import { Kiet } from "@/pages/Kiet";
 export enum ERolePath {
@@ -41,13 +43,22 @@ export const router = [
   {
     path: "/Kiet",
     element: <Kiet/>,
-  
+    
+  },
+  {
+    path: "/minh",
+    element: <Minh />,
+  },
+  {
+    path: "/Phuoc",
+    element: <Phuoc />,
   },
   {
     path: "*",
     element: <NotFound />,
   },
 ];
+
 const paths = {
   "/": ["/"],
 } as const;
