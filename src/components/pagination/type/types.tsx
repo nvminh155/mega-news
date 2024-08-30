@@ -5,5 +5,5 @@ export interface PaginationProps {
   buttonsToShow?: number;
   isEnabled?: boolean;
 }
-
+ 
 export type PageNumber = number | '...';
