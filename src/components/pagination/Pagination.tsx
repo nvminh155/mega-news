@@ -10,7 +10,7 @@ const Pagination: React.FC<PaginationProps> = ({
   buttonsToShow = 4,
   isEnabled = true,
 }) => {
- 
+  
   const [activePage, setActivePage] = useState(initialPage);
 
   const displayedButtons = getButtonsToDisplay(activePage, totalPages, buttonsToShow, isEnabled);

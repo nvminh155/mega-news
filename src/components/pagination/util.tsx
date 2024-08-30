@@ -11,7 +11,7 @@ export const getButtonsToDisplay = (
     if (!isEnabled || numberOfPages.length <= buttonsToShow) {
         return numberOfPages;
     }
- 
+  
     const dots = '...';
     let tempNumberOfPages: PageNumber[] = [];
 

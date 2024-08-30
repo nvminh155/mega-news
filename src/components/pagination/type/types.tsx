@@ -7,3 +7,4 @@ export interface PaginationProps {
 }
  
 export type PageNumber = number | '...';
+ 
