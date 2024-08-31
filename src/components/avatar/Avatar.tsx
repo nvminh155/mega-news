@@ -62,7 +62,7 @@ const Avatar: React.FC<AvatarWrapperProps> = ({
           src={avatar}
           alt="avatar"
         />
-        <p className="mt-auto py-6 text-xs font-semibold text-tertiary-75">
+        <p className="mt-auto py-6 text-xs font-semibold text-tertiary/75">
           {job}
         </p>
         <button className="w-full rounded-xl bg-[#F5F5F5] p-3 font-semibold text-tertiary">

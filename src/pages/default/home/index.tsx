@@ -7,18 +7,16 @@ const Home = () => {
     <div>
       Home Page
       <div
-        className={
-          "h-full w-full bg-primary-10 font-semibold text-primary max-md:bg-red-500"
-        }
+        className={"m h-full w-full bg-primary/75 font-semibold text-primary"}
       >
         alsdfljsaf
       </div>
       <AppLink to="/">à</AppLink>
-      <AppButton className="text-xl text-primary-75">s</AppButton>
+      <AppButton className="text-xl text-primary/75">s</AppButton>
       <Iconfy
         icon={"fa6-brands:facebook"}
         size={"lg"}
-        className="text-primary-75"
+        className="text-primary/75"
       />
     </div>
   );
