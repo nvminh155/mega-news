@@ -1,4 +1,8 @@
+//pangination
 import Pagination from "@/components/pagination/Pagination";
+
+import Login from "@/components/user/login/Login"
+import Nlogin from "@/components/user/login/NoLogin";
 
 export const Kiet = () => {
 
@@ -16,8 +20,18 @@ export const Kiet = () => {
     const Pages = 9; //so trang
 
     return (
-        <div>
-            <Pagination totalPages={Pages} />
-        </div>
+        <>
+            <div>
+                <Pagination totalPages={Pages} />
+            </div>
+
+            <div className="mt-10">
+                <Nlogin />
+            </div>
+
+            <div className="mt-10">
+                <Login name="Behzad" avatar="/avatar.svg" />
+            </div>
+        </>
     );
 };
