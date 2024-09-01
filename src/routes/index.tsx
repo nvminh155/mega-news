@@ -8,6 +8,7 @@ import {
 
 import Home from "@/pages/default/home";
 import Minh from "@/pages/default/Minh";
+import Thang from "@/pages/default/Thang";
 import { Phuoc } from "@/pages/default/Phuoc";
 import NotFound from "@/pages/NotFound";
 import { Kiet } from "@/pages/Kiet";
@@ -40,6 +41,10 @@ export const createRoute = (
 
 export const router = [
   createRoute("/", <Home />, ERolePath.USER),
+  {
+    path: "/thang",
+    element: <Thang />,
+  },
   {
     path: "/Kiet",
     element: <Kiet/>,
