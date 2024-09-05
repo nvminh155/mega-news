@@ -1,3 +1,4 @@
+import { ETags, IMG_URL } from "@/types";
 import { cva, VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/cn";
@@ -15,27 +16,45 @@ const HashtagVariants = cva("rounded-[20px] overflow-hidden  bg-gray flex ", {
 });
 
 interface HashtagProps
-  extends React.ButtonHTMLAttributes<HTMLDivElement>,
+  extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof HashtagVariants> {
-  title: string;
-  srcimg: string;
+  title: ETags;
+  imgIndex: number;
   className?: string;
 }
 const Hashtag: React.FC<HashtagProps> = ({
-  title = "title",
-  srcimg,
+  title = ETags.FOOD,
+  imgIndex = 1,
   status = "cover",
   className,
 }) => {
-  console.log(status);
+  function capitalizeTitle(title: string): string {
+    return title
+      .toLowerCase() // Chuyển toàn bộ chuỗi thành chữ thường
+      .split(" ") // Tách các từ trong chuỗi thành mảng
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1)) // Viết hoa chữ cái đầu của mỗi từ
+      .join(" "); // Ghép lại thành chuỗi
+  }
+  const imgSrc = () => {
+    const imgSrc = `${IMG_URL}/${title}/${imgIndex < 10 ? "0" + imgIndex : imgIndex}.png`;
+
+    const img = new Image();
+    img.src = imgSrc;
+
+    img.onerror = function () {
+      img.src = `${IMG_URL}/${title}/01.png`;
+    };
+
+    return img.src;
+  };
   return (
     <div className={cn(HashtagVariants({ status, className }))}>
       <img
-        src={srcimg}
+        src={imgSrc()}
         className={cn(
           status === "cover" && "relative w-full blur-sm",
           status === "split" && "h-[48px] w-[60px]",
-          "object-cover object-center"
+          "object-cover"
         )}
       />
 
@@ -45,7 +64,7 @@ const Hashtag: React.FC<HashtagProps> = ({
           "z-10 flex w-full items-center justify-center text-center text-sm font-bold"
         )}
       >
-        #{title}
+        #{capitalizeTitle(title)}
       </div>
     </div>
   );

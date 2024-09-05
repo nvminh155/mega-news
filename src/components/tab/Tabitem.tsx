@@ -23,7 +23,7 @@ const TabItemVariants = cva(
 );
 
 interface ITabItemProps
-  extends React.ButtonHTMLAttributes<HTMLElement>,
+  extends React.HTMLAttributes<HTMLElement>,
     VariantProps<typeof TabItemVariants> {
   className?: string;
   text: string;

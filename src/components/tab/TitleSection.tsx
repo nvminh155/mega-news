@@ -23,7 +23,7 @@ const TitleSectionVariants = cva(
 );
 
 interface TitleSectionProps
-  extends React.ButtonHTMLAttributes<HTMLDivElement>,
+  extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof TitleSectionVariants> {
   className?: string;
   status?: "default" | "dot" | "simple" | "line";

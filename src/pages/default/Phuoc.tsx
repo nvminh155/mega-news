@@ -1,15 +1,16 @@
-import { ESize } from "@/types";
+import { ESize, ETags, IMG_URL } from "@/types";
 
 import Hashtag from "@/components/hashtag/Hashtag";
 import LoadingBar from "@/components/loadingBar/LoadingBar";
 
 export const Phuoc = () => {
+  console.log(`${IMG_URL}/${ETags.FOOD}/01`);
   return (
     <div>
       <div>
-        <Hashtag srcimg="public/food01.jpg" title="Food" status="cover" />
+        <Hashtag imgIndex={2} title={ETags.FOOD} status="cover" />
 
-        <Hashtag srcimg="public/food01.jpg" title="Food" status="split" />
+        <Hashtag imgIndex={2} title={ETags.ABSTRACT} status="split" />
       </div>
       <br></br>
 

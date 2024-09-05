@@ -9,7 +9,7 @@ interface LoadingBargProps extends React.ButtonHTMLAttributes<HTMLElement> {
   className?: string;
 }
 const LoadingBar: React.FC<LoadingBargProps> = ({
-  size = "small",
+  size = ESize.Small,
   percent = 0,
   containerClassname,
   className,
