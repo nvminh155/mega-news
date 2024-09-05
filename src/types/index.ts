@@ -18,4 +18,3 @@ export enum ETags {
     CAR = "car",
     FOOD = "food",
 }
-export const IMG_URL= "public/imgAllPages(Community)/img"

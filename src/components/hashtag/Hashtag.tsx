@@ -2,13 +2,12 @@ import { ETags } from "@/types";
 import { cva, VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/cn";
-import { UseImg } from "@/hooks/useImg";
 
 const HashtagVariants = cva("rounded-[20px] overflow-hidden  bg-gray flex ", {
   variants: {
     status: {
       cover: "text-white max-w-[170px] max-h-[48px] bg-gray relative  ",
-      split: "text-black max-w-[132px] max-h-[48px] flex ",
+      split: "text-black max-w-[150px] max-h-[48px] flex ",
     },
   },
   defaultVariants: {
@@ -20,12 +19,12 @@ interface HashtagProps
   extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof HashtagVariants> {
   title: ETags;
-  imgIndex: number;
+  imgSrc: string;
   className?: string;
 }
 const Hashtag: React.FC<HashtagProps> = ({
   title = ETags.FOOD,
-  imgIndex = 1,
+  imgSrc,
   status = "cover",
   className,
 }) => {
@@ -36,7 +35,7 @@ const Hashtag: React.FC<HashtagProps> = ({
       .map((word) => word.charAt(0).toUpperCase() + word.slice(1)) // Viết hoa chữ cái đầu của mỗi từ
       .join(" "); // Ghép lại thành chuỗi
   }
-  const imgSrc = UseImg(title, imgIndex);
+
   return (
     <div className={cn(HashtagVariants({ status, className }))}>
       <img
