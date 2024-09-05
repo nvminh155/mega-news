@@ -7,7 +7,7 @@ const HashtagVariants = cva("rounded-[20px] overflow-hidden  bg-gray flex ", {
   variants: {
     status: {
       cover: "text-white max-w-[170px] max-h-[48px] bg-gray relative  ",
-      split: "text-black max-w-[150px] max-h-[48px] flex ",
+      split: "text-black  w-fit max-h-[48px] flex ",
     },
   },
   defaultVariants: {
@@ -50,7 +50,7 @@ const Hashtag: React.FC<HashtagProps> = ({
       <div
         className={cn(
           status == "cover" && "absolute bottom-0 left-0 right-0 top-0",
-          "z-10 flex w-full items-center justify-center text-center text-sm font-bold"
+          "flex w-full items-center justify-center text-center text-sm font-bold"
         )}
       >
         #{capitalizeTitle(title)}
