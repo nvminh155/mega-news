@@ -10,7 +10,7 @@ export const Phuoc = () => {
       <div>
         <Hashtag imgIndex={2} title={ETags.FOOD} status="cover" />
 
-        <Hashtag imgIndex={2} title={ETags.ABSTRACT} status="split" />
+        <Hashtag imgIndex={3} title={ETags.TECHNOLOGY} status="split" />
       </div>
       <br></br>
 

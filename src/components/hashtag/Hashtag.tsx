@@ -1,7 +1,8 @@
-import { ETags, IMG_URL } from "@/types";
+import { ETags } from "@/types";
 import { cva, VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/cn";
+import { UseImg } from "@/hooks/useImg";
 
 const HashtagVariants = cva("rounded-[20px] overflow-hidden  bg-gray flex ", {
   variants: {
@@ -35,22 +36,11 @@ const Hashtag: React.FC<HashtagProps> = ({
       .map((word) => word.charAt(0).toUpperCase() + word.slice(1)) // Viết hoa chữ cái đầu của mỗi từ
       .join(" "); // Ghép lại thành chuỗi
   }
-  const imgSrc = () => {
-    const imgSrc = `${IMG_URL}/${title}/${imgIndex < 10 ? "0" + imgIndex : imgIndex}.png`;
-
-    const img = new Image();
-    img.src = imgSrc;
-
-    img.onerror = function () {
-      img.src = `${IMG_URL}/${title}/01.png`;
-    };
-
-    return img.src;
-  };
+  const imgSrc = UseImg(title, imgIndex);
   return (
     <div className={cn(HashtagVariants({ status, className }))}>
       <img
-        src={imgSrc()}
+        src={imgSrc}
         className={cn(
           status === "cover" && "relative w-full blur-sm",
           status === "split" && "h-[48px] w-[60px]",
