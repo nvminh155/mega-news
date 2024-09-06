@@ -65,6 +65,7 @@ export const router = [
 
 const paths = {
   "/": ["/"],
+  "/minh": ["/minh"],
 } as const;
 
 export type TRoutePaths = (typeof paths)[keyof typeof paths][number];

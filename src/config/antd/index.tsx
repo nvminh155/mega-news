@@ -11,6 +11,12 @@ export const ConfigAntd = ({ children }: { children: React.ReactNode }) => {
         },
         components: {
           Button: {},
+          Breadcrumb: {
+            itemColor: "hsla(var(--black), 1)",
+            lastItemColor: "hsla(var(--tertiary), 0.5)",
+            linkColor: "hsla(var(--black), 1)",
+            separatorMargin: 1,
+          },
         },
       }}
     >
