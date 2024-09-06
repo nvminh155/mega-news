@@ -1,3 +1,7 @@
+import { App, Pagination } from "antd";
+
+import AppButton from "@/components/button";
+import { Iconfy } from "@/components/Iconfy";
 import CardSlider from "@/components/slider/CardSlider";
 import Slider from "@/components/slider/Slider";
 
@@ -31,10 +35,54 @@ const Minh = () => {
         dotProps={{ dotPosition: "bottom-right" }}
         orientation="horizontal"
         items={list.map((it) => {
-          return <CardSlider key={it.id} />;
+          return <CardSlider key={it.id} src="/Image-card.png" />;
         })}
         containerProps={{ className: "max-w-[754px] max-h-[452px]" }}
       />
+      <Pagination
+        rootClassName="*:!border-none"
+        className="mt-5"
+        total={500}
+        pageSize={5}
+        showLessItems={false}
+        itemRender={(page, type) => {
+          if (type === "jump-prev" || type === "jump-next")
+            return <div>sakfj</div>;
+          if (type === "next")
+            return (
+              <AppButton
+                suffixIcon={<Iconfy icon={"radix-icons:caret-right"} />}
+                className="pl-3 pr-2"
+              >
+                Next
+              </AppButton>
+            );
+          if (type === "prev")
+            return (
+              <AppButton
+                prefixIcon={<Iconfy icon={"radix-icons:caret-left"} />}
+                className="pl-2 pr-3"
+              >
+                Prev
+              </AppButton>
+            );
+          console.log(page, type);
+          return (
+            <div className="rounded-sm !border-none bg-accent-gray">{page}</div>
+          );
+        }}
+      />
+      <AppButton variant={"disabled"}>
+        <div className="flex items-center">
+          <span className="leading-tight">Next</span>
+          <Iconfy icon={"radix-icons:caret-right"} size={"sm"} />
+        </div>
+      </AppButton>
+
+      <AppButton className="flex items-center text-md bg-primary w-max">
+        <span>tẽt</span>
+        <Iconfy icon={"radix-icons:caret-right"} size={"sm"} />
+      </AppButton>
     </div>
   );
 };

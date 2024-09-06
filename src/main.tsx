@@ -8,6 +8,7 @@ import "@/i18n";
 import { store } from "@/stores";
 import { Provider as ReduxProvider } from "react-redux";
 
+import Container from "./components/Container";
 import Footer from "./components/footer";
 import Header from "./components/header";
 import { ConfigAntd } from "./config/antd";
@@ -17,13 +18,13 @@ createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ReduxProvider store={store}>
       <ConfigAntd>
-        <div className="flex min-h-screen w-screen flex-col px-5">
+        <Container className="min-h-screen w-screen max-w-[1920px] px-5">
           <Header />
-          <div className="flex-1">
+          <Container className="flex-1">
             <RouterProvider router={createBrowserRouter(router)} />
-          </div>
+          </Container>
           <Footer />
-        </div>
+        </Container>
       </ConfigAntd>
     </ReduxProvider>
   </StrictMode>
