@@ -29,7 +29,7 @@ const ElementMenuVariants = cva(
 );
 
 interface ElementMenuProps
-  extends React.ButtonHTMLAttributes<HTMLDivElement>,
+  extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof ElementMenuVariants> {
   className?: string;
   text: string;
