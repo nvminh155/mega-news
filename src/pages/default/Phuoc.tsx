@@ -1,7 +1,7 @@
-import { ESize, ETags } from "@/types";
-
 import Hashtag from "@/components/hashtag/Hashtag";
+import { ETags } from "@/components/hashtag/type";
 import LoadingBar from "@/components/loadingBar/LoadingBar";
+import { ESize } from "@/components/loadingBar/type";
 
 export const Phuoc = () => {
   return (

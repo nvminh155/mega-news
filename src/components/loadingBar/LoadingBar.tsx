@@ -1,6 +1,6 @@
-import { ESize } from "@/types";
-
 import { cn } from "@/lib/cn";
+
+import { ESize } from "./type";
 
 interface LoadingBargProps extends React.ButtonHTMLAttributes<HTMLElement> {
   size: ESize | number;

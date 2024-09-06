@@ -1,7 +1,9 @@
-import { ETags } from "@/types";
+import { capitalizeTitle } from "@/utils";
 import { cva, VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/cn";
+
+import { ETags } from "./type";
 
 const HashtagVariants = cva("rounded-[20px] overflow-hidden  bg-gray flex ", {
   variants: {
@@ -28,14 +30,6 @@ const Hashtag: React.FC<HashtagProps> = ({
   status = "cover",
   className,
 }) => {
-  function capitalizeTitle(title: string): string {
-    return title
-      .toLowerCase() // Chuyển toàn bộ chuỗi thành chữ thường
-      .split(" ") // Tách các từ trong chuỗi thành mảng
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1)) // Viết hoa chữ cái đầu của mỗi từ
-      .join(" "); // Ghép lại thành chuỗi
-  }
-
   return (
     <div className={cn(HashtagVariants({ status, className }))}>
       <img
@@ -50,6 +44,7 @@ const Hashtag: React.FC<HashtagProps> = ({
       <div
         className={cn(
           status == "cover" && "absolute bottom-0 left-0 right-0 top-0",
+          status == "split" && "mx-1",
           "flex w-full items-center justify-center text-center text-sm font-bold"
         )}
       >

@@ -1,8 +1,3 @@
-export enum ESize {
-    Small = "small",
-    Large = "large",
-}
-
 export enum ETags {
     CITY = "city",
     MAP = "map",
