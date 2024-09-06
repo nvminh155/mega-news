@@ -37,10 +37,6 @@ export default {
           DEFAULT: "hsla(var(--muted))",
           foreground: "hsla(var(--muted-foreground))",
         },
-        accent: {
-          DEFAULT: "hsla(var(--accent))",
-          foreground: "hsla(var(--accent-foreground))",
-        },
         popover: {
           DEFAULT: "hsla(var(--popover))",
           foreground: "hsla(var(--popover-foreground))",
@@ -49,8 +45,13 @@ export default {
           DEFAULT: "hsla(var(--card))",
           foreground: "hsla(var(--card-foreground))",
         },
-        gray:{
-          DEFAULT:"#F5F5F5",
+        gray: {
+          DEFAULT: "hsla(var(--accent-gray))",
+        },
+        accent: {
+          gray: {
+            DEFAULT: "hsla(var(--accent-gray))",
+          },
         }
       },
       fontSize: {

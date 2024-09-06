@@ -6,10 +6,11 @@ export const ConfigAntd = ({ children }: { children: React.ReactNode }) => {
       theme={{
         token: {
           colorPrimary: "hsl(350, 94%, 53%)",
+          fontFamily: '"Roboto", sans-serif',
+          fontSize: 16,
         },
         components: {
           Button: {},
-       
         },
       }}
     >

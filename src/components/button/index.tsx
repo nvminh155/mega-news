@@ -5,7 +5,7 @@ import { cva, VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/cn";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap rounded-md font-semibold text-sm focus-visible:!outline-none focus-visible:!shadow-none",
+  "flex items-center h-max justify-center rounded-md font-semibold focus-visible:!outline-none focus-visible:!shadow-none border-none",
   {
     variants: {
       variant: {
@@ -17,17 +17,17 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline !bg-transparent !border-none",
         disabled:
-          "!bg-[#f5f5f5] !text-tertiary/75 cursor-not-allowed border-none",
+          "!bg-[#f5f5f5] !text-tertiary/75 border-none pointer-events-none",
       },
       size: {
-        default: "px-6 py-3",
+        default: "py-2 px-2",
         sm: "px-4 py-2",
         lg: "px-8 py-4",
         icon: "h-max w-max p-2",
       },
     },
     defaultVariants: {
-      variant: "outline",
+      variant: "default",
       size: "default",
     },
   }
@@ -37,6 +37,7 @@ export interface AppButtonProps
   extends Omit<ButtonProps, "size">,
     VariantProps<typeof buttonVariants> {
   suffixIcon?: React.ReactNode;
+  prefixIcon?: React.ReactNode;
   disabledRing?: boolean;
 }
 
@@ -47,17 +48,19 @@ const AppButton: React.FC<AppButtonProps> = ({
   size,
   children,
   suffixIcon,
+  prefixIcon,
   disabledRing = false,
   ...props
 }) => {
   return (
     <Button
       className={cn(
-        buttonVariants({ variant, size, className }),
-        !disabledRing && "focus-visible:ring-2"
+        "gap-0 p-0 ring-0",
+        buttonVariants({ variant, size, className })
       )}
       {...props}
     >
+      {prefixIcon}
       {children}
       {suffixIcon}
     </Button>
