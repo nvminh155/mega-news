@@ -1,9 +1,7 @@
-import React from "react";
-
 import PostCard from "@/components/postCard";
 import { EPostCardSize, EPostCardType } from "@/components/postCard/type";
 
-const Thang: React.FC = () => {
+const ListPostCard = () => {
   return (
     <>
       <div>
@@ -175,4 +173,4 @@ const Thang: React.FC = () => {
   );
 };
 
-export default Thang;
+export default ListPostCard;

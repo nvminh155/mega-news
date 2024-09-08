@@ -28,6 +28,7 @@ export default {
         },
         tertiary: {
           DEFAULT: "hsla(var(--tertiary))",
+          black: "hsla(var(--black))",
         },
         destructive: {
           DEFAULT: "hsla(var(--destructive))",
