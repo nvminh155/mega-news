@@ -1,3 +1,6 @@
+import { useEffect, useState } from "react";
+import { TUser, UserAPI } from "@/services";
+
 import { cn } from "@/lib/cn";
 
 import Action from "./Action";
@@ -5,20 +8,34 @@ import Author from "./Author";
 import Background from "./Background";
 import Description from "./Description";
 import Title from "./Title";
-import { EPostCardSize, EPostCardType, TAuthor, TPostCard } from "./type";
+import { EPostCardSize, EPostCardType, TPostCard } from "./type";
 import { imageVariants, postCardVariants } from "./variants";
 
 type TPostCardProps = TPostCard;
 
 const PostCard: React.FC<TPostCardProps> = ({
-  imageUrl = "/not-found.png",
-  title,
-  description,
-  author,
+  post,
   size = EPostCardSize.large,
   type = EPostCardType.vertical,
   actions,
 }) => {
+  const [author, setAuthor] = useState<TUser>();
+
+  const fetchAuthorData = async () => {
+    try {
+      if (post.authorId) {
+        const response = await UserAPI.getUser(post.authorId);
+        setAuthor(response);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchAuthorData();
+  }, []);
+
   return (
     <div
       className={cn(
@@ -33,25 +50,25 @@ const PostCard: React.FC<TPostCardProps> = ({
     >
       <Background
         type={type}
-        title={title}
-        imageUrl={imageUrl}
+        imageUrl={post.imageUrl}
+        title={post.title}
         imageClassName={imageVariants({
           imageClassName: `${type}-${size}` as keyof typeof imageVariants,
         })}
       />
       <div
         className={cn(
-          "flex flex-col",
+          "flex w-full flex-col",
           type === EPostCardType.widget && "items-center justify-center",
           type === EPostCardType.horizontal && "h-[190px]"
         )}
       >
-        <Title type={type} title={title} />
-        {description && (
+        <Title type={type} title={post.title} />
+        {post.explanationHTML && (
           <Description
             type={type}
-            description={description}
-            author={author as TAuthor}
+            authorId={post.authorId}
+            explanationHTML={post.explanationHTML}
           />
         )}
         {author && <Author {...author} />}

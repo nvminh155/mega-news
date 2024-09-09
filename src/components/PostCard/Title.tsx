@@ -1,8 +1,10 @@
+import { TPost } from "@/services";
+
 import { cn } from "@/lib/cn";
 
 import { EPostCardType, TPostCard } from "./type";
 
-type TitleProps = Pick<TPostCard, "type" | "title">;
+type TitleProps = Pick<TPostCard, "type"> & Pick<TPost, "title">;
 
 const Title: React.FC<TitleProps> = ({ ...props }) => {
   return (

@@ -1,0 +1,106 @@
+{
+    "users": [
+        {
+            "id": "user1",
+            "avatarUrl": "https://www.vietnamworks.com/hrinsider/wp-content/uploads/2023/12/hinh-nen-3d-thien-nhien-003.jpg",
+            "bannerUrl": "https://www.vietnamworks.com/hrinsider/wp-content/uploads/2023/12/hinh-nen-3d-thien-nhien-003.jpg",
+            "firstName": "John",
+            "lastName": "Doe",
+            "userName": "johndoe",
+            "password": "123456",
+            "email": "abc1@gmail.com",
+            "title": "Hello World",
+            "followerIds": ["user2"],
+            "explanationHTML": "This is my explanation"
+        },
+        {
+            "id": "user2",
+            "avatarUrl": "/avatar.svg",
+            "bannerUrl": "https://www.vietnamworks.com/hrinsider/wp-content/uploads/2023/12/hinh-nen-3d-thien-nhien-003.jpg",
+            "firstName": "John",
+            "lastName": "Doe 2",
+            "userName": "johndoe2",
+            "password": "123456",
+            "email": "abc2@gmail.com",
+            "title": "Hello Again",
+            "followerIds": ["user1"],
+            "explanationHTML": "This is my explanation"
+        }
+    ],
+    "posts": [
+        {
+            "id": "post1",
+            "imageUrl": "https://www.vietnamworks.com/hrinsider/wp-content/uploads/2023/12/hinh-nen-3d-thien-nhien-003.jpg",
+            "videoUrl": "",
+            "imageGallery": [],
+            "title": "Hello World",
+            "explanationHTML": "This is my first post!",
+            "authorId": "user1",
+            "tags": ["abc", "xyz"],
+            "categoryIds": ["category1"],
+            "bookmarkList": ["user2"],
+            "draft": false,
+            "isPublished": true
+        },
+        {
+            "id": "post2",
+            "imageUrl": "https://www.vietnamworks.com/hrinsider/wp-content/uploads/2023/12/hinh-nen-3d-thien-nhien-003.jpg",
+            "videoUrl": "",
+            "imageGallery": [],
+            "title": "Hello Again",
+            "explanationHTML": "This is my second post!",
+            "authorId": "user2",
+            "tags": ["hello", "world"],
+            "categoryIds": ["category2"],
+            "bookmarkList": ["user1"],
+            "draft": false,
+            "isPublished": true
+        }
+    ],
+    "categories": [
+        {
+            "id": "category1",
+            "name": "Food"
+        },
+        {
+            "id": "category2",
+            "name": "Animal"
+        }
+    ],
+    "comments": [
+        {
+            "id": "comment1",
+            "content": "This is a comment",
+            "authorId": "user1",
+            "displayName": "User1",
+            "website": "",
+            "email": "",
+            "postId": "post1",
+            "rate": 5,
+            "createdAt": 1725891900000,
+            "replyTo": "comment2"
+        },
+        {
+            "id": "comment2",
+            "content": "This is another comment",
+            "authorId": "user2",
+            "displayName": "User2",
+            "website": "",
+            "email": "",
+            "postId": "post1",
+            "rate": 5,
+            "createdAt": 1725891900000,
+            "replyTo": ""
+        }
+    ],
+    "contacts": [
+        {
+            "id": "contact1",
+            "subject": "Hello",
+            "name": "John Doe 2",
+            "email": "",
+            "explanationHTML": "This is a explanation",
+            "imageUrls": ""
+        }
+    ]
+}

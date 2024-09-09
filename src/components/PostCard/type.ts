@@ -1,3 +1,5 @@
+import { TPost } from "@/services";
+
 // Define the enum for type of post card
 enum EPostCardType {
   horizontal = "horizontal",
@@ -12,10 +14,7 @@ enum EPostCardSize {
 }
 
 type TPostCard = {
-  imageUrl?: string;
-  title: string;
-  description?: string;
-  author?: TAuthor;
+  post: TPost;
   size?: EPostCardSize;
   type?: EPostCardType;
   actions?: TAction;
@@ -26,11 +25,5 @@ type TAction = {
   stars?: string[];
 };
 
-type TAuthor = {
-  avatarUrl?: string;
-  name?: string;
-  title?: string;
-};
-
-export type { TPostCard, TAction, TAuthor };
+export type { TPostCard, TAction };
 export { EPostCardType, EPostCardSize };
