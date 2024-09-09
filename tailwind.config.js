@@ -12,6 +12,11 @@ export default {
       },
     },
     extend: {
+      screens: {
+        desktop: "1024px",
+        tablet: "768px",
+        mobile: "640px",
+      },
       colors: {
         border: "hsla(var(--border))",
         input: "hsla(var(--input))",
@@ -28,6 +33,7 @@ export default {
         },
         tertiary: {
           DEFAULT: "hsla(var(--tertiary))",
+          black: "hsla(var(--black))",
         },
         destructive: {
           DEFAULT: "hsla(var(--destructive))",
@@ -37,10 +43,6 @@ export default {
           DEFAULT: "hsla(var(--muted))",
           foreground: "hsla(var(--muted-foreground))",
         },
-        accent: {
-          DEFAULT: "hsla(var(--accent))",
-          foreground: "hsla(var(--accent-foreground))",
-        },
         popover: {
           DEFAULT: "hsla(var(--popover))",
           foreground: "hsla(var(--popover-foreground))",
@@ -49,9 +51,14 @@ export default {
           DEFAULT: "hsla(var(--card))",
           foreground: "hsla(var(--card-foreground))",
         },
-        gray:{
-          DEFAULT:"#F5F5F5",
-        }
+        gray: {
+          DEFAULT: "hsla(var(--accent-gray))",
+        },
+        accent: {
+          gray: {
+            DEFAULT: "hsla(var(--accent-gray))",
+          },
+        },
       },
       fontSize: {
         xs: "13px",
@@ -69,8 +76,16 @@ export default {
         md: "var(--radius)",
         lg: "calc(var(--radius) + 4px)",
       },
-      padding: {},
-      margin: {},
+      gap: {
+        sm: "15px",
+        md: "24px",
+      },
+      padding: {
+        sm: "10px",
+        md: "16px",
+        lg: "32px",
+      },
+      margin: { sm: "10px", md: "16px", lg: "32px" },
       keyframes: {
         scroll: {
           to: {

@@ -7,9 +7,9 @@ import {
 // import { locales } from "@/config";
 
 import Home from "@/pages/default/home";
+
 import Minh from "@/pages/default/Minh";
 import { Phuoc } from "@/pages/default/Phuoc";
-import Tuan from "@/pages/default/Tuan";
 import { Kiet } from "@/pages/Kiet";
 import NotFound from "@/pages/NotFound";
 
@@ -43,6 +43,7 @@ export const createRoute = (
 export const router = [
   createRoute("/", <Home />, ERolePath.USER),
   {
+
     path: "/Kiet",
     element: <Kiet />,
   },
@@ -55,10 +56,7 @@ export const router = [
     element: <Phuoc />,
   },
   {
-    path: "/Tuan",
-    element: <Tuan />,
-  },
-  {
+
     path: "*",
     element: <NotFound />,
   },
@@ -66,6 +64,7 @@ export const router = [
 
 const paths = {
   "/": ["/"],
+  "/minh": ["/minh"],
 } as const;
 
 export type TRoutePaths = (typeof paths)[keyof typeof paths][number];

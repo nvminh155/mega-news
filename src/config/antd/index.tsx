@@ -6,10 +6,17 @@ export const ConfigAntd = ({ children }: { children: React.ReactNode }) => {
       theme={{
         token: {
           colorPrimary: "hsl(350, 94%, 53%)",
+          fontFamily: '"Roboto", sans-serif',
+          fontSize: 16,
         },
         components: {
           Button: {},
-       
+          Breadcrumb: {
+            itemColor: "hsla(var(--black), 1)",
+            lastItemColor: "hsla(var(--tertiary), 0.5)",
+            linkColor: "hsla(var(--black), 1)",
+            separatorMargin: 1,
+          },
         },
       }}
     >
