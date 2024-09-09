@@ -27,7 +27,7 @@
     --accent-foreground: 120 5% 15%;
 
     --accent-gray: 0, 0%, 96%;
-    
+
     --destructive: 0 72% 51%;
     --destructive-foreground: 120 5% 100%;
 
@@ -72,6 +72,6 @@
 
 
 body {
-  font-family: "Roboto", sans-serif !important;
+  font-family: "Roboto", system-ui !important;
   width: 100vw;
 }

@@ -1,4 +1,4 @@
-import { ElementMenu } from "@/components/tab/ElementMenu";
+import { TitleSection } from "@/components/TitleSection";
 
 type TTag = {
   key: string;
@@ -8,8 +8,7 @@ type TTag = {
 const Tags: React.FC<{ tags: TTag[] }> = ({ tags }) => {
   return (
     <div className="rounded-md bg-gray px-4 py-5">
-      <ElementMenu
-        status="MegaMenItem"
+      <TitleSection
         text="Tags"
         className="flex items-center justify-start p-0 pb-4 text-lg"
       />

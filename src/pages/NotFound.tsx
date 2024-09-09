@@ -13,7 +13,7 @@ const NotFound = () => {
       >
         404
       </span>
-      <span>{t("not-found")}</span>
+      <span className="text-tertiary/75">{t("not-found")}</span>
     </div>
   );
 };

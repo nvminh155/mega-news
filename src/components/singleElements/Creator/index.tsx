@@ -1,8 +1,8 @@
 import React from "react";
 
-import AppButton from "@/components/button";
+import AppButton from "@/components/Button";
 import { Iconfy } from "@/components/Iconfy";
-import { TPostCard } from "@/components/postCard/type";
+import { TPostCard } from "@/components/PostCard/type";
 
 type TCreatorProps = {
   avatar: string;

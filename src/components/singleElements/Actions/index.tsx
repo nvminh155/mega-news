@@ -1,4 +1,4 @@
-import AppButton from "@/components/button";
+import AppButton from "@/components/Button";
 import { Iconfy } from "@/components/Iconfy";
 
 type TAction = {

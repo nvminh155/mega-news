@@ -12,6 +12,11 @@ export default {
       },
     },
     extend: {
+      screens: {
+        desktop: "1024px",
+        tablet: "768px",
+        mobile: "640px",
+      },
       colors: {
         border: "hsla(var(--border))",
         input: "hsla(var(--input))",
@@ -53,7 +58,7 @@ export default {
           gray: {
             DEFAULT: "hsla(var(--accent-gray))",
           },
-        }
+        },
       },
       fontSize: {
         xs: "13px",
@@ -71,8 +76,16 @@ export default {
         md: "var(--radius)",
         lg: "calc(var(--radius) + 4px)",
       },
-      padding: {},
-      margin: {},
+      gap: {
+        sm: "15px",
+        md: "24px",
+      },
+      padding: {
+        sm: "10px",
+        md: "16px",
+        lg: "32px",
+      },
+      margin: { sm: "10px", md: "16px", lg: "32px" },
       keyframes: {
         scroll: {
           to: {
