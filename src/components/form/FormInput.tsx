@@ -22,13 +22,11 @@ const FormInput = ({
     fieldState: { error },
   } = useController({ control, name });
   return (
-    <div className="flex h-full w-full flex-col space-y-4">
+    <div className="flex h-full w-full flex-col space-y-1">
       {label && (
-        <div>
-          <label className="m-2 block text-md font-semibold text-tertiary">
-            {label}
-          </label>
-        </div>
+        <label className="block text-md font-semibold text-tertiary">
+          {label}
+        </label>
       )}
 
       <input
@@ -36,7 +34,7 @@ const FormInput = ({
         {...inputProps}
         placeholder={placeholder ?? ""}
         className={cn(
-          "h-full w-full rounded-xl border border-[#E6E6E6] bg-gray p-2",
+          "h-full w-full rounded-xl border border-[#E6E6E6] bg-accent-gray/50 p-2 focus-visible:outline-primary",
           className,
           {
             "placeholder:text-xs placeholder:text-tertiary": placeholder,
