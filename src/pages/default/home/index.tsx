@@ -1,29 +1,44 @@
-import { useEffect, useState } from "react";
-import { postAPI } from "@/services";
-import { TPost } from "@/types";
+import { useEffect } from "react";
+import { z } from "@/i18n";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
 
-import Hashtag, { ETags } from "@/components/HashTag";
+import { Form } from "@/components/form";
+import FormInput from "@/components/form/FormInput";
+
+const schema = z.object({
+  name: z.string().length(5),
+  age: z.number(),
+});
+
+type Schema = z.infer<typeof schema>;
 
 const Home = () => {
-  const [post, setPost] = useState<TPost[]>();
+  const form = useForm<Schema>({
+    resolver: zodResolver(schema),
+  });
 
-  useEffect(() => {
-    const fetchDetailPost = async () => {
-      await postAPI.getPosts().then((res) => {
-        console.log(res);
-        setPost(res.data);
-      });
-    };
+  useEffect(() => {}, []);
 
-    fetchDetailPost();
-  }, []);
+  const onSubmit = (data: Schema) => {
+    console.log(data);
+  };
 
-  if (!post) return <div>Loading...</div>;
   return (
-    <div className="space-x-md flex p-sm">
-      {[...post, ...post, ...post].map((_, i) => (
-        <Hashtag key={i + 1} title={ETags.FOOD} imgSrc="/food01.jpg" />
-      ))}
+    <div className="h-full">
+      Home Page
+      <div className="h-[500px]">
+        <div className="mx-auto my-auto h-5 w-1/2">asfjlsajfsaf</div>
+      </div>
+      <Form {...form}>
+        <form onSubmit={form.handleSubmit(onSubmit)}>
+          <FormInput control={form.control} name="name" />
+
+          <input type="submit" onClick={() => {
+            console.log(form.getValues("name"));
+          }} />
+        </form>
+      </Form>
     </div>
   );
 };
