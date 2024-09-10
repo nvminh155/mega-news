@@ -1,28 +1,15 @@
 import { request } from "@/config/request";
+import { TUser } from "@/types/user";
 
-export type TUser = {
-  id: string;
-  avatarUrl?: string;
-  bannerUrl?: string;
-  firstName: string;
-  lastName: string;
-  userName: string;
-  password?: string;
-  email?: string;
-  title?: string;
-  followerIds?: string[];
-  explanationHTML?: string;
-};
-
-const UserAPI = {
+const userAPI = {
   getUsers: async () => {
-    const response = await request.get("/users");
+    const response = await request.get<TUser>("/users");
     return response.data;
   },
   getUser: async (id: string) => {
-    const response = await request.get(`/users/${id}`);
+    const response = await request.get<TUser>(`/users/${id}`);
     return response.data;
   },
 };
 
-export default UserAPI;
+export default userAPI;

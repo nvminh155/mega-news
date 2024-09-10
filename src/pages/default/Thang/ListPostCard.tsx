@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { PostAPI, TPost, UserAPI } from "@/services";
+import { postAPI, userAPI } from "@/services";
+import { TPost } from "@/types";
 
 import PostCard from "@/components/PostCard";
 import { EPostCardSize, EPostCardType } from "@/components/PostCard/type";
@@ -9,11 +10,10 @@ const ListPostCard = () => {
 
   const fetchPostsData = async () => {
     try {
-      const request = await PostAPI.getPost("post1");
-      if (request) {
-        request["authorId"] = await UserAPI.getUser(request["authorId"]);
+      const request = await postAPI.getPost("post1");
+      if (request.authorId) {
+        request.authorId = await userAPI.getUser(request.authorId as string);
       }
-      console.log(request);
       setPost(request);
     } catch (error) {
       console.error(error);

@@ -1,29 +1,15 @@
+import { TPost } from "@/types/post";
 import { request } from "@/config/request";
 
-export type TPost = {
-  id: string;
-  imageUrl?: string;
-  videoUrl?: string;
-  imageGallery?: string[];
-  title: string;
-  explanationHTML?: string;
-  authorId?: string;
-  tags?: string[];
-  categoryIds?: string[];
-  bookmarkList?: string[];
-  draft?: boolean;
-  isPublished?: boolean;
-};
-
-const PostAPI = {
+const postAPI = {
   getPosts: async () => {
-    const response = await request.get("/posts");
+    const response = await request.get<TPost>("/posts");
     return response.data;
   },
   getPost: async (id: string) => {
-    const response = await request.get(`/posts/${id}`);
+    const response = await request.get<TPost>(`/posts/${id}`);
     return response.data;
   },
 };
 
-export default PostAPI;
+export default postAPI;

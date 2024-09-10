@@ -1,27 +1,15 @@
 import { request } from "@/config/request";
+import { TComment } from "@/types/comment";
 
-export type TComment = {
-  id: string;
-  content: string;
-  authorId: string;
-  postId: string;
-  displayName?: string;
-  website?: string;
-  email?: string;
-  rate?: number;
-  createdAt?: number;
-  replyTo?: string;
-};
-
-const CommentAPI = {
+const commentAPI = {
   getComments: async () => {
-    const response = await request.get("/comments");
+    const response = await request.get<TComment>("/comments");
     return response.data;
   },
   getComment: async (id: string) => {
-    const response = await request.get(`/comments/${id}`);
+    const response = await request.get<TComment>(`/comments/${id}`);
     return response.data;
   },
 };
 
-export default CommentAPI;
+export default commentAPI;

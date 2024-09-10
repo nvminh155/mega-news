@@ -1,4 +1,4 @@
-import { TPost } from "@/services";
+import { TPost } from "@/types";
 
 // Define the enum for type of post card
 enum EPostCardType {

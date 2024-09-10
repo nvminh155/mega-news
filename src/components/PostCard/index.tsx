@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { TUser, UserAPI } from "@/services";
+import { userAPI } from "@/services";
+import { TUser } from "@/types";
 
 import { cn } from "@/lib/cn";
 
@@ -24,7 +25,7 @@ const PostCard: React.FC<TPostCardProps> = ({
   const fetchAuthorData = async () => {
     try {
       if (post.authorId) {
-        const response = await UserAPI.getUser(post.authorId);
+        const response = await userAPI.getUser(post.authorId as string);
         setAuthor(response);
       }
     } catch (error) {

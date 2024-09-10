@@ -1,5 +1,5 @@
 import React from "react";
-import { TUser } from "@/services";
+import { TUser } from "@/types";
 
 import Avatar from "../Avatar/Avatar";
 import { Iconfy } from "../Iconfy";

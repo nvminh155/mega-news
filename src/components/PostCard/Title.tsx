@@ -1,4 +1,4 @@
-import { TPost } from "@/services";
+import { TPost } from "@/types";
 
 import { cn } from "@/lib/cn";
 

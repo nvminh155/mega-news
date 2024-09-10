@@ -1,0 +1,30 @@
+{
+    "users": [
+        {
+            "id": "user1",
+            "avatarUrl": "https://www.vietnamworks.com/hrinsider/wp-content/uploads/2023/12/hinh-nen-3d-thien-nhien-003.jpg",
+            "bannerUrl": "https://www.vietnamworks.com/hrinsider/wp-content/uploads/2023/12/hinh-nen-3d-thien-nhien-003.jpg",
+            "firstName": "John",
+            "lastName": "Doe",
+            "userName": "johndoe",
+            "password": "123456",
+            "email": "abc1@gmail.com",
+            "title": "Hello World",
+            "followerIds": ["user2"],
+            "explanationHTML": "This is my explanation"
+        },
+        {
+            "id": "user2",
+            "avatarUrl": "/avatar.svg",
+            "bannerUrl": "https://www.vietnamworks.com/hrinsider/wp-content/uploads/2023/12/hinh-nen-3d-thien-nhien-003.jpg",
+            "firstName": "John",
+            "lastName": "Doe 2",
+            "userName": "johndoe2",
+            "password": "123456",
+            "email": "abc2@gmail.com",
+            "title": "Hello Again",
+            "followerIds": ["user1"],
+            "explanationHTML": "This is my explanation"
+        }
+    ]
+}

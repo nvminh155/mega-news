@@ -100,7 +100,7 @@
             "name": "John Doe 2",
             "email": "",
             "explanationHTML": "This is a explanation",
-            "imageUrls": ""
+            "imageUrls": []
         }
     ]
 }

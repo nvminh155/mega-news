@@ -1,19 +1,15 @@
 import { request } from "@/config/request";
+import { TCategory } from "@/types/category";
 
-export type TCategory = {
-  id: string;
-  name: string;
-};
-
-const CategoryAPI = {
+const categoryAPI = {
   getCategories: async () => {
-    const response = await request.get("/categories");
+    const response = await request.get<TCategory>("/categories");
     return response.data;
   },
   getCategory: async (id: string) => {
-    const response = await request.get(`/categories/${id}`);
+    const response = await request.get<TCategory>(`/categories/${id}`);
     return response.data;
   },
 };
 
-export default CategoryAPI;
+export default categoryAPI;
