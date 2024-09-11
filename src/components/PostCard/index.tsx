@@ -26,7 +26,7 @@ const PostCard: React.FC<TPostCardProps> = ({
     try {
       if (post.authorId) {
         const response = await userAPI.getUser(post.authorId as string);
-        setAuthor(response);
+        setAuthor(response.data);
       }
     } catch (error) {
       console.error(error);

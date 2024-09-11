@@ -1,14 +1,14 @@
+import { axiosApi } from "@/lib/axios";
 import { TPost } from "@/types/post";
-import { request } from "@/config/request";
+
+const postPath = "/posts";
 
 const postAPI = {
   getPosts: async () => {
-    const response = await request.get<TPost>("/posts");
-    return response.data;
+    return await axiosApi.getList<TPost[]>(postPath);
   },
   getPost: async (id: string) => {
-    const response = await request.get<TPost>(`/posts/${id}`);
-    return response.data;
+    return await axiosApi.get<TPost>(postPath + `/${id}`);
   },
 };
 

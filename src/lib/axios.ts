@@ -1,47 +1,87 @@
 import axios, { AxiosError, AxiosRequestConfig } from "axios";
 
 const instance = axios.create({
-  baseURL: "https://some-domain.com/api/",
+  baseURL: import.meta.env.VITE_DOMAIN_API,
   timeout: 50000,
   headers: { "Content-Type": "application/json" },
 });
 
+// type MoreRecord<TData> = {
+//   data: TData;
+// };
+
+// type TPaginationRes<TData> = {
+//   success: true;
+//   count: number;
+// } & Record<keyof MoreRecord<TData>, TData[]>;
+
+// type TSingleRes<TData> = {
+//   success: true;
+// } & Record<keyof MoreRecord<TData>, TData>;
+
+// type TData = TSingleRes<TData>;
+// type TResponseList<TData> = TPaginationRes<TData>;
+
 const handleError = (error: AxiosError) => {
-  if (error.response) {
-    // The request was made and the server responded with a status code
-    // that falls out of the range of 2xx
-
-    return {
-      reason_from: "response",
-      error: error.response,
-    };
-  } else if (error.request) {
-    // The request was made but no response was received
-    // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
-    // http.ClientRequest in node.js
-
-    return {
-      reason_from: "The request was made but no response was received",
-      error: error.request,
-    };
-  } else {
-    // Something happened in setting up the request that triggered an Error
-
-    return {
-      reason_from:
-        "Something happened in setting up the request that triggered an Error",
-      error: error.message,
-    };
-  }
+  return Promise.reject(error);
 };
 
 export const axiosApi = {
-  get: async (url: string, config?: AxiosRequestConfig) => {
+  get: async <TData = unknown>(url: string, config?: AxiosRequestConfig) => {
     return await instance
-      .get(url, config)
+      .get<TData>(url, config)
+      .then((res) => ({
+        success: true,
+        data: res.data,
+      }))
+      .catch(handleError);
+  },
+
+  getList: async <TData = unknown>(
+    url: string,
+    config?: AxiosRequestConfig
+  ) => {
+    return await instance
+      .get<TData>(url, config)
+      .then((res) => ({
+        success: true,
+        data: res.data,
+      }))
+      .catch(handleError);
+  },
+
+  post: async <TData = unknown>(
+    url: string,
+    data: TData,
+    config?: AxiosRequestConfig
+  ) => {
+    return await instance
+      .post<TData>(url, data, config)
+      .then((res) => ({
+        success: true,
+        data: res.data,
+      }))
+      .catch(handleError);
+  },
+
+  put: async <TData = unknown>(
+    url: string,
+    data: any,
+    config?: AxiosRequestConfig
+  ) => {
+    return await instance
+      .put<TData>(url, data, config)
+      .then((res) => ({
+        success: true,
+        data: res.data,
+      }))
+      .catch(handleError);
+  },
+
+  delete: async <TData = unknown>(url: string, config?: AxiosRequestConfig) => {
+    return await instance
+      .delete<TData>(url, config)
       .then((res) => res.data)
       .catch(handleError);
   },
 };
-
-

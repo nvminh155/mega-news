@@ -80,6 +80,10 @@ export default {
         sm: "15px",
         md: "24px",
       },
+      space: {
+        sm: "15px",
+        md: "24px",
+      },
       padding: {
         sm: "10px",
         md: "16px",
