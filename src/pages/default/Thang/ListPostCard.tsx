@@ -1,29 +1,9 @@
-import { useEffect, useState } from "react";
-import { postAPI, userAPI } from "@/services";
-import { TPost } from "@/types";
+
 
 import PostCard from "@/components/PostCard";
 import { EPostCardSize, EPostCardType } from "@/components/PostCard/type";
 
 const ListPostCard = () => {
-  const [post, setPost] = useState<TPost>();
-
-  const fetchPostsData = async () => {
-    try {
-      const request = await postAPI.getPost("post1");
-      if (request.authorId) {
-        request.authorId = await userAPI.getUser(request.authorId as string);
-      }
-      setPost(request);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  useEffect(() => {
-    fetchPostsData();
-  }, []);
-
   return (
     <>
       <div>
@@ -197,19 +177,6 @@ const ListPostCard = () => {
       <div>
         <div>Horizontal - Size: "md"</div>
         <div className="flex gap-5">
-          <div>
-            <PostCard
-              size={EPostCardSize.medium}
-              post={{
-                id: "post1",
-                imageUrl: post?.imageUrl,
-                title: post?.title ?? "",
-                explanationHTML: post?.explanationHTML,
-                authorId: post?.authorId,
-              }}
-              type={EPostCardType.horizontal}
-            />
-          </div>
           <div>
             <PostCard
               size={EPostCardSize.medium}
