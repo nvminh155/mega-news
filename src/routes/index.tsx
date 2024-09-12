@@ -7,7 +7,10 @@ import {
 // import { locales } from "@/config";
 
 import Home from "@/pages/default/home";
+import { Phuoc } from "@/pages/default/Phuoc/Phuoc";
+import Thang from "@/pages/default/Thang";
 import NotFound from "@/pages/NotFound";
+import {Kiet}  from "@/pages/default/Kiet/index";
 
 export enum ERolePath {
   ADMIN = 2,
@@ -38,6 +41,18 @@ export const createRoute = (
 
 export const router = [
   createRoute("/", <Home />, ERolePath.USER),
+  {
+    path: "/Kiet",
+    element: <Kiet/>,
+  },
+  {
+    path: "/Phuoc",
+    element: <Phuoc />,
+  },
+  {
+    path: "/thang",
+    element: <Thang />,
+  },
   {
     path: "*",
     element: <NotFound />,

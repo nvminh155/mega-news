@@ -1,0 +1,20 @@
+{
+    "tags": [
+        {
+            "id": "tag1",
+            "name": "abc"
+        },
+        {
+            "id": "tag2",
+            "name": "xyz"
+        },
+        {
+            "id": "tag3",
+            "name": "hello"
+        },
+        {
+            "id": "tag4",
+            "name": "world"
+        }
+    ]
+}
