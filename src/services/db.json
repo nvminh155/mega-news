@@ -41,8 +41,8 @@
       "explanationHTML": "This is my first post!",
       "authorId": "user1",
       "tags": [
-        "abc",
-        "xyz"
+        "tag1",
+        "tag2"
       ],
       "categoryIds": [
         "category1"
@@ -62,8 +62,8 @@
       "explanationHTML": "This is my second post!",
       "authorId": "user2",
       "tags": [
-        "hello",
-        "world"
+        "tag3",
+        "tag4"
       ],
       "categoryIds": [
         "category2"
@@ -119,6 +119,24 @@
       "email": "",
       "explanationHTML": "This is a explanation",
       "imageUrls": []
+    }
+  ],
+  "tags": [
+    {
+      "id": "tag1",
+      "name": "abc"
+    },
+    {
+      "id": "tag2",
+      "name": "xyz"
+    },
+    {
+      "id": "tag3",
+      "name": "hello"
+    },
+    {
+      "id": "tag4",
+      "name": "world"
     }
   ]
 }

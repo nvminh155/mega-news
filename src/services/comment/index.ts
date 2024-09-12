@@ -1,9 +1,9 @@
-import { request } from "@/config/request";
 import { TComment } from "@/types/comment";
+import { request } from "@/config/request";
 
 const commentAPI = {
   getComments: async () => {
-    const response = await request.get<TComment>("/comments");
+    const response = await request.get<TComment[]>("/comments");
     return response.data;
   },
   getComment: async (id: string) => {
