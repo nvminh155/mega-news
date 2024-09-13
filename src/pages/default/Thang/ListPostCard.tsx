@@ -1,5 +1,3 @@
-
-
 import PostCard from "@/components/PostCard";
 import { EPostCardSize, EPostCardType } from "@/components/PostCard/type";
 
@@ -18,6 +16,7 @@ const ListPostCard = () => {
                   "Kayaking Adventure Kayaking Adventure Kayaking Adventure Kayaking Adventure Kayaking Adventure ",
                 explanationHTML:
                   "Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor",
+                createdAt: 1726239005000,
               }}
               type={EPostCardType.widget}
             />
@@ -35,6 +34,7 @@ const ListPostCard = () => {
                 title: "Kayaking Adventure",
                 explanationHTML:
                   "Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor",
+                createdAt: 1726239005000,
               }}
               size={EPostCardSize.medium}
               actions={{
@@ -56,6 +56,7 @@ const ListPostCard = () => {
                 explanationHTML:
                   "Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor",
                 authorId: "user1",
+                createdAt: 1726239005000,
               }}
             />
           </div>
@@ -67,6 +68,7 @@ const ListPostCard = () => {
                 title: "Kayaking Adventure",
                 explanationHTML:
                   "Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor",
+                createdAt: 1726239005000,
               }}
             />
           </div>
@@ -77,6 +79,7 @@ const ListPostCard = () => {
                 imageUrl: "/background.jfif",
                 title: "Kayaking Adventure",
                 authorId: "user1",
+                createdAt: 1726239005000,
               }}
             />
           </div>
@@ -86,6 +89,7 @@ const ListPostCard = () => {
                 id: "post1",
                 imageUrl: "/background.jfif",
                 title: "Kayaking Adventure",
+                createdAt: 1726239005000,
               }}
             />
           </div>
@@ -104,6 +108,7 @@ const ListPostCard = () => {
                 explanationHTML:
                   "Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor",
                 authorId: "user1",
+                createdAt: 1726239005000,
               }}
             />
           </div>
@@ -116,6 +121,7 @@ const ListPostCard = () => {
                 title: "Kayaking Adventure",
                 explanationHTML:
                   "Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor",
+                createdAt: 1726239005000,
               }}
             />
           </div>
@@ -127,6 +133,7 @@ const ListPostCard = () => {
                 imageUrl: "/background.jfif",
                 title: "Kayaking Adventure",
                 authorId: "user1",
+                createdAt: 1726239005000,
               }}
             />
           </div>
@@ -137,6 +144,7 @@ const ListPostCard = () => {
                 id: "post1",
                 imageUrl: "/background.jfif",
                 title: "Kayaking Adventure",
+                createdAt: 1726239005000,
               }}
             />
           </div>
@@ -155,6 +163,7 @@ const ListPostCard = () => {
                 explanationHTML:
                   "Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor",
                 authorId: "user1",
+                createdAt: 1726239005000,
               }}
               type={EPostCardType.horizontal}
             />
@@ -168,6 +177,7 @@ const ListPostCard = () => {
                 title: "Kayaking Adventure",
                 explanationHTML:
                   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit ...",
+                createdAt: 1726239005000,
               }}
               type={EPostCardType.horizontal}
             />
@@ -187,6 +197,7 @@ const ListPostCard = () => {
                 title: "Kayaking Adventure",
                 explanationHTML:
                   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet ",
+                createdAt: 1726239005000,
               }}
               type={EPostCardType.horizontal}
             />

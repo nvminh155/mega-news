@@ -51,7 +51,8 @@
         "user2"
       ],
       "draft": false,
-      "isPublished": true
+      "isPublished": true,
+      "createdAt": 1726239004999
     },
     {
       "id": "post2",
@@ -72,7 +73,8 @@
         "user1"
       ],
       "draft": false,
-      "isPublished": true
+      "isPublished": true,
+      "createdAt": 1726239005000
     }
   ],
   "comments": [
