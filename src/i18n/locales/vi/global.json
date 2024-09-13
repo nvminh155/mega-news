@@ -1,7 +1,8 @@
 {
-  "hello": "Xin chào",
+  "not-found": "OOPS! Page you're looking for doesn't exist. Please use search for help",
+  "hello": "Hello",
   "Course": {
-    "title": "khoas hjc ",
-    "description": "This is a khoa hoc"
+    "title": "Course",
+    "description": "This is a course"
   }
 }

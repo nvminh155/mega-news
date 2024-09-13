@@ -1,3 +1,6 @@
+import { z } from "@/i18n";
+import { commentSchema } from "@/schemas/comment";
+
 export type TComment = {
   id: string;
   content: string;
@@ -10,3 +13,5 @@ export type TComment = {
   createdAt?: number;
   replyTo?: string;
 };
+
+export type TCommentForm = z.infer<typeof commentSchema>;
