@@ -1,14 +1,13 @@
 import { TCategory } from "@/types/category";
-import { request } from "@/config/request";
 
+import { axiosApi } from "@/lib/axios";
+const categoriesPath = "/categories";
 const categoryAPI = {
-  getCategories: async () => {
-    const response = await request.get<TCategory[]>("/categories");
-    return response.data;
+  getcategories: async () => {
+    return await axiosApi.getList<TCategory[]>(categoriesPath);
   },
-  getCategory: async (id: string) => {
-    const response = await request.get<TCategory>(`/categories/${id}`);
-    return response.data;
+  getcategory: async (id: string) => {
+    return await axiosApi.get<TCategory>(categoriesPath + `/${id}`);
   },
 };
 
