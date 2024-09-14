@@ -72,8 +72,8 @@ const PostCard: React.FC<TPostCardProps> = ({
             explanationHTML={post.explanationHTML}
           />
         )}
-        {author && <Author {...author} />}
-        {actions && (
+        {type !== EPostCardType.widget && author && <Author {...author} />}
+        {type !== EPostCardType.widget && actions && (
           <Action viewers={actions.viewers || []} stars={actions.stars || []} />
         )}
       </div>
