@@ -1,12 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 // import { categoryAPI } from "@/services";
 import { TCategory } from "@/types";
-import { ButtonProps, Carousel } from "antd";
+import { Carousel } from "antd";
 
 import "./SliderTag.css";
 
 import Hashtag from "@/components/HashTag";
-import { Iconfy } from "@/components/Iconfy";
+
+import { NextArrow, PrevArrow } from "./CustomArrowAnt";
 
 const data = {
   categories: [
@@ -74,27 +75,6 @@ export const SliderTag = () => {
     )
   );
 
-  const SamplePrevArrow = (props: ButtonProps) => {
-    const { className, onClick } = props;
-    return (
-      <div onClick={onClick} className={`arrow ${className}`}>
-        <Iconfy
-          icon="ooui:previous-ltr"
-          className="icon font-bold text-black"
-        />
-      </div>
-    );
-  };
-
-  function SampleNextArrow(props: ButtonProps) {
-    const { className, onClick } = props;
-    return (
-      <div onClick={onClick} className={`arrow ${className}`}>
-        <Iconfy icon="ooui:next-ltr" className="icon font-bold text-black" />
-      </div>
-    );
-  }
-
   useEffect(() => {
     const handleResize = () => {
       if (divRef.current) {
@@ -114,8 +94,8 @@ export const SliderTag = () => {
   }, [divRef.current]);
 
   const settings = {
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
   };
   useEffect(() => {
     const fetchDetailCategorys = async () => {
