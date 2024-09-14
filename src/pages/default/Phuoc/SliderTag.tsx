@@ -8,70 +8,15 @@ import "./SliderTag.css";
 import Hashtag from "@/components/HashTag";
 
 import { NextArrow, PrevArrow } from "./CustomArrowAnt";
+import { DataCategories } from "./DataCategories";
 
-const data = {
-  categories: [
-    {
-      id: "category1",
-      name: "Food",
-    },
-    {
-      id: "category2",
-      name: "Animal",
-    },
-    {
-      id: "category3",
-      name: "City",
-    },
-    {
-      id: "category4",
-      name: "Map",
-    },
-    {
-      id: "category5",
-      name: "Weather",
-    },
-    {
-      id: "category6",
-      name: "Dance",
-    },
-    {
-      id: "category7",
-      name: "Avatar",
-    },
-    {
-      id: "category8",
-      name: "Team",
-    },
-    {
-      id: "category9",
-      name: "Abstract",
-    },
-    {
-      id: "category10",
-      name: "Music",
-    },
-    {
-      id: "category11",
-      name: "Sport",
-    },
-    {
-      id: "category12",
-      name: "Technology",
-    },
-    {
-      id: "category13",
-      name: "Car",
-    },
-  ],
-};
 export const SliderTag = () => {
   const [categories, setCategories] = useState<TCategory[]>();
   const divRef = useRef<HTMLDivElement>(null);
 
   const [numberCategory, setNumberCategory] = useState<number>(
     Math.floor(
-      ((window.innerWidth > 1500 ? 1500 : window.innerWidth) - 100) / (170 + 24)
+      ((window.innerWidth > 1512 ? 1512 : window.innerWidth) - 100) / (170 + 24)
     )
   );
 
@@ -102,7 +47,7 @@ export const SliderTag = () => {
       // await categoryAPI.getcategories().then((res) => {
       //   if (res.success) setCategories(res.data);
       // });
-      setCategories(data.categories);
+      setCategories(DataCategories.categories);
     };
     fetchDetailCategorys();
   }, []);
