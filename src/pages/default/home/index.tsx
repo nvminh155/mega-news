@@ -34,9 +34,12 @@ const Home = () => {
         <form onSubmit={form.handleSubmit(onSubmit)}>
           <FormInput control={form.control} name="name" />
 
-          <input type="submit" onClick={() => {
-            console.log(form.getValues("name"));
-          }} />
+          <input
+            type="submit"
+            onClick={() => {
+              console.log(form.getValues("name"));
+            }}
+          />
         </form>
       </Form>
     </div>
