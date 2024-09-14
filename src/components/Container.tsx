@@ -2,7 +2,7 @@ import React, { PropsWithChildren } from "react";
 
 import { cn } from "@/lib/cn";
 
-enum EDirection {
+export enum EDirection {
   ROW,
   COL,
 }
