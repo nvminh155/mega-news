@@ -67,9 +67,13 @@ const data = {
 export const SliderTag = () => {
   const [categories, setCategories] = useState<TCategory[]>();
   const divRef = useRef<HTMLDivElement>(null);
+
   const [numberCategory, setNumberCategory] = useState<number>(
-    Math.floor(window.innerWidth / (170 + 24))
+    Math.floor(
+      ((window.innerWidth > 1500 ? 1500 : window.innerWidth) - 100) / (170 + 24)
+    )
   );
+
   const SamplePrevArrow = (props: ButtonProps) => {
     const { className, onClick } = props;
     return (
@@ -95,8 +99,8 @@ export const SliderTag = () => {
     const handleResize = () => {
       if (divRef.current) {
         const divWidth = divRef.current.offsetWidth;
-
-        setNumberCategory(Math.floor(divWidth / (170 + 24)));
+        setNumberCategory(Math.floor((divWidth - 60) / (170 + 24)));
+        console.log(divWidth);
       }
     };
 
