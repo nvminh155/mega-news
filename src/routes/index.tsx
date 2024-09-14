@@ -7,6 +7,7 @@ import {
 // import { locales } from "@/config";
 
 import Home from "@/pages/default/home";
+import Tuan from "@/pages/default/Tuan";
 import NotFound from "@/pages/NotFound";
 
 export enum ERolePath {
@@ -41,6 +42,10 @@ export const router = [
   {
     path: "*",
     element: <NotFound />,
+  },
+  {
+    path: "/Tuan",
+    element: <Tuan />,
   },
 ];
 
