@@ -37,7 +37,14 @@ const SingleElement: React.FC = () => {
           avatar="/background.jfif"
           name="Behzad Pashaei"
           posts={[
-            { post: { id: "post1", imageUrl: "/avatar.svg", title: "abc" } },
+            {
+              post: {
+                id: "post1",
+                imageUrl: "/avatar.svg",
+                title: "abc",
+                createdAt: 1726239005000,
+              },
+            },
           ]}
         />
       </div>
@@ -46,27 +53,27 @@ const SingleElement: React.FC = () => {
         <Tags
           tags={[
             {
-              key: "1",
+              id: "1",
               name: "Montenegro",
             },
             {
-              key: "2",
+              id: "2",
               name: "Visit Croatia",
             },
             {
-              key: "3",
+              id: "3",
               name: "Luxury Travel",
             },
             {
-              key: "4",
+              id: "4",
               name: "Travel Log",
             },
             {
-              key: "5",
+              id: "5",
               name: "Paradise Island",
             },
             {
-              key: "6",
+              id: "6",
               name: "Travel Info",
             },
           ]}

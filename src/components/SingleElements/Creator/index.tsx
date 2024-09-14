@@ -4,11 +4,13 @@ import AppButton from "@/components/Button";
 import { Iconfy } from "@/components/Iconfy";
 import { TPostCard } from "@/components/PostCard/type";
 
-type TCreatorProps = {
+export type TCreator = {
   avatar: string;
   name?: string;
   posts?: TPostCard[];
 };
+
+type TCreatorProps = TCreator;
 
 const Creator: React.FC<TCreatorProps> = ({
   avatar = "/avatar.svg",
