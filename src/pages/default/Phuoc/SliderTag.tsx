@@ -8,6 +8,62 @@ import "./SliderTag.css";
 import Hashtag from "@/components/HashTag";
 import { Iconfy } from "@/components/Iconfy";
 
+const data = {
+  categories: [
+    {
+      id: "category1",
+      name: "Food",
+    },
+    {
+      id: "category2",
+      name: "Animal",
+    },
+    {
+      id: "category3",
+      name: "City",
+    },
+    {
+      id: "category4",
+      name: "Map",
+    },
+    {
+      id: "category5",
+      name: "Weather",
+    },
+    {
+      id: "category6",
+      name: "Dance",
+    },
+    {
+      id: "category7",
+      name: "Avatar",
+    },
+    {
+      id: "category8",
+      name: "Team",
+    },
+    {
+      id: "category9",
+      name: "Abstract",
+    },
+    {
+      id: "category10",
+      name: "Music",
+    },
+    {
+      id: "category11",
+      name: "Sport",
+    },
+    {
+      id: "category12",
+      name: "Technology",
+    },
+    {
+      id: "category13",
+      name: "Car",
+    },
+  ],
+};
 export const SliderTag = () => {
   const [categories, setCategories] = useState<TCategory[]>();
   const divRef = useRef<HTMLDivElement>(null);
@@ -59,9 +115,10 @@ export const SliderTag = () => {
   };
   useEffect(() => {
     const fetchDetailCategorys = async () => {
-      await categoryAPI.getcategories().then((res) => {
-        if (res.success) setCategories(res.data);
-      });
+      // await categoryAPI.getcategories().then((res) => {
+      //   if (res.success) setCategories(res.data);
+      // });
+      setCategories(data.categories);
     };
     fetchDetailCategorys();
   }, []);
@@ -78,13 +135,7 @@ export const SliderTag = () => {
         infinite={false}
         className="flex bg-accent-gray desktop:p-sm"
       >
-        {[
-          ...categories,
-          ...categories,
-          ...categories,
-          ...categories,
-          ...categories,
-        ].map((category, i) => (
+        {categories.map((category, i) => (
           <Hashtag
             key={i + 1}
             title={category.name}

@@ -4,7 +4,7 @@ import { cva, VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/cn";
 
 const HashtagVariants = cva(
-  "rounded-[20px] max-h-[48px] overflow-hidden bg-accent-gray flex",
+  "rounded-[20px] max-h-[48px] overflow-hidden bg-accent-gray flex cursor-pointer",
   {
     variants: {
       status: {
