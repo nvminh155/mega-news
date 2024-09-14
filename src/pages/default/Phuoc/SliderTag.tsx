@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { categoryAPI } from "@/services";
+// import { categoryAPI } from "@/services";
 import { TCategory } from "@/types";
 import { ButtonProps, Carousel } from "antd";
 
