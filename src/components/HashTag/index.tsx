@@ -3,28 +3,12 @@ import { cva, VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/cn";
 
-export enum ETags {
-  CITY = "city",
-  MAP = "map",
-  WEATHER = "weather",
-  DANCE = "dance",
-  AVATAR = "avatar",
-  TEAM = "team",
-  ANIMAL = "animal",
-  ABSTRACT = "abstract",
-  MUSIC = "music",
-  SPORT = "sport",
-  TECHNOLOGY = "technology",
-  CAR = "car",
-  FOOD = "food",
-}
-
 const HashtagVariants = cva(
-  "rounded-[20px] max-h-[48px]  overflow-hidden bg-accent-gray flex",
+  "rounded-[20px] max-h-[48px] overflow-hidden bg-accent-gray flex cursor-pointer",
   {
     variants: {
       status: {
-        cover: "text-white max-w-[170px] bg-accent-gray relative  ",
+        cover: "text-white w-[170px] bg-accent-gray relative  ",
         split: "text-black  w-fit flex ",
       },
     },
@@ -37,12 +21,12 @@ const HashtagVariants = cva(
 interface HashtagProps
   extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof HashtagVariants> {
-  title: ETags;
+  title: string;
   imgSrc: string;
   className?: string;
 }
 const Hashtag: React.FC<HashtagProps> = ({
-  title = ETags.FOOD,
+  title = "food",
   imgSrc,
   status = "cover",
   className,
