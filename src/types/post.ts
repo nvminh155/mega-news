@@ -13,4 +13,5 @@ export type TPost = {
   bookmarkList?: string[];
   draft?: boolean;
   isPublished?: boolean;
+  createdAt: number;
 };

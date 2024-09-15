@@ -6,18 +6,20 @@ type TInformation = {
   date: number;
   comments: number;
   category: string;
+  className?: string;
 };
 
 const Information: React.FC<TInformation> = ({
   date = 1656947004000,
   comments = 35,
   category = "Sport",
+  className,
 }) => {
   const { isDesktop } = useDeviceType();
   const timeFormatted = formatDateTime(date);
 
   return (
-    <div className="flex w-full justify-between gap-20 text-sm font-medium text-tertiary/75">
+    <div className={`flex w-full justify-between gap-20 text-sm font-medium text-tertiary/75 ${className}`}>
       <div className="flex items-center justify-between gap-1">
         <Iconfy icon={"fa:calendar-o"} size={"sm"} />
         <div>

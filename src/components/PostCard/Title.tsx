@@ -10,12 +10,13 @@ const Title: React.FC<TitleProps> = ({ ...props }) => {
   return (
     <div
       className={cn(
+        "w-full",
         props.type !== EPostCardType.widget && "py-4 pl-[6px] pr-4"
       )}
     >
       <p
         className={cn(
-          "w-full font-semibold",
+          "font-semibold",
           props.type === EPostCardType.widget
             ? "line-clamp-2 text-[13px]"
             : "line-clamp-1"

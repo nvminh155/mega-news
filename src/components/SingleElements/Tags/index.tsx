@@ -1,9 +1,6 @@
-import { TitleSection } from "@/components/TitleSection";
+import { TTag } from "@/types";
 
-type TTag = {
-  key: string;
-  name: string;
-};
+import { TitleSection } from "@/components/TitleSection";
 
 const Tags: React.FC<{ tags: TTag[] }> = ({ tags }) => {
   return (
@@ -13,7 +10,7 @@ const Tags: React.FC<{ tags: TTag[] }> = ({ tags }) => {
         className="flex items-center justify-start p-0 pb-4 text-lg"
       />
       <div className="flex flex-wrap gap-[14px] text-xs font-medium text-tertiary/75">
-        {tags?.map((tag) => <div key={tag.key}>{tag.name}</div>)}
+        {tags?.map((tag) => <div key={tag.id}>{tag.name}</div>)}
       </div>
     </div>
   );

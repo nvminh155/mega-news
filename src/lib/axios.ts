@@ -28,6 +28,7 @@ const handleError = (error: AxiosError) => {
 
 export const axiosApi = {
   get: async <TData = unknown>(url: string, config?: AxiosRequestConfig) => {
+  
     return await instance
       .get<TData>(url, config)
       .then((res) => ({
@@ -41,9 +42,11 @@ export const axiosApi = {
     url: string,
     config?: AxiosRequestConfig
   ) => {
+  
     return await instance
       .get<TData>(url, config)
-      .then((res) => ({
+      .then((res) => (
+        {
         success: true,
         data: res.data,
       }))
