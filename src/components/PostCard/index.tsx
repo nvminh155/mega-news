@@ -30,6 +30,23 @@ const PostCard: React.FC<TPostCardProps> = ({
       }
     } catch (error) {
       console.error(error);
+
+      // Phần này em set cúng nha
+      setAuthor({
+        id: "user1",
+        avatarUrl:
+          "https://www.vietnamworks.com/hrinsider/wp-content/uploads/2023/12/hinh-nen-3d-thien-nhien-003.jpg",
+        bannerUrl:
+          "https://www.vietnamworks.com/hrinsider/wp-content/uploads/2023/12/hinh-nen-3d-thien-nhien-003.jpg",
+        firstName: "John",
+        lastName: "Doe",
+        userName: "johndoe",
+        password: "123456",
+        email: "abc1@gmail.com",
+        title: "Hello World",
+        followerIds: ["user2"],
+        explanationHTML: "This is my explanation",
+      });
     }
   };
 
