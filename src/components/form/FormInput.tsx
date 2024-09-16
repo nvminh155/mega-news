@@ -1,9 +1,6 @@
-import { ComponentProps } from "react";
-import {
-  Control,
-  FieldPath,
-  FieldValues,
-} from "react-hook-form";
+import React from "react";
+import { Input, InputProps } from "antd";
+import { Control, FieldPath, FieldValues } from "react-hook-form";
 
 import { cn } from "@/lib/cn";
 
@@ -12,11 +9,13 @@ import { FormField } from ".";
 type FormInputProps<
   TFieldValues extends FieldValues = FieldValues,
   TFieldName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
-> = ComponentProps<"input"> & {
+> = InputProps & {
   control: Control<TFieldValues>;
   name: TFieldName;
   label?: string;
   placeholder?: string;
+  prefixIcon?: React.ReactNode;
+  suffixIcon?: React.ReactNode;
 };
 
 const FormInput = <
@@ -27,6 +26,8 @@ const FormInput = <
   label,
   placeholder,
   control,
+  prefixIcon,
+  suffixIcon,
   className,
   ...inputProps
 }: FormInputProps<TFieldValues, TFieldName>) => {
@@ -42,13 +43,13 @@ const FormInput = <
             </label>
           )}
 
-          <input
+          <Input
             value={value ?? ""}
             {...inputProps}
             {...fieldProps}
-            placeholder={placeholder ?? ""}
+            placeholder={placeholder ?? name}
             className={cn(
-              "h-full w-full rounded-xl border border-[#E6E6E6] bg-accent-gray/50 p-2 focus-visible:outline-primary",
+              "h-full w-full rounded-md border border-[#E6E6E6] !bg-accent-gray/50 p-2 ring-0 focus-visible:outline-none",
               className,
               {
                 "placeholder:text-xs placeholder:text-tertiary": placeholder,
@@ -56,8 +57,11 @@ const FormInput = <
             )}
             onChange={onChange}
           />
+
           {fieldState.error && (
-            <div className="text-red-500">{fieldState.error.message}</div>
+            <div className="font-medium text-red-500">
+              {fieldState.error.message}
+            </div>
           )}
         </div>
       )}

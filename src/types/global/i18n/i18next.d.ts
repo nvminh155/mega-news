@@ -3,6 +3,6 @@ import { defaultNS, resources } from "@/i18n";
 declare module "i18next" {
   interface CustomTypeOptions {
     defaultNS: typeof defaultNS;
-    resources: (typeof resources)["en" | "vi"];
+    resources: (typeof resources)["en"]; // add vi later
   }
 }
