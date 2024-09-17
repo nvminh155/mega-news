@@ -1,9 +1,12 @@
+import { useTranslation } from "react-i18next";
+
 import Avatar from "@/components/Avatar/Avatar";
 import AppButton from "@/components/Button";
 import Container, { EDirection } from "@/components/Container";
 import { Iconfy } from "@/components/Iconfy";
 
 export const TopWriter = () => {
+  const { t } = useTranslation("info");
   return (
     <Container
       className={"TopWriter gap-y-[15px] rounded-sm bg-accent-gray p-sm"}
@@ -24,23 +27,23 @@ export const TopWriter = () => {
               icon={"material-symbols:star-outline"}
               className="h-[20px] w-[20px]"
             />
-            Rate : 4.2
+            {t("rate")} : 4.2
           </div>
           <div className="flex">
             <Iconfy
               icon={"iconamoon:profile-bold"}
               className="h-[20px] w-[20px]"
             />
-            Follower : 1.2 k
+            {t("follower")} : 1.2 k
           </div>
           <div className="flex">
             <Iconfy icon={"mdi:post-outline"} className="h-[20px] w-[20px]" />
-            Post : 29
+            {t("post")} : 29
           </div>
         </div>
         <div>
           <AppButton prefixIcon={<Iconfy icon={"ic:baseline-plus"} />}>
-            Follow
+            {t("follow")}
           </AppButton>
         </div>
       </Container>
