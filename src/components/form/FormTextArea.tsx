@@ -1,21 +1,25 @@
-import { Input, InputProps } from "antd";
+import React from "react";
+import { Input } from "antd";
+import { TextAreaProps } from "antd/es/input";
 import { Control, FieldPath, FieldValues } from "react-hook-form";
 
 import { cn } from "@/lib/cn";
 
 import { FormField, FormMessage } from ".";
 
-type FormInputProps<
+type FormTextAreaProps<
   TFieldValues extends FieldValues = FieldValues,
   TFieldName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
-> = InputProps & {
+> = TextAreaProps & {
   control: Control<TFieldValues>;
   name: TFieldName;
   label?: string;
   placeholder?: string;
+  prefixIcon?: React.ReactNode;
+  suffixIcon?: React.ReactNode;
 };
 
-const FormInput = <
+const FormTextArea = <
   TFieldValues extends FieldValues = FieldValues,
   TFieldName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
 >({
@@ -23,9 +27,11 @@ const FormInput = <
   label,
   placeholder,
   control,
+  prefixIcon,
+  suffixIcon,
   className,
   ...inputProps
-}: FormInputProps<TFieldValues, TFieldName>) => {
+}: FormTextAreaProps<TFieldValues, TFieldName>) => {
   return (
     <FormField
       name={name}
@@ -38,7 +44,7 @@ const FormInput = <
             </label>
           )}
 
-          <Input
+          <Input.TextArea
             value={value ?? ""}
             {...inputProps}
             {...fieldProps}
@@ -61,4 +67,4 @@ const FormInput = <
   );
 };
 
-export default FormInput;
+export default FormTextArea;

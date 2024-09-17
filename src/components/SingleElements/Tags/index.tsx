@@ -7,7 +7,7 @@ const Tags: React.FC<{ tags: TTag[] }> = ({ tags }) => {
     <div className="rounded-md bg-gray px-4 py-5">
       <TitleSection
         text="Tags"
-        className="flex items-center justify-start p-0 pb-4 text-lg"
+        className="flex items-center justify-start text-lg"
       />
       <div className="flex flex-wrap gap-[14px] text-xs font-medium text-tertiary/75">
         {tags?.map((tag) => <div key={tag.id}>{tag.name}</div>)}
