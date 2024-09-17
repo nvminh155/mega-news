@@ -1,4 +1,4 @@
-import formatDateTime from "@/utils/formatDatetime";
+import { formatDateTime } from "@/utils/formatDatetime";
 import useDeviceType from "@/hooks/useDeviceType";
 import { Iconfy } from "@/components/Iconfy";
 
@@ -19,7 +19,9 @@ const Information: React.FC<TInformation> = ({
   const timeFormatted = formatDateTime(date);
 
   return (
-    <div className={`flex w-full justify-between gap-20 text-sm font-medium text-tertiary/75 ${className}`}>
+    <div
+      className={`flex w-full justify-between text-sm font-medium text-tertiary/75 ${className}`}
+    >
       <div className="flex items-center justify-between gap-1">
         <Iconfy icon={"fa:calendar-o"} size={"sm"} />
         <div>
