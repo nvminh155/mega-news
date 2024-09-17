@@ -1,9 +1,9 @@
-import { SliderTag } from "./SliderTag";
+import { Writer } from "../writer";
 
 export const Phuoc = () => {
   return (
     <div>
-      <SliderTag />
+      <Writer />
     </div>
   );
 };

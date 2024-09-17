@@ -4,5 +4,6 @@ import global from "./global.json";
 import input from "./input.json";
 import posts from "./posts.json";
 import zod from "./zod.json";
-export { global, zod, formErrors, posts, input, comment };
+import info from "./info.json";
+export { global, zod, formErrors, posts, input, comment,info };
 
