@@ -23,14 +23,18 @@ export const LatestPosts = () => {
     ...Data,
     ...Data,
   ];
+
   const { t } = useTranslation("posts");
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 4 * 4;
+  const itemsPerPage = 16;
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
 
   const currentData = Source.slice(startIndex, endIndex);
-
+  const chunkedData = Array.from(
+    { length: Math.ceil(currentData.length / 4) },
+    (_, i) => currentData.slice(i * 4, i * 4 + 4)
+  );
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
   };
@@ -41,17 +45,18 @@ export const LatestPosts = () => {
         text={t("LastestPosts")}
         className="flex justify-start text-lg"
       />
-      <div className="flex flex-wrap gap-md">
-        {currentData.map((item, i) => (
-          <div key={i} className="min-w-[350px] flex-1">
-            <center>
-              <PostCard post={item} size={EPostCardSize.medium} />
-            </center>
+      <div>
+        {chunkedData.map((group, index) => (
+          <div key={index} className="flex justify-center gap-md">
+            {group.map((item, idx) => (
+              <PostCard post={item} key={idx} size={EPostCardSize.medium} />
+            ))}
           </div>
         ))}
       </div>
 
       <AppPagination
+        rootClassName="justify-center"
         current={currentPage}
         pageSize={itemsPerPage}
         total={Source.length}
