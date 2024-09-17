@@ -19,7 +19,7 @@ const Creator: React.FC<TCreatorProps> = ({
   posts = [],
 }) => {
   return (
-    <div className="flex h-auto w-full flex-1 flex-row gap-[10px] rounded-lg bg-gray p-[15px]">
+    <div className="flex w-full flex-row gap-[10px] rounded-lg bg-gray p-[15px]">
       <Avatar
         avatar={avatar}
         containerProps={{

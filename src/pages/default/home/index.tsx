@@ -1,7 +1,7 @@
 import Container from "@/components/Container";
 
-import Posts from "./Post";
 import { SliderTag } from "./SliderTag";
+import Posts from "@/components/Post";
 
 const Home = () => {
   return (

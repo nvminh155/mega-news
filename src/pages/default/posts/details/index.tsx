@@ -1,10 +1,27 @@
+import Comment from "@/components/Comment";
+import { ECommentSize } from "@/components/Comment/type";
+
+import FormComment from "./FormComment";
 import LeftSingle from "./LeftSingle";
 import Sidebar from "./Sidebar";
 
 const DetailsPost = () => {
   return (
     <div className="flex w-full gap-md">
-      <LeftSingle />
+      <div className="flex flex-col gap-md">
+        <LeftSingle />
+        <Comment
+          author={{
+            firstName: "tesst",
+            lastName: "Pashaei",
+            avatarUrl: "/avatar.svg",
+          }}
+          size={ECommentSize.large}
+          createdAt={Date.now()}
+          content="asljfasljk"
+        />
+        <FormComment />
+      </div>
       <Sidebar
         creator={{
           avatar: "/background.jfif",
@@ -47,7 +64,6 @@ const DetailsPost = () => {
           },
         ]}
       />
-      
     </div>
   );
 };

@@ -13,7 +13,7 @@ import { TitleSection } from "@/components/TitleSection";
 
 import Rate from "./Rate";
 
-const Minh = () => {
+const FormComment = () => {
   const { t } = useTranslation("input");
 
   const form = useForm<TCommentForm>({
@@ -66,15 +66,17 @@ const Minh = () => {
 
           <div className="rate flex w-full items-center gap-[50px]">
             <Rate />
-            <AppButton prefixIcon={<Iconfy icon={"uiw:message"} />}>
+            <AppButton
+              htmlType="submit"
+              prefixIcon={<Iconfy icon={"uiw:message"} />}
+            >
               Send Comment
             </AppButton>
           </div>
-          <button type="submit">Submit</button>
         </form>
       </Form>
     </div>
   );
 };
 
-export default Minh;
+export default FormComment;
