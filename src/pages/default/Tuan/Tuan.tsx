@@ -1,4 +1,5 @@
 import Posts from "@/components/Post";
+
 import NewPost from "@/components/Post/NewPost";
 
 const Tuan = () => {

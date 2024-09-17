@@ -3,6 +3,7 @@ import { Tabs } from "antd";
 
 import Sidebar from "@/components/Sidebar";
 
+import ListComment from "./ListComment";
 import ListPostCard from "./ListPostCard";
 import SingleElement from "./SingleElement";
 
@@ -65,6 +66,11 @@ const Thang: React.FC = () => {
           ]}
         />
       ),
+    },
+    {
+      label: "Comment",
+      key: "4",
+      children: <ListComment />,
     },
   ];
 

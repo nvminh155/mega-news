@@ -1,12 +1,11 @@
+
 import { useRef } from "react";
 import { Carousel } from "antd";
 import { CarouselRef } from "antd/es/carousel";
 import { useTranslation } from "react-i18next";
-
 import { Iconfy } from "@/components/Iconfy";
 import PostCard from "@/components/PostCard";
 import { EPostCardSize } from "@/components/PostCard/type";
-
 import { TitleSection } from "../TitleSection";
 import { mockPosts } from "./data/mockPosts";
 
@@ -16,6 +15,7 @@ interface PostProps {
 
 const Posts = ({ title }: PostProps) => {
   const { t } = useTranslation("posts");
+
   const newData = [...mockPosts, ...mockPosts];
 
   const sliderRef = useRef<CarouselRef>(null);
@@ -26,6 +26,7 @@ const Posts = ({ title }: PostProps) => {
   const previous = () => {
     sliderRef.current?.prev();
   };
+
 
   return (
     <div>

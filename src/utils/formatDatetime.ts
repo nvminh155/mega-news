@@ -1,10 +1,21 @@
 import moment from "moment";
 
-moment.locale();
+import "moment/dist/locale/vi";
+import "moment/dist/locale/es";
 
-export default function formatDateTime(timestamp: number) {
+import i18n from "@/i18n";
+
+const formatDateTime = (timestamp: number) => {
+  const date = moment(timestamp);
+  if (i18n.language === "vi") {
+    date.locale("vi");
+  } else {
+    date.locale("en");
+  }
   return {
-    YYYYDDMMMM: moment(timestamp).format("YYYY DD MMMM"), // 2022 03 March
-    MMMMDDYYYY: moment(timestamp).format("ll"), // Sep 5, 2024
+    YYYYDDMMMM: date.format("YYYY DD MMMM"), // 2022 03 March
+    MMMMDDYYYY: date.format("ll"), // Sep 5, 2024
   };
-}
+};
+
+export { formatDateTime };

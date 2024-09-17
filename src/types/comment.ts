@@ -1,10 +1,12 @@
 import { z } from "@/i18n";
 import { commentSchema } from "@/schemas/comment";
 
+import { TUser } from "./user";
+
 export type TComment = {
   id: string;
   content: string;
-  authorId: string;
+  author: TUser;
   postId: string;
   displayName?: string;
   website?: string;
