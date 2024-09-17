@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { userAPI } from "@/services";
+// import { userAPI } from "@/services";
 import { TUser } from "@/types";
 
 import { cn } from "@/lib/cn";
@@ -23,6 +23,7 @@ const PostCard: React.FC<TPostCardProps> = ({
   const [author, setAuthor] = useState<TUser>();
 
   const fetchAuthorData = async () => {
+<<<<<<< HEAD
     try {
       if (post.authorId) {
         const response = await userAPI.getUser(post.authorId as string);
@@ -48,6 +49,31 @@ const PostCard: React.FC<TPostCardProps> = ({
         explanationHTML: "This is my explanation",
       });
     }
+=======
+    setAuthor({
+      id: "user1",
+      avatarUrl:
+        "https://www.vietnamworks.com/hrinsider/wp-content/uploads/2023/12/hinh-nen-3d-thien-nhien-003.jpg",
+      bannerUrl:
+        "https://www.vietnamworks.com/hrinsider/wp-content/uploads/2023/12/hinh-nen-3d-thien-nhien-003.jpg",
+      firstName: "John",
+      lastName: "Doe",
+      userName: "johndoe",
+      password: "123456",
+      email: "abc1@gmail.com",
+      title: "Hello World",
+      followerIds: ["user2"],
+      explanationHTML: "This is my explanation",
+    });
+    // try {
+    //   if (post.authorId) {
+    //     const response = await userAPI.getUser(post.authorId as string);
+    //     setAuthor(response.data);
+    //   }
+    // } catch (error) {
+    //   console.error(error);
+    // }
+>>>>>>> 7e5a060876ca252377bff445bab2a20699c8b13d
   };
 
   useEffect(() => {

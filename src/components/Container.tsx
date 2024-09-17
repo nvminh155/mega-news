@@ -20,7 +20,7 @@ export default function Container({
   return (
     <div
       className={cn(
-        "flex items-center",
+        "flex items-center gap-sm",
         direction === EDirection.COL && "flex-col items-stretch",
         className
       )}
