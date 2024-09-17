@@ -45,7 +45,7 @@ export const LatestPosts = () => {
         text={t("LastestPosts")}
         className="flex justify-start text-lg"
       />
-      <div>
+      <div className="flex flex-col gap-md">
         {chunkedData.map((group, index) => (
           <div key={index} className="flex justify-center gap-md">
             {group.map((item, idx) => (
