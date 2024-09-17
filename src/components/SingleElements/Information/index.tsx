@@ -1,42 +1,30 @@
-import formatDateTime from "@/utils/formatDatetime";
-import useDeviceType from "@/hooks/useDeviceType";
+import { cn } from "@/lib/cn";
 import { Iconfy } from "@/components/Iconfy";
 
 type TInformation = {
-  date: number;
-  comments: number;
-  category: string;
+  icon?: string;
+  data: any;
+  label?: string;
   className?: string;
 };
 
 const Information: React.FC<TInformation> = ({
-  date = 1656947004000,
-  comments = 35,
-  category = "Sport",
+  data,
+  label,
+  icon,
   className,
 }) => {
-  const { isDesktop } = useDeviceType();
-  const timeFormatted = formatDateTime(date);
-
   return (
-    <div className={`flex w-full justify-between gap-20 text-sm font-medium text-tertiary/75 ${className}`}>
-      <div className="flex items-center justify-between gap-1">
-        <Iconfy icon={"fa:calendar-o"} size={"sm"} />
-        <div>
-          {isDesktop ? timeFormatted?.YYYYDDMMMM : timeFormatted?.MMMMDDYYYY}
-        </div>
-      </div>
-      <div className="flex items-center justify-between gap-1">
-        <Iconfy icon={"fa-regular:comment-dots"} size={"sm"} />
-        <div>
-          <span className="hidden sm:inline">Comments:</span> {comments}
-        </div>
-      </div>
-      <div className="flex items-center justify-between gap-1">
-        <Iconfy icon={"ic:outline-folder"} size={"sm"} />
-        <div>
-          <span className="hidden sm:inline">Category:</span> {category}
-        </div>
+    <div
+      className={cn(
+        "flex items-center justify-between gap-1 text-sm font-medium text-tertiary/75",
+        className
+      )}
+    >
+      {icon && <Iconfy icon={icon} size={"md"} />}
+      <div className="flex items-center gap-1 font-medium mt-0.5">
+        <span className="content-center leading-[20px]">{label + ":"} </span>
+        <span>{data}</span>
       </div>
     </div>
   );

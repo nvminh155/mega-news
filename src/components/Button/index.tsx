@@ -12,7 +12,7 @@ const buttonVariants = cva(
         default: "bg-primary/75 !text-white hover:!bg-primary",
         destructive: "",
         outline:
-          "border-[1px] border-input text-primary/75 bg-transparent hover:!bg-primary/10 hover:!border-primary/10",
+          "border-[1px] border-[#E6E6E6] !border-solid !text-primary/75 bg-transparent hover:!bg-primary/10 hover:!border-primary/10",
         secondary: "bg-secondary/75 !text-white hover:!bg-secondary ",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline !bg-transparent !border-none",
@@ -55,7 +55,7 @@ const AppButton: React.FC<AppButtonProps> = ({
   return (
     <Button
       className={cn(
-        "gap-0 p-0 ring-0",
+        "gap-1.5 p-0 ring-0",
         buttonVariants({ variant, size, className })
       )}
       {...props}

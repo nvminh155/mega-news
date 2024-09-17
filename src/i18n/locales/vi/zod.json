@@ -16,7 +16,7 @@
     "not_multiple_of": "Number must be a multiple of {{multipleOf}}",
     "not_finite": "Number must be finite",
     "invalid_string": {
-      "email": "Invalid {{validation}}",
+      "email": "Invalid {{validation}} zz",
       "url": "Invalid {{validation}}",
       "uuid": "Invalid {{validation}}",
       "cuid": "Invalid {{validation}}",
@@ -33,7 +33,7 @@
       },
       "string": {
         "exact": "String must contain exactly {{minimum}} character(s)",
-        "inclusive": "String must contain at least {{minimum}} character(s)",
+        "inclusive": "String must contain ít nhất {{minimum}} character(s)",
         "not_inclusive": "String must contain over {{minimum}} character(s)"
       },
       "number": {

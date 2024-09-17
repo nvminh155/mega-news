@@ -17,6 +17,15 @@ export const ConfigAntd = ({ children }: { children: React.ReactNode }) => {
             linkColor: "hsla(var(--black), 1)",
             separatorMargin: 1,
           },
+          Input: {
+            activeShadow: "none",
+          },
+          Upload: {
+            
+          },
+          Carousel: {
+            marginXXS: 10
+          }
         },
       }}
     >

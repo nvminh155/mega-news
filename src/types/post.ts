@@ -1,4 +1,6 @@
+import { z } from "@/i18n";
 import { TUser } from "./user";
+import { newsSchema } from "@/schemas/news";
 
 export type TPost = {
   id: string;
@@ -15,3 +17,5 @@ export type TPost = {
   isPublished?: boolean;
   createdAt: number;
 };
+
+export type TFormSendNews = z.infer<typeof newsSchema>;

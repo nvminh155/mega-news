@@ -1,8 +1,10 @@
 import React from "react";
 import { Tabs } from "antd";
 
+import TopCategory from "@/components/Category/TopCategory";
 import Sidebar from "@/components/Sidebar";
 
+import ListComment from "./ListComment";
 import ListPostCard from "./ListPostCard";
 import SingleElement from "./SingleElement";
 
@@ -65,6 +67,16 @@ const Thang: React.FC = () => {
           ]}
         />
       ),
+    },
+    {
+      label: "Comment",
+      key: "4",
+      children: <ListComment />,
+    },
+    {
+      label: "Top Category",
+      key: "5",
+      children: <TopCategory />,
     },
   ];
 

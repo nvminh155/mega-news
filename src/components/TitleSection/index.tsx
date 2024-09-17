@@ -1,4 +1,4 @@
-import React from "react";
+import React, { PropsWithChildren } from "react";
 
 import { cn } from "@/lib/cn";
 
@@ -14,6 +14,7 @@ export interface TitleSectionProps
   className?: string;
   status?: ETitleSectionStatus;
   text: string;
+  containerClassName?: string;
 }
 
 type TTitleSectionPrefixProps = {
@@ -33,20 +34,26 @@ const TitleSectionPrefix: React.FC<TTitleSectionPrefixProps> = ({ type }) => {
   );
 };
 
-export const TitleSection: React.FC<TitleSectionProps> = ({
+export const TitleSection: React.FC<TitleSectionProps & PropsWithChildren> = ({
   className,
   text,
   status = ETitleSectionStatus.DEFAULT,
+  containerClassName,
+  children = null,
 }) => {
   return (
-    <div
-      className={cn(
-        "flex items-center justify-center gap-[6px] text-center font-semibold text-tertiary",
-        className
-      )}
-    >
-      <TitleSectionPrefix type={status} />
-      {text}
+    <div className={cn(containerClassName)}>
+      <div
+        className={cn(
+          "flex items-center gap-[6px] text-center font-semibold text-tertiary",
+          children && "mb-md",
+          className
+        )}
+      >
+        <TitleSectionPrefix type={status} />
+        <span>{text}</span>
+      </div>
+      {children && <div className="pl-[10px] text-tertiary/75">{children}</div>}
     </div>
   );
 };

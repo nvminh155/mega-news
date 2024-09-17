@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { userAPI } from "@/services";
+// import { userAPI } from "@/services";
 import { TUser } from "@/types";
 
 import { cn } from "@/lib/cn";
@@ -12,25 +12,43 @@ import Title from "./Title";
 import { EPostCardSize, EPostCardType, TPostCard } from "./type";
 import { imageVariants, postCardVariants } from "./variants";
 
-type TPostCardProps = TPostCard;
+type TPostCardProps = TPostCard & {
+  className?: string;
+};
 
 const PostCard: React.FC<TPostCardProps> = ({
   post,
   size = EPostCardSize.large,
   type = EPostCardType.vertical,
   actions,
+  className,
 }) => {
   const [author, setAuthor] = useState<TUser>();
 
   const fetchAuthorData = async () => {
-    try {
-      if (post.authorId) {
-        const response = await userAPI.getUser(post.authorId as string);
-        setAuthor(response.data);
-      }
-    } catch (error) {
-      console.error(error);
-    }
+    setAuthor({
+      id: "user1",
+      avatarUrl:
+        "https://www.vietnamworks.com/hrinsider/wp-content/uploads/2023/12/hinh-nen-3d-thien-nhien-003.jpg",
+      bannerUrl:
+        "https://www.vietnamworks.com/hrinsider/wp-content/uploads/2023/12/hinh-nen-3d-thien-nhien-003.jpg",
+      firstName: "John",
+      lastName: "Doe",
+      userName: "johndoe",
+      password: "123456",
+      email: "abc1@gmail.com",
+      title: "Hello World",
+      followerIds: ["user2"],
+      explanationHTML: "This is my explanation",
+    });
+    // try {
+    //   if (post.authorId) {
+    //     const response = await userAPI.getUser(post.authorId as string);
+    //     setAuthor(response.data);
+    //   }
+    // } catch (error) {
+    //   console.error(error);
+    // }
   };
 
   useEffect(() => {
@@ -46,7 +64,8 @@ const PostCard: React.FC<TPostCardProps> = ({
         postCardVariants({
           postCardWidth: `${type}-${size}` as keyof typeof postCardVariants,
         }),
-        type === EPostCardType.vertical ? "flex-col" : "flex-row gap-[10px]"
+        type === EPostCardType.vertical ? "flex-col" : "flex-row gap-[10px]",
+        className
       )}
     >
       <Background

@@ -1,0 +1,25 @@
+{
+  "Placeholder": {
+    "write-your-email": "Write your email ..",
+    "search-anything": "Search anything ..",
+    "type-anything": "Type anything ..",
+    "display-name": "Display name",
+    "website": "Website",
+    "email": "Email",
+    "title": "Enter title..",
+    "add-tags": "Chose tags..",
+    "comment": "Comment"
+  },
+  "Label": {
+    "type-anything": "Type anything ..",
+    "display-name": "Display name",
+    "website": "Website",
+    "email": "Email",
+    "title": "Title",
+    "add-tags": "Add Tags",
+    "comment": "Comment",
+    "phone-number": "Phone number",
+    "fax": "Fax",
+    "address": "Address"
+  }
+}

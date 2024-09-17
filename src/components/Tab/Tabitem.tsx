@@ -1,23 +1,26 @@
 import React from "react";
 import { cva, VariantProps } from "class-variance-authority";
 
-import { cn } from "@/lib/cn";
-
 import { Iconfy } from "../Iconfy";
 
 const TabItemVariants = cva(
-  "ml-[6px] max-h-[39px] items-center flex justify-center text-[16px] text-center",
+  "ml-[6px] max-h-[39px] rounded-md w-max cursor-pointer select-none items-center flex justify-center text-center",
   {
     variants: {
       size: {
-        default: "py-[10px] px-[20px]",
+        default: "py-sm px-[20px]",
         sm: "px-4 py-2",
         lg: "px-8 py-4",
         icon: "h-max w-max p-2",
       },
+      status: {
+        enabled: "bg-accent-gray font-medium",
+        disabled: "hover:bg-accent-gray",
+      },
     },
     defaultVariants: {
       size: "default",
+      status: "disabled",
     },
   }
 );
@@ -35,14 +38,10 @@ export const TabItem: React.FC<ITabItemProps> = ({
   status = "enabled",
   size = "default",
   text,
+  ...props
 }) => {
   return (
-    <div
-      className={cn(
-        status === "enabled" && "rounded-[12px] bg-gray",
-        TabItemVariants({ size, className })
-      )}
-    >
+    <div className={TabItemVariants({ size, status, className })} {...props}>
       {status === "enabled" && (
         <Iconfy icon="mdi:dot" className="items-center text-primary" />
       )}

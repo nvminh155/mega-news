@@ -1,5 +1,51 @@
 {
   "not-found": "OOPS! Page you're looking for doesn't exist. Please use search for help",
+  "Auth": {
+    "login": "Login",
+    "register": "Register"
+  },
+  "Btn": {
+    "select": "Select",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "add": "Add",
+    "update": "Update",
+    "submit": "Submit",
+    "close": "Close",
+    "login": "Login",
+    "register": "Register"
+  },
+  "Title-section": {
+    "mega-news-info": "Mega news information",
+    "mega-news-team": "Mega news team",
+    "news-comment": "News comment",
+    "news-letters": "Newsletters",
+    "follow-on-insta": "Follow On Instagram",
+    "social-network": "Social Network",
+    "categories": "Categories",
+    "contact-us": "Contact Us",
+    "about-us": "About Us"
+  },
+  "Time": {
+    "day": "Day",
+    "week": "Week",
+    "month": "Month",
+    "year": "Year",
+    "hour": "Hour",
+    "minute": "Minute",
+    "second": "Second"
+  },
+  "Map": {
+    "latitude": "Latitude",
+    "longitude": "Longitude",
+    "text": "Map"
+  },
+  "Casing": {
+    "upper": "Uppercase",
+    "lower": "Lowercase"
+  },
   "hello": "Hello",
   "Course": {
     "title": "Course",
