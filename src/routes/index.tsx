@@ -12,6 +12,8 @@ import Thang from "@/pages/default/Thang";
 import Tuan from "@/pages/default/Tuan/Tuan";
 import NotFound from "@/pages/NotFound";
 import {Kiet}  from "@/pages/default/Kiet/index";
+import Minh from "@/pages/Minh";
+import DetailsPost from "@/pages/default/posts/details";
 
 export enum ERolePath {
   ADMIN = 2,
@@ -42,6 +44,9 @@ export const createRoute = (
 
 export const router = [
   createRoute("/", <Home />, ERolePath.USER),
+  createRoute("/posts", <Home />, ERolePath.USER),
+  createRoute("/posts/:id", <DetailsPost />, ERolePath.USER),
+  createRoute("/minh", <Minh />, ERolePath.USER),
   {
     path: "/Kiet",
     element: <Kiet/>,
@@ -66,6 +71,7 @@ export const router = [
 
 const paths = {
   "/": ["/"],
+  "/posts": ["/posts", "/posts/:id"],
   "/minh": ["/minh"],
 } as const;
 

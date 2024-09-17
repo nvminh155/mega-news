@@ -55,7 +55,7 @@ const AppButton: React.FC<AppButtonProps> = ({
   return (
     <Button
       className={cn(
-        "gap-0 p-0 ring-0",
+        "p-0 ring-0 gap-1.5",
         buttonVariants({ variant, size, className })
       )}
       {...props}
