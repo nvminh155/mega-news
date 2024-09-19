@@ -31,7 +31,7 @@ const FormInput = <
       name={name}
       control={control}
       render={({ field: { onChange, value, ...fieldProps } }) => (
-        <div className="flex h-full w-full flex-col space-y-1">
+        <div className="flex h-full w-full flex-col space-y-sm">
           {label && (
             <label className="block text-md font-semibold text-tertiary">
               {label}

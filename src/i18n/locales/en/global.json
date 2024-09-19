@@ -1,5 +1,16 @@
 {
   "not-found": "OOPS! Page you're looking for doesn't exist. Please use search for help",
+  "Btn": {
+    "select": "Select",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "add": "Add",
+    "update": "Update",
+    "submit": "Submit",
+    "close": "Close"
+  },
   "hello": "Hello",
   "Course": {
     "title": "Course",
