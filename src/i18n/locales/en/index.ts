@@ -6,3 +6,4 @@ import posts from "./posts.json";
 import zod from "./zod.json";
 import info from "./info.json";
 export { global, zod, formErrors, posts, input, comment,info };
+
