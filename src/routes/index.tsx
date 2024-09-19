@@ -7,13 +7,14 @@ import {
 // import { locales } from "@/config";
 
 import Home from "@/pages/default/home";
+import { Kiet } from "@/pages/default/Kiet/index";
 import { Phuoc } from "@/pages/default/Phuoc/Phuoc";
+import DetailsPost from "@/pages/default/posts/details";
+import Profile from "@/pages/default/profile";
 import Thang from "@/pages/default/Thang";
 import Tuan from "@/pages/default/Tuan/Tuan";
-import NotFound from "@/pages/NotFound";
-import {Kiet}  from "@/pages/default/Kiet/index";
 import Minh from "@/pages/Minh";
-import DetailsPost from "@/pages/default/posts/details";
+import NotFound from "@/pages/NotFound";
 
 export enum ERolePath {
   ADMIN = 2,
@@ -47,9 +48,10 @@ export const router = [
   createRoute("/posts", <Home />, ERolePath.USER),
   createRoute("/posts/:id", <DetailsPost />, ERolePath.USER),
   createRoute("/minh", <Minh />, ERolePath.USER),
+  createRoute("/profile/:id", <Profile />, ERolePath.USER),
   {
     path: "/Kiet",
-    element: <Kiet/>,
+    element: <Kiet />,
   },
   {
     path: "/Phuoc",
@@ -72,6 +74,7 @@ export const router = [
 const paths = {
   "/": ["/"],
   "/posts": ["/posts", "/posts/:id"],
+  "/profile": ["/profile", "/profile/:id"],
   "/minh": ["/minh"],
 } as const;
 

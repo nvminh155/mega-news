@@ -20,6 +20,9 @@ export const ConfigAntd = ({ children }: { children: React.ReactNode }) => {
           Input: {
             activeShadow: "none",
           },
+          Upload: {
+            
+          }
         },
       }}
     >
