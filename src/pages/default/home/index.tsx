@@ -1,17 +1,17 @@
 import Container from "@/components/Container";
+import ListPost from "@/components/ListPost";
 
 import { SliderTag } from "./SliderTag";
-import Posts from "@/components/Post";
 
 const Home = () => {
   return (
     <Container>
       <SliderTag />
       <div className="posts flex flex-col">
-        <Posts title={"popular"} />
-        <Posts title={"trendy"} />
-        <Posts title={"top"} />
-        <Posts title={"your"} />
+        <ListPost title={"popular"} />
+        <ListPost.News />
+        <ListPost title={"trendy"} />
+        <ListPost title={"top"} />
       </div>
     </Container>
   );

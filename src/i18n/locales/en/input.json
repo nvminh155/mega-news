@@ -17,6 +17,9 @@
     "email": "Email",
     "title": "Title",
     "add-tags": "Add Tags",
-    "comment": "Comment"
+    "comment": "Comment",
+    "phone-number": "Phone number",
+    "fax": "Fax",
+    "address": "Address"
   }
 }

@@ -42,6 +42,7 @@ export const SliderTag = () => {
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
   };
+
   useEffect(() => {
     const fetchDetailCategorys = async () => {
       // await categoryAPI.getcategories().then((res) => {
@@ -51,7 +52,9 @@ export const SliderTag = () => {
     };
     fetchDetailCategorys();
   }, []);
+
   if (!categories) return <div>Loading...</div>;
+
   return (
     <div className="SliderTag overflow-hidden" ref={divRef}>
       <Carousel

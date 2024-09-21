@@ -7,6 +7,7 @@ import { cn } from "@/lib/cn";
 
 import { Form } from "../form";
 import FormSearch from "../form/FormSearch";
+import { useTranslation } from "react-i18next";
 
 const sche = z.object({
   search: z.string(),
@@ -19,6 +20,8 @@ type TSearchProps = {
 };
 
 const Search = ({ className }: TSearchProps) => {
+  const {t}= useTranslation("input");
+
   const form = useForm<Sche>({
     resolver: zodResolver(sche),
   });
@@ -30,7 +33,7 @@ const Search = ({ className }: TSearchProps) => {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className={cn(className)}>
-        <FormSearch control={form.control} />
+        <FormSearch control={form.control} placeholder={t("Placeholder.search-anything")} />
       </form>
     </Form>
   );

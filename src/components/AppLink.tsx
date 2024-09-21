@@ -3,13 +3,13 @@ import { TRoutePaths } from "@/routes";
 import { Link, LinkProps } from "react-router-dom";
 
 type TAppLinkProps = Omit<LinkProps, "to"> & {
-  to: TRoutePaths & LinkProps["to"];
+  to: TRoutePaths;
   params?: Record<string, string>;
 };
 
 const AppLink: React.FC<TAppLinkProps> = ({ to, params, ...props }) => {
   let path = to as string;
-
+  console.log(path)
   if (path.includes(":") && !params) {
     throw new Error("Missing params for path: " + path);
   }

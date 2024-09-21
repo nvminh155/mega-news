@@ -39,20 +39,21 @@ export const TitleSection: React.FC<TitleSectionProps & PropsWithChildren> = ({
   text,
   status = ETitleSectionStatus.DEFAULT,
   containerClassName,
-  children,
+  children = null,
 }) => {
   return (
-    <div className={containerClassName}>
+    <div className={cn(containerClassName)}>
       <div
         className={cn(
-          "mb-md flex items-center gap-[6px] text-center font-semibold text-tertiary",
+          "flex items-center gap-[6px] text-center font-semibold text-tertiary",
+          children && "mb-md",
           className
         )}
       >
         <TitleSectionPrefix type={status} />
-        {text}
+        <span>{text}</span>
       </div>
-      <div className="pl-[10px] text-tertiary/75">{children}</div>
+      {children && <div className="pl-[10px] text-tertiary/75">{children}</div>}
     </div>
   );
 };

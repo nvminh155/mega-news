@@ -12,13 +12,16 @@ import Title from "./Title";
 import { EPostCardSize, EPostCardType, TPostCard } from "./type";
 import { imageVariants, postCardVariants } from "./variants";
 
-type TPostCardProps = TPostCard;
+type TPostCardProps = TPostCard & {
+  className?: string;
+};
 
 const PostCard: React.FC<TPostCardProps> = ({
   post,
   size = EPostCardSize.large,
   type = EPostCardType.vertical,
   actions,
+  className,
 }) => {
   const [author, setAuthor] = useState<TUser>();
 
@@ -61,7 +64,8 @@ const PostCard: React.FC<TPostCardProps> = ({
         postCardVariants({
           postCardWidth: `${type}-${size}` as keyof typeof postCardVariants,
         }),
-        type === EPostCardType.vertical ? "flex-col" : "flex-row gap-[10px]"
+        type === EPostCardType.vertical ? "flex-col" : "flex-row gap-[10px]",
+        className
       )}
     >
       <Background
