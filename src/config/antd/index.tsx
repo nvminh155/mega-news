@@ -22,6 +22,9 @@ export const ConfigAntd = ({ children }: { children: React.ReactNode }) => {
           },
           Upload: {
             
+          },
+          Carousel: {
+            marginXXS: 10
           }
         },
       }}

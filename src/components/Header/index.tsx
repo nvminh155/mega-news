@@ -1,12 +1,11 @@
 import React from "react";
 
+import AppLink from "../AppLink";
 import { Iconfy } from "../Iconfy";
 import Logo from "../Logo";
 import DropdownMenu from "../Menu/DropdownMenu";
 import Search from "./Search";
 import UserActions from "./UserActions";
-
-const menu = ["Categories", "Pages", "Contact Us", "About Us"];
 
 const Header: React.FC = () => {
   return (
@@ -14,9 +13,10 @@ const Header: React.FC = () => {
       <div className="left flex items-center justify-between gap-16">
         <Logo className="text-[22px]" />
         <div className="menu flex items-center gap-8 font-medium text-tertiary">
-          {menu.map((item) => (
-            <DropdownMenu key={item} text={item} className="menu-item" />
-          ))}
+          <DropdownMenu text={"Categories"} className="menu-item" />
+          <DropdownMenu text={"Pages"} className="menu-item" />
+          <AppLink to={"/contact"}>Contact Us</AppLink>
+          <AppLink to={"/about"}>About Us</AppLink>
         </div>
       </div>
 

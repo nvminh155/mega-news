@@ -29,6 +29,12 @@ i18n
     debug: true,
     fallbackLng: defaultNS,
     defaultNS,
+    interpolation: {
+      format: function (value, format) {
+        if (format === "uppercase") return value.toUpperCase();
+        return value;
+      },
+    },
   });
 
 export default i18n;

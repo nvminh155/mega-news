@@ -1,7 +1,7 @@
 import AppButton from "@/components/Button";
 import { Iconfy } from "@/components/Iconfy";
-import Posts from "@/components/Post";
-import NewPost from "@/components/Post/NewPost";
+import Posts from "@/components/ListPost";
+import NewPost from "@/components/ListPost/NewPost";
 import AvatarNav from "@/pages/default/Tuan/Nav/PropsNav/AvatarNav";
 
 import MenuNav from "./Nav/PropsNav/MenuNav";

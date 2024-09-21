@@ -1,13 +1,16 @@
 import { ReactNode } from "react";
+import { LinkProps } from "react-router-dom";
 
 import {
   ProtectedRouteAdmin,
   ProtectedRouteUser,
 } from "@/components/ProtectedRoute";
+import About from "@/pages/default/about";
 // import { locales } from "@/config";
 
 import Home from "@/pages/default/home";
 import { Kiet } from "@/pages/default/Kiet/index";
+import Layout from "@/pages/default/Layout";
 import { Phuoc } from "@/pages/default/Phuoc/Phuoc";
 import DetailsPost from "@/pages/default/posts/details";
 import Profile from "@/pages/default/profile";
@@ -44,30 +47,38 @@ export const createRoute = (
 };
 
 export const router = [
-  createRoute("/", <Home />, ERolePath.USER),
-  createRoute("/posts", <Home />, ERolePath.USER),
-  createRoute("/posts/:id", <DetailsPost />, ERolePath.USER),
-  createRoute("/minh", <Minh />, ERolePath.USER),
-  createRoute("/profile/:id", <Profile />, ERolePath.USER),
   {
-    path: "/Kiet",
-    element: <Kiet />,
-  },
-  {
-    path: "/Phuoc",
-    element: <Phuoc />,
-  },
-  {
-    path: "/thang",
-    element: <Thang />,
-  },
-  {
-    path: "/Tuan",
-    element: <Tuan />,
-  },
-  {
-    path: "*",
-    element: <NotFound />,
+    path: "/",
+    element: <Layout />,
+    children: [
+      createRoute("/", <Home />, ERolePath.USER),
+      createRoute("/posts", <Home />, ERolePath.USER),
+      createRoute("/posts/:id", <DetailsPost />, ERolePath.USER),
+      createRoute("/minh", <Minh />, ERolePath.USER),
+      createRoute("/profile/:id", <Profile />, ERolePath.USER),
+      createRoute("/about", <About />, ERolePath.USER),
+      createRoute("/contact", <About />, ERolePath.USER),
+      {
+        path: "/Kiet",
+        element: <Kiet />,
+      },
+      {
+        path: "/Phuoc",
+        element: <Phuoc />,
+      },
+      {
+        path: "/thang",
+        element: <Thang />,
+      },
+      {
+        path: "/Tuan",
+        element: <Tuan />,
+      },
+      {
+        path: "*",
+        element: <NotFound />,
+      },
+    ],
   },
 ];
 
@@ -75,7 +86,10 @@ const paths = {
   "/": ["/"],
   "/posts": ["/posts", "/posts/:id"],
   "/profile": ["/profile", "/profile/:id"],
+  "/about": ["/about"],
+  "/contact": ["/contact"],
   "/minh": ["/minh"],
 } as const;
 
-export type TRoutePaths = (typeof paths)[keyof typeof paths][number];
+export type TRoutePaths = (typeof paths)[keyof typeof paths][number] &
+  LinkProps["to"];
