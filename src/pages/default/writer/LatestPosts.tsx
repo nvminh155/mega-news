@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { AppPagination } from "@/components/Pagination";
@@ -8,7 +8,12 @@ import { TitleSection } from "@/components/TitleSection";
 
 import { DataWriter } from "./DataWriter";
 
-export const LatestPosts = () => {
+interface LatestPostsProps {
+  authorId: string;
+}
+
+export const LatestPosts: React.FC<LatestPostsProps> = ({ authorId }) => {
+  console.log(authorId);
   const Data = DataWriter.posts;
   const Source = [
     ...Data,
