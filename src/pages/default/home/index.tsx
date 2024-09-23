@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <Container>
       <SliderTag />
-      <div className="posts flex flex-col">
+      <div className="posts w-full flex flex-col">
         <ListPost title={"popular"} />
         <ListPost.News />
         <ListPost title={"trendy"} />

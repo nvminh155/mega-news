@@ -12,18 +12,23 @@ type AppPaginationProps = {
 
 export const AppPagination = ({
   onChangePage,
+  rootClassName,
+  className,
   ...props
 }: AppPaginationProps) => {
   const [current, setCurrent] = useState(1);
 
   return (
     <Pagination
-      rootClassName="*:!border-none *:!rounded-sm !h-max flex items-center"
+      rootClassName={cn(
+        "*:!border-none *:!rounded-sm !h-max flex items-center",
+        rootClassName
+      )}
       onChange={(page) => {
         if (onChangePage) onChangePage(page);
         setCurrent(page);
       }}
-      className="mt-5"
+      className={cn("11 mt-5", className)}
       showLessItems={false}
       defaultPageSize={5}
       defaultCurrent={1}

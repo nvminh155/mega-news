@@ -5,7 +5,7 @@ import { cn } from "@/lib/cn";
 
 import { FormField, FormMessage } from ".";
 
-type FormInputProps<
+export type TFormInputProps<
   TFieldValues extends FieldValues = FieldValues,
   TFieldName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
 > = InputProps & {
@@ -25,7 +25,7 @@ const FormInput = <
   control,
   className,
   ...inputProps
-}: FormInputProps<TFieldValues, TFieldName>) => {
+}: TFormInputProps<TFieldValues, TFieldName>) => {
   return (
     <FormField
       name={name}

@@ -14,7 +14,7 @@ const TabItemVariants = cva(
         icon: "h-max w-max p-2",
       },
       status: {
-        enabled: "bg-accent-gray",
+        enabled: "bg-accent-gray font-medium",
         disabled: "hover:bg-accent-gray",
       },
     },

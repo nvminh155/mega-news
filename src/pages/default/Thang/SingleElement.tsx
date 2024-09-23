@@ -2,7 +2,6 @@ import {
   Actions,
   BreadCrumb,
   Creator,
-  Informations,
   Tags,
 } from "@/components/SingleElements";
 
@@ -12,10 +11,6 @@ const SingleElement: React.FC = () => {
       <div className="w-[361px]">
         --------Actions--------
         <Actions />
-      </div>
-      <div className="w-[509px]">
-        --------Informations--------
-        <Informations date={1656947004000} comments={35} category="Sport" />
       </div>
       <div className="w-[456px]">
         --------BreadCrumb--------

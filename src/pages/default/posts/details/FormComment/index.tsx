@@ -7,11 +7,10 @@ import { TCommentForm } from "@/types/comment";
 import AppButton from "@/components/Button";
 import { Form } from "@/components/form";
 import FormInput from "@/components/form/FormInput";
+import FormRate from "@/components/form/FormRate";
 import FormTextArea from "@/components/form/FormTextArea";
 import { Iconfy } from "@/components/Iconfy";
 import { TitleSection } from "@/components/TitleSection";
-
-import Rate from "./Rate";
 
 const FormComment = () => {
   const { t } = useTranslation("input");
@@ -65,7 +64,11 @@ const FormComment = () => {
           </div>
 
           <div className="rate flex w-full items-center gap-[50px]">
-            <Rate />
+            <FormRate
+              control={form.control}
+              name="rate"
+              onChangeCallBack={(val) => form.setValue("rate", val)}
+            />
             <AppButton
               htmlType="submit"
               prefixIcon={<Iconfy icon={"uiw:message"} />}

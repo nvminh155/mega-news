@@ -27,12 +27,23 @@ type FileType = Parameters<GetProp<UploadProps, "beforeUpload">>[0];
 export type TAppUploadProps = {
   type?: "video" | "image";
   size?: "sm" | "lg";
+  defaultPreviewUrl?: string;
+  onChangeCallback?: (value: any, type?: "video" | "image") => void;
 };
 
-const AppUpload = ({ type = "image", size = "sm" }: TAppUploadProps) => {
+const AppUpload = ({
+  type = "image",
+  size = "sm",
+  defaultPreviewUrl,
+  onChangeCallback,
+}: TAppUploadProps) => {
   // const [previewOpen, setPreviewOpen] = useState(false);
-  const [previewImage, setPreviewImage] = useState<string>("");
-  const [previewVideo, setPreviewVideo] = useState<string>("");
+  const [previewImage, setPreviewImage] = useState<string>(
+    defaultPreviewUrl || ""
+  );
+  const [previewVideo, setPreviewVideo] = useState<string>(
+    defaultPreviewUrl || ""
+  );
 
   const [isHovered, setIsHovered] = useState<boolean>(false);
   // const [fileList, setFileList] = useState<UploadFile[]>([
@@ -69,8 +80,9 @@ const AppUpload = ({ type = "image", size = "sm" }: TAppUploadProps) => {
   }) => {
     // setFileList(newFileList);
     if (file.status === "done" || file.status === "error") {
-      console.log("file -> ", file);
       const fileUrl = await getBase64(file.originFileObj as FileType);
+
+      if (onChangeCallback) onChangeCallback(fileUrl, type);
       if (type === "image") {
         setPreviewImage(fileUrl);
       } else {
@@ -80,6 +92,9 @@ const AppUpload = ({ type = "image", size = "sm" }: TAppUploadProps) => {
   };
 
   const removeImage = () => {
+    if (!defaultPreviewUrl) return;
+
+    if (onChangeCallback) onChangeCallback(previewImage);
     if (size === "sm") {
       setPreviewImage("");
     }
