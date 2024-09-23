@@ -1,25 +1,32 @@
-import Explanation from "@/components/AboutUs/Explanation"
-import postData from "@/components/AboutUs/explanationData.json"
-import Contact from "@/components/AboutUs/Contact"
-import Team from "@/components/AboutUs/Team"
+import ContentCart from "@/components/SingleContent";
+import { ESingleContentType } from "@/components/SingleContent/type";
+
+import Data from "@/components/SingleContent/data.json"
 
 export const Kiet = () => {
 
-    const post = postData;
+    const data = Data;
+
     return (
-        <>
-            <div className="">
-                <Explanation
-                    title={post.title}
-                    content={post.content}
-                    imageUrl={post.imageUrl}
-                    alt={post.alt}
+        <div>
+
+            <div className="flex flex-row">
+
+                <ContentCart
+
+                    content={data[0]}
+                />
+                <ContentCart
+                    type={ESingleContentType.normal}
+                    content={data[0]}
                 />
 
-                <Contact />
-                <Team />
             </div>
-
-        </>
+            <div>
+                <ContentCart
+                    type={ESingleContentType.video}
+                    content={data[1]}/>
+            </div>
+        </div>
     );
 };
