@@ -10,8 +10,8 @@ import FormInput from "@/components/form/FormInput";
 import { Iconfy } from "@/components/Iconfy";
 import TextEditor from "@/components/TextEditor";
 
-import Actions from "./FormSend/Actions";
-import AppUpload from "./FormSend/AppUpload";
+import Actions from "./Actions";
+import AppUpload from "./AppUpload";
 
 // import ImageGallery from "./ImageGallery";
 

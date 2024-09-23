@@ -4,11 +4,12 @@ import { ECommentSize } from "@/components/Comment/type";
 import FormComment from "./FormComment";
 import LeftSingle from "./LeftSingle";
 import Sidebar from "./Sidebar";
+// import ListPost from "@/components/ListPost";
 
 const DetailsPost = () => {
   return (
-    <div className="flex w-full gap-md">
-      <div className="flex flex-col gap-md">
+    <div className="flex w-full max-w-full gap-md">
+      <div className="flex flex-col flex-1 gap-md">
         <LeftSingle />
         <Comment
           author={{
@@ -21,6 +22,8 @@ const DetailsPost = () => {
           content="asljfasljk"
         />
         <FormComment />
+
+        {/* <ListPost title="related" /> */}
       </div>
       <Sidebar
         creator={{

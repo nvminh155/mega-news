@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 import Information from "@/components/SingleElements/Information";
 
@@ -24,6 +25,8 @@ const ImgProps: React.FC<TImageProps> = ({ title, mainImageUrl, alt = "" }) => {
 };
 
 const LeftSingle: React.FC = () => {
+  const { t } = useTranslation("info");
+
   const post = postData;
 
   return (
@@ -34,12 +37,19 @@ const LeftSingle: React.FC = () => {
         alt={post.altImageUrl}
       />
 
-      <Information
-        date={post.date}
-        comments={post.comments}
-        category={post.category}
-        className="mx-auto mt-[50px] max-w-[516px]"
-      />
+      <div className="mx-auto mt-[50px] w-full max-w-[516px]">
+        <Information data={post.date} icon="lets-icons:date-fill" />
+        <Information
+          data={post.comments}
+          icon="lets-icons:date-fill"
+          label={t("comments")}
+        />
+        <Information
+          data={post.category}
+          icon="material-symbols-light:folder"
+          label={t("category")}
+        />
+      </div>
 
       <div className="mt-[40px] px-4">
         {post.content.map((section, index) => (
@@ -49,7 +59,7 @@ const LeftSingle: React.FC = () => {
             </p>
             <p className="mb-md text-tertiary">{section.paragraph}</p>
             {index === 0 && (
-              <div className="mb-lg  flex flex-col items-center">
+              <div className="mb-lg flex flex-col items-center">
                 <img
                   src={post.subImages}
                   alt={post.subImageUrl}

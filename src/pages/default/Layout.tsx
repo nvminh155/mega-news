@@ -8,7 +8,7 @@ import Header from "@/components/Header";
 
 const Layout = () => {
   return (
-    <Container className="mx-auto min-h-screen px-5 pt-2 max-tablet:bg-red-200 max-mobile:bg-red-50 desktop:max-w-[1512px]">
+    <Container className="mx-auto min-h-screen px-5 pt-2 max-desktop:bg-red-200 max-tablet:bg-green-500 desktop:max-w-[1512px]">
       <Header />
       <AppButton
         onClick={() => {

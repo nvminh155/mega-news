@@ -16,7 +16,7 @@ const Actions = () => {
       >
         Preview
       </AppButton>
-      <AppButton prefixIcon={<Iconfy icon={"mingcute:send-fill"} />}>
+      <AppButton htmlType="submit" prefixIcon={<Iconfy icon={"mingcute:send-fill"} />}>
         Public
       </AppButton>
     </div>

@@ -1,10 +1,18 @@
 import { cn } from "@/lib/cn";
 
+import AppLink from "./AppLink";
+
 const Logo = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
   return (
-    <div className={cn("text-[40px] font-semibold text-secondary", className)}>
+    <AppLink
+      to={"/"}
+      className={cn(
+        "select-none text-[40px] font-semibold text-secondary",
+        className
+      )}
+    >
       MEGA.news
-    </div>
+    </AppLink>
   );
 };
 

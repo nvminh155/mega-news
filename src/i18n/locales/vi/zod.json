@@ -16,7 +16,7 @@
     "not_multiple_of": "Number must be a multiple of {{multipleOf}}",
     "not_finite": "Number must be finite",
     "invalid_string": {
-      "email": "Invalid {{validation}}",
+      "email": "Invalid {{validation}} zz",
       "url": "Invalid {{validation}}",
       "uuid": "Invalid {{validation}}",
       "cuid": "Invalid {{validation}}",
