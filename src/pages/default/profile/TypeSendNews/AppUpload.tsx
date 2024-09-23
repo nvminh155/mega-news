@@ -5,8 +5,16 @@ import { Iconfy } from "@/components/Iconfy";
 import "react-quill/dist/quill.snow.css";
 
 import { useState } from "react";
-import { GetProp, Upload, UploadFile, UploadProps } from "antd";
-import { useTranslation } from "react-i18next";
+import {
+  GetProp,
+  Upload,
+  // UploadFile,
+  UploadProps,
+} from "antd";
+
+import Avatar from "@/components/Avatar/Avatar";
+
+import Preview from "./Upload";
 
 // type TForm = {
 //   title: string;
@@ -16,26 +24,27 @@ import { useTranslation } from "react-i18next";
 // };
 
 type FileType = Parameters<GetProp<UploadProps, "beforeUpload">>[0];
-type TAppUploadProps = {
+export type TAppUploadProps = {
   type?: "video" | "image";
   size?: "sm" | "lg";
 };
 
 const AppUpload = ({ type = "image", size = "sm" }: TAppUploadProps) => {
-  const { t } = useTranslation("upload");
+  // const [previewOpen, setPreviewOpen] = useState(false);
+  const [previewImage, setPreviewImage] = useState<string>("");
+  const [previewVideo, setPreviewVideo] = useState<string>("");
 
-  const [previewOpen, setPreviewOpen] = useState(false);
-  const [previewImage, setPreviewImage] = useState("");
-  const [fileList, setFileList] = useState<UploadFile[]>([
-    {
-      uid: "-1",
-      name: "image.png",
-      status: "done",
-      url: "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png",
-    },
-  ]);
+  const [isHovered, setIsHovered] = useState<boolean>(false);
+  // const [fileList, setFileList] = useState<UploadFile[]>([
+  //   {
+  //     uid: "-1",
+  //     name: "image.png",
+  //     status: "done",
+  //     url: "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png",
+  //   },
+  // ]);
 
-  console.log("test -> ", previewImage, previewOpen, fileList);
+  // console.log("test -> ", previewImage, previewOpen, fileList);
 
   const getBase64 = (file: FileType): Promise<string> =>
     new Promise((resolve, reject) => {
@@ -45,48 +54,84 @@ const AppUpload = ({ type = "image", size = "sm" }: TAppUploadProps) => {
       reader.onerror = (error) => reject(error);
     });
 
-  const handlePreview = async (file: UploadFile) => {
-    if (!file.url && !file.preview) {
-      file.preview = await getBase64(file.originFileObj as FileType);
-    }
+  // const handlePreview = async (file: UploadFile) => {
+  //   if (!file.url && !file.preview) {
+  //     file.preview = await getBase64(file.originFileObj as FileType);
+  //   }
 
-    setPreviewImage(file.url || (file.preview as string));
-    setPreviewOpen(true);
+  //   setPreviewImage(file.url || (file.preview as string));
+  //   setPreviewOpen(true);
+  // };
+
+  const handleChange: UploadProps["onChange"] = async ({
+    // fileList: newFileList,
+    file,
+  }) => {
+    // setFileList(newFileList);
+    if (file.status === "done" || file.status === "error") {
+      console.log("file -> ", file);
+      const fileUrl = await getBase64(file.originFileObj as FileType);
+      if (type === "image") {
+        setPreviewImage(fileUrl);
+      } else {
+        setPreviewVideo(fileUrl);
+      }
+    }
   };
 
-  const handleChange: UploadProps["onChange"] = ({ fileList: newFileList }) =>
-    setFileList(newFileList);
+  const removeImage = () => {
+    if (size === "sm") {
+      setPreviewImage("");
+    }
+  };
 
   return (
     <div
       className={cn(
-        "img h-full max-h-[131px] w-full max-w-[131px] rounded-md bg-accent-gray p-sm",
+        "img relative h-full max-h-[131px] w-full max-w-[131px] rounded-md bg-accent-gray p-sm",
         {
           "max-h-[319px] max-w-[319px]": size === "lg",
+        },
+        {
+          "cursor-pointer": previewImage && isHovered,
         }
       )}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      onClick={removeImage}
     >
+      {size === "sm" && previewImage && isHovered && (
+        <Iconfy
+          icon={"ion:trash-outline"}
+          size={"xl"}
+          className="absolute bottom-0 left-0 right-0 top-0 z-30 mx-auto my-auto text-white"
+        />
+      )}
       <Upload
-        action="https://660d2bd96ddfa2943b33731c.mockapi.io/api/upload"
         listType="picture-card"
-        onPreview={handlePreview}
+        // onPreview={handlePreview}
         onChange={handleChange}
         rootClassName="w-full h-full *:!h-full *:!w-full"
         className={cn("max-h-[319px] max-w-[319px] *:*:!h-full *:*:!w-full", {
           "max-h-[131px] max-w-[131px]": size === "sm",
         })}
+        maxCount={1}
+        showUploadList={false}
+        disabled={previewImage.length > 0 && size === "sm"}
       >
         {size === "lg" ? (
-          <div className="flex flex-col items-center gap-3 rounded-md py-10">
-            <Iconfy
-              icon={type === "image" ? "lets-icons:img-box" : "gridicons:video"}
-              className={cn("h-[48px] w-[48px] text-tertiary/25", {
-                "h-[96px] w-[96px]": size === "lg",
-              })}
+          <div
+            className={cn(
+              "flex h-full w-full flex-col items-center gap-3 rounded-md py-10",
+              { "py-3": previewVideo.length > 0 && type === "video" }
+            )}
+          >
+            <Preview
+              type={type}
+              size={size}
+              previewImage={previewImage}
+              previewVideo={previewVideo}
             />
-            <span className="text-tertiary/75">
-              {t(type === "image" ? "Label.drop-image" : "Label.drop-video")}
-            </span>
             <AppButton
               className="w-max text-tertiary/75"
               prefixIcon={<Iconfy icon={"ic:outline-plus"} />}
@@ -95,10 +140,23 @@ const AppUpload = ({ type = "image", size = "sm" }: TAppUploadProps) => {
             </AppButton>
           </div>
         ) : (
-          <Iconfy
-            icon={type === "image" ? "lets-icons:img-box" : "gridicons:video"}
-            className={cn("h-[48px] w-[48px] text-tertiary/25")}
-          />
+          <>
+            {previewImage ? (
+              <Avatar
+                avatar={previewImage}
+                containerProps={{
+                  className: `w-full h-full cursor-pointer ${previewImage && isHovered && "filter blur-sm"}`,
+                }}
+              />
+            ) : (
+              <Iconfy
+                icon={
+                  type === "image" ? "lets-icons:img-box" : "gridicons:video"
+                }
+                className={cn("h-[48px] w-[48px] text-tertiary/25")}
+              />
+            )}
+          </>
         )}
       </Upload>
     </div>
