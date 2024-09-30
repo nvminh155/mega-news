@@ -1,9 +1,14 @@
 import { useEffect, useState } from "react";
 import { TAdvertising } from "@/types";
 
+import { cn } from "@/lib/cn";
+
 import { adsData } from "./data";
 
-const Advertising: React.FC = () => {
+interface AdvertisingProps {
+  className?: string;
+}
+const Advertising: React.FC<AdvertisingProps> = ({ className }) => {
   const [ads, setAds] = useState<TAdvertising[]>([]);
 
   const fetchAds = async () => {
@@ -18,11 +23,14 @@ const Advertising: React.FC = () => {
     fetchAds();
   }, []);
   return (
-    <>
-      {ads.map((ad) => (
+    <div className={cn(className)}>
+      {ads.map((ad, index) => (
         <div
           key={ad.id}
-          className="relative h-[180px] w-full overflow-hidden rounded-xl shadow-lg"
+          className={cn(
+            "relative h-[180px] w-full overflow-hidden rounded-xl shadow-lg",
+            index != 0 && "max-tablet:hidden"
+          )}
         >
           <div
             className="absolute inset-0 bg-cover bg-center blur-sm filter"
@@ -35,7 +43,7 @@ const Advertising: React.FC = () => {
           </div>
         </div>
       ))}
-    </>
+    </div>
   );
 };
 

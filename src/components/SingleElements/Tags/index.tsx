@@ -1,10 +1,15 @@
 import { TTag } from "@/types";
 
+import { cn } from "@/lib/cn";
 import { TitleSection } from "@/components/TitleSection";
 
-const Tags: React.FC<{ tags: TTag[] }> = ({ tags }) => {
+interface TagsProps {
+  tags: TTag[];
+  className?: string;
+}
+const Tags: React.FC<TagsProps> = ({ tags, className }) => {
   return (
-    <div className="rounded-md bg-gray px-4 py-5">
+    <div className={cn(className, "rounded-md bg-gray px-4 py-5")}>
       <TitleSection
         text="Tags"
         className="flex items-center justify-start text-lg"

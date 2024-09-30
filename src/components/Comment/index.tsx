@@ -1,5 +1,8 @@
+import { useTranslation } from "react-i18next";
+
 import { cn } from "@/lib/cn";
 
+import { TitleSection } from "../TitleSection";
 import Author from "./Author";
 import Replies from "./Replies";
 import { ECommentSize, TCommentProps } from "./type";
@@ -8,8 +11,10 @@ const Comment: React.FC<TCommentProps> = ({
   size = ECommentSize.small,
   ...comment
 }) => {
+  const { t } = useTranslation("comment");
   return (
     <>
+      <TitleSection text={t("comments")} className="mb-[30px]" />
       {size === ECommentSize.small ? (
         <div className="flex w-full flex-col gap-2 rounded-md bg-gray p-4">
           <div className="font-medium">{`${comment.author.firstName} ${comment.author.lastName}`}</div>

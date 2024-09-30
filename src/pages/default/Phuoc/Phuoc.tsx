@@ -1,9 +1,12 @@
-import { Writer } from "../writer";
+
+
+import DetailsPost from "../posts/details";
 
 export const Phuoc = () => {
   return (
     <div>
-      <Writer />
+      <DetailsPost />
+    
     </div>
   );
 };
