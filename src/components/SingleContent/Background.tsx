@@ -4,10 +4,33 @@ import { Iconfy } from "../Iconfy";
 import { ESingleContentType } from "./type";
 
 const Background = ({ ...props }) => {
-  
+  const isVideoPlaying = false;
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  // Cập nhật trạng thái phát khi props thay đổi
+  useEffect(() => {
+    if (videoRef.current) {
+      isVideoPlaying ? videoRef.current.play() : videoRef.current.pause();
+      setIsPlaying(isVideoPlaying);
+    }
+  }, [isVideoPlaying]);
+
+  const togglePlay = () => {
+    setIsPlaying(true);
+    if (videoRef.current) {
+      if (videoRef.current.paused) {
+        videoRef.current.play();
+        setIsPlaying(true);
+      } else {
+        videoRef.current.pause();
+        setIsPlaying(false);
+      }
+    }
+  };
 
   return (
-    <div className="relative w-full h-full">
+    <div className="relative h-full w-full">
       {props.type === ESingleContentType.video ? (
         <div>
           <video
@@ -34,7 +57,7 @@ const Background = ({ ...props }) => {
         <img
           src={props.imageUrl}
           alt={props.title}
-          className="h-[452px] w-full rounded-[12px] object-cover absolute"
+          className="absolute h-[452px] w-full rounded-[12px] object-cover"
         />
       )}
     </div>

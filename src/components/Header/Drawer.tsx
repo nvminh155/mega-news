@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import type { DrawerProps } from "antd";
 import { Drawer } from "antd";
 
 import { cn } from "@/lib/cn";

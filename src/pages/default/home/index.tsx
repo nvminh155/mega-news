@@ -1,7 +1,4 @@
-import Container from "@/components/Container";
 import ListPost from "@/components/ListPost";
-import ContentCart from "@/components/SingleContent";
-import { ESingleContentType } from "@/components/SingleContent/type";
 import CardSlider from "@/components/Slider/CardSlider";
 import Slider from "@/components/Slider/Slider";
 import SingleContent from "@/components/test";
