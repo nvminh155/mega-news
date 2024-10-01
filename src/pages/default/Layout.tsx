@@ -8,7 +8,7 @@ import Header from "@/components/Header";
 
 const Layout = () => {
   return (
-    <Container className="mx-auto min-h-screen px-5 pt-2 max-desktop:bg-red-200 max-tablet:bg-green-500 desktop:max-w-[1512px]">
+    <Container className="mx-auto min-h-screen px-5 pt-2 max-desktop:bg-red-200 max-mobile:bg-green-500 desktop:max-w-[1512px]">
       <Header />
       <AppButton
         onClick={() => {
@@ -18,9 +18,9 @@ const Layout = () => {
       >
         Change lang
       </AppButton>
-      <Container className="flex-1 pb-[155px] pt-[45px]">
+      <div className="flex-1 pb-[155px] pt-[45px]">
         <Outlet />
-      </Container>
+      </div>
       <Footer />
     </Container>
   );
