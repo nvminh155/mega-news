@@ -10,11 +10,11 @@ const CardSlider: React.FC<CardSliderProps> = ({
   srcImg,
 }) => {
   return (
-    <div className="relative h-full w-full">
+    <div className="relative w-full max-h-[744px]">
       <img
         src={srcImg}
-        className="x h-full w-full rounded-md"
-        alt="background"
+        className="h-[452px] w-full rounded-md"
+        alt="background1"
       />
       <div className="content absolute bottom-0 w-full p-2">
         <div className="rounded-sm bg-white/75 p-4">

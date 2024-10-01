@@ -1,5 +1,5 @@
 const Minh = () => {
-  return <div className="h-max w-full"></div>;
+  return <div></div>;
 };
 
 export default Minh;

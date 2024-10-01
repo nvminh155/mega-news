@@ -7,7 +7,7 @@ const Logo = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
     <AppLink
       to={"/"}
       className={cn(
-        "select-none text-[40px] font-semibold text-secondary",
+        "select-none text-[40px] font-semibold text-secondary hover:text-secondary",
         className
       )}
     >

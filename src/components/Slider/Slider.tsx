@@ -57,11 +57,11 @@ const SliderDots: React.FC<SliderDotsProps> = ({
 const arrowVariants = cva("absolute cursor-pointer", {
   variants: {
     next: {
-      horizontal: "left-aut1o right-[12px]",
+      horizontal: "left-aut1o right-[32px]",
       vertical: "bottom-[12px]",
     },
     prev: {
-      horizontal: "left-[12px]",
+      horizontal: "left-[24px]",
       vertical: "top-[12px]",
     },
     orientation: {
@@ -136,11 +136,13 @@ const Slider: React.FC<SliderProps> = ({
   const totalSlides = items?.length ?? 0;
 
   return (
-    <div className={cn("relative h-max", containerProps?.className)}>
+    <div className={cn("relative max-w-full", containerProps?.className)}>
       <Carousel
         dots={false}
         ref={ref}
         dotPosition={orientation === "horizontal" ? "bottom" : "right"}
+        style={{ padding: 0 }}
+        slidesToShow={1}
       >
         {items}
       </Carousel>

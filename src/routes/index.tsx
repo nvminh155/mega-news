@@ -16,9 +16,9 @@ import DetailsPost from "@/pages/default/posts/details";
 import Profile from "@/pages/default/profile";
 import Thang from "@/pages/default/Thang";
 import Tuan from "@/pages/default/Tuan/Tuan";
+import { Writer } from "@/pages/default/writer";
 import Minh from "@/pages/Minh";
 import NotFound from "@/pages/NotFound";
-import { Writer } from "@/pages/default/writer";
 
 export enum ERolePath {
   ADMIN = 2,
@@ -91,6 +91,7 @@ const paths = {
   "/about": ["/about"],
   "/contact": ["/contact"],
   "/writer": ["/writer/:id"],
+  "/test": ["/test"],
   "/minh": ["/minh"],
 } as const;
 
