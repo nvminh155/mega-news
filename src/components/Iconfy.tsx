@@ -16,13 +16,15 @@ const iconVariants = cva("inline-flex", {
       md: "h-5 w-5",
       lg: "h-6 w-6",
       xl: "h-12 w-12",
+      "2xl": "h-14 w-14",
     },
     bg: {
       no: "",
       sm: "rounded-xs",
       md: "rounded-sm",
       lg: "rounded-md",
-      xl: "rounded-lg"
+      xl: "rounded-lg",
+      "2xl": "rounded-xl",
     },
   },
   defaultVariants: {

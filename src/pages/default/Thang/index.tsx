@@ -2,8 +2,11 @@ import React from "react";
 import { Tabs } from "antd";
 
 import TopCategory from "@/components/Category/TopCategory";
+import ListWeatherWidget from "@/components/ListWeatherWidget";
 import Sidebar from "@/components/Sidebar";
 
+import ViewPostChart from "../profile/ViewPostChart";
+import { categories, years } from "../profile/ViewPostChart/data";
 import ListComment from "./ListComment";
 import ListPostCard from "./ListPostCard";
 import SingleElement from "./SingleElement";
@@ -78,9 +81,19 @@ const Thang: React.FC = () => {
       key: "5",
       children: <TopCategory />,
     },
+    {
+      label: "View Post Chart",
+      key: "6",
+      children: <ViewPostChart categories={categories} years={years} />,
+    },
+    {
+      label: "Weather Widget",
+      key: "7",
+      children: <ListWeatherWidget />,
+    },
   ];
 
-  return <Tabs type="card" items={items} />;
+  return <Tabs type="card" items={items} defaultActiveKey="7" />;
 };
 
 export default Thang;
