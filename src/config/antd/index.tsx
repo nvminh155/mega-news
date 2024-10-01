@@ -20,12 +20,7 @@ export const ConfigAntd = ({ children }: { children: React.ReactNode }) => {
           Input: {
             activeShadow: "none",
           },
-          Upload: {
-            
-          },
-          Carousel: {
-            marginXXS: 10
-          }
+          Upload: {},
         },
       }}
     >

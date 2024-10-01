@@ -13,9 +13,9 @@ export default {
     },
     extend: {
       screens: {
-        desktop: "1024px",
-        tablet: "768px",
-        mobile: "640px",
+        desktop: "1200px",
+        tablet: "1024px",
+        mobile: "800px",
       },
       colors: {
         border: "hsla(var(--border))",
