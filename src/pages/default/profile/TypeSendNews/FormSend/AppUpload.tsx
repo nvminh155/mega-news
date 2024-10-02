@@ -103,9 +103,10 @@ const AppUpload = ({
   return (
     <div
       className={cn(
-        "img relative h-full max-h-[131px] w-full max-w-[131px] rounded-md bg-accent-gray p-sm",
+        "img relative h-full w-full rounded-md bg-accent-gray p-sm",
         {
-          "max-h-[319px] max-w-[319px]": size === "lg",
+          "min-w-[360px] desktop:max-h-[319px] desktop:max-w-[319px] tablet:max-w-[564px] tablet:min-h-[360px] ": size === "lg",
+          "w-[131px] h-[131px] ": size ==="sm",
         },
         {
           "cursor-pointer": previewImage && isHovered,
@@ -127,9 +128,7 @@ const AppUpload = ({
         // onPreview={handlePreview}
         onChange={handleChange}
         rootClassName="w-full h-full *:!h-full *:!w-full"
-        className={cn("max-h-[319px] max-w-[319px] *:*:!h-full *:*:!w-full", {
-          "max-h-[131px] max-w-[131px]": size === "sm",
-        })}
+        className={cn(" *:*:!h-full *:*:!w-full")}
         maxCount={1}
         showUploadList={false}
         disabled={previewImage.length > 0 && size === "sm"}
@@ -137,7 +136,7 @@ const AppUpload = ({
         {size === "lg" ? (
           <div
             className={cn(
-              "flex h-full w-full flex-col items-center gap-3 rounded-md py-10",
+              "flex h-[360px] w-full flex-col items-center gap-5 rounded-md py-20",
               { "py-3": previewVideo.length > 0 && type === "video" }
             )}
           >

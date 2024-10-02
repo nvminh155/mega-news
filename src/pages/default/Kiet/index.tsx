@@ -1,32 +1,42 @@
-import ContentCart from "@/components/SingleContent";
-import { ESingleContentType } from "@/components/SingleContent/type";
-
-import Data from "@/components/SingleContent/data.json"
+import AppButton from "@/components/Button";
+import AvatarNav from "../profile/Nav/PropsNav/AvatarNav";
+import MenuNav from "../profile/Nav/PropsNav/MenuNav";
+import NavBar from "../profile/Navbar";
+import TypeSendNews from "../profile/TypeSendNews";
+import { Iconfy } from "@/components/Iconfy";
 
 export const Kiet = () => {
 
-    const data = Data;
+  const items = [
+    {
+      label: "Marked"
+    },
+    {
+      label: "Send Post"
+    },
+    {
+      label: "Posts"
+    },
+  ];
 
-    return (
-        <div>
+  return (
+    <div>
+      <NavBar bgImg="/unsplash_9XngoIpxcEo.svg">
+        <AvatarNav
+          containerProps={{ className: "ml-2" }}
+          name={"Louis Hoebregts"}
+        />
+        <MenuNav menuItems={items}></MenuNav>
+        <AppButton
+          className="mr-2 text-sm text-popover"
+          size={"sm"}
+          prefixIcon={<Iconfy icon={"ic:baseline-plus"} size={"lg"} />}
+        >
+          <div className="text-sm font-medium">Follow</div>
+        </AppButton>
+      </NavBar>
 
-            <div className="flex flex-row">
-
-                <ContentCart
-
-                    content={data[0]}
-                />
-                <ContentCart
-                    type={ESingleContentType.normal}
-                    content={data[0]}
-                />
-
-            </div>
-            <div>
-                <ContentCart
-                    type={ESingleContentType.video}
-                    content={data[1]}/>
-            </div>
-        </div>
-    );
+      <TypeSendNews />
+    </div>
+  );
 };
