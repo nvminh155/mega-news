@@ -9,7 +9,7 @@ const TypeSendNews = () => {
 
   return (
     <div>
-      <div className="flex">
+      <div className="flex pb-[20px]">
         {["Send Post", "Send Video"].map((text, i) => (
           <TabItem
             key={i + 1}
