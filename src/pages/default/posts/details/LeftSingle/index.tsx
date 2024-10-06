@@ -37,13 +37,15 @@ const LeftSingle: React.FC = () => {
         alt={post.altImageUrl}
       />
 
-      <div className="mx-auto mt-[50px] w-full max-w-[516px]">
+      <div className="mx-auto mt-[50px] flex w-full max-w-[516px] flex-row justify-between">
         <Information data={post.date} icon="lets-icons:date-fill" />
+
         <Information
           data={post.comments}
           icon="lets-icons:date-fill"
           label={t("comments")}
         />
+
         <Information
           data={post.category}
           icon="material-symbols-light:folder"

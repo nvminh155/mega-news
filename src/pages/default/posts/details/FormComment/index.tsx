@@ -14,7 +14,7 @@ import { TitleSection } from "@/components/TitleSection";
 
 const FormComment = () => {
   const { t } = useTranslation("input");
-
+  const { t: tComment } = useTranslation("comment");
   const form = useForm<TCommentForm>({
     resolver: zodResolver(commentSchema),
   });
@@ -25,14 +25,14 @@ const FormComment = () => {
 
   return (
     <div className="h-max w-full">
-      <TitleSection text="Add A Comment" />
+      <TitleSection text={tComment("add A Comment")} className="my-[30px]" />
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
           className="flex w-full flex-col gap-sm"
         >
-          <div className="flex gap-5">
-            <div className="flex w-1/2 max-w-[488px] flex-col gap-3">
+          <div className="flex items-stretch gap-5 max-desktop:flex-col">
+            <div className="flex w-1/2 max-w-[488px] flex-col gap-3 max-desktop:w-full max-desktop:max-w-[1024px]">
               <FormInput
                 control={form.control}
                 label="Name"
@@ -63,13 +63,15 @@ const FormComment = () => {
             </div>
           </div>
 
-          <div className="rate flex w-full items-center gap-[50px]">
+          <div className="rate flex w-full items-center justify-center gap-md max-desktop:flex-col">
             <FormRate
               control={form.control}
               name="rate"
               onChangeCallBack={(val) => form.setValue("rate", val)}
+              className=""
             />
             <AppButton
+              className="ml-auto max-w-[160px]"
               htmlType="submit"
               prefixIcon={<Iconfy icon={"uiw:message"} />}
             >

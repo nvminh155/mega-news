@@ -61,8 +61,8 @@ const FormRate = <
         <div
           className={cn("flex h-full w-full flex-col space-y-sm", className)}
         >
-          <div className="flex flex-1 items-center justify-between rounded-md bg-accent-gray p-[4px] pl-[12px]">
-            <span className="font-medium text-tertiary">
+          <div className="flex flex-1 justify-between rounded-md bg-accent-gray p-[4px] pl-[12px] max-tablet:flex-col">
+            <span className="my-auto font-medium text-tertiary">
               Rate the usefulness of the article
             </span>
             <div className="mood flex items-center gap-0.5">

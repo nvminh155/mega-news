@@ -22,7 +22,7 @@ const Information: React.FC<TInformation> = ({
       )}
     >
       {icon && <Iconfy icon={icon} size={"md"} />}
-      <div className="flex items-center gap-1 font-medium mt-0.5">
+      <div className="mt-0.5 flex items-center gap-1 font-medium">
         <span className="content-center leading-[20px]">{label + ":"} </span>
         <span>{data}</span>
       </div>
