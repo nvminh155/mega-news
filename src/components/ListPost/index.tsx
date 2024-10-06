@@ -34,7 +34,7 @@ const ListPost = ({ title }: PostProps) => {
     <div>
       <div className="flex items-center justify-between">
         {title && <TitleSection className="text-lg" text={t(title)} />}
-        <div className="mr-1 space-x-5" style={{ textAlign: "right" }}>
+        <div className="mr-1 space-x-2" style={{ textAlign: "right" }}>
           <button
             className="h-[40px] w-[40px] rounded-xl bg-gray text-tertiary-black50 hover:text-tertiary"
             onClick={previous}
@@ -70,6 +70,12 @@ const ListPost = ({ title }: PostProps) => {
             breakpoint: 768,
             settings: {
               slidesToShow: 2,
+            },
+          },
+          {
+            breakpoint: 640,
+            settings: {
+              slidesToShow: 1,
             },
           },
         ]}
