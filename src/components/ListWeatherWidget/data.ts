@@ -59,7 +59,7 @@ const dayWeather = [
   },
 ];
 
-const weatherWidgetMedium = [
+const weatherWidgetMediums = [
   {
     temperatureToday: 32,
     icon: EWeatherStatus.sunny,
@@ -102,11 +102,4 @@ const weatherWidgetMedium = [
   },
 ];
 
-const colors = [
-  "rgba(251, 68, 28, 0.91), rgba(251, 202, 28, 0.6)",
-  "rgba(28, 50, 251, 0.91), rgba(28, 251, 224, 0.6)",
-  "rgba(7, 156, 39, 0.91), rgba(192, 255, 113, 0.6)",
-  "rgba(113, 28, 251, 0.91), rgba(251, 28, 148, 0.6)",
-];
-
-export { dayWeather, weatherWidgetMedium, colors };
+export { dayWeather, weatherWidgetMediums };
