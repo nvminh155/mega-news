@@ -1,9 +1,9 @@
 import useMediaQuery from "./useMediaQuery";
 
 const useDeviceType = () => {
-  const isMobile = useMediaQuery("(max-width: 640px)");
-  const isTablet = useMediaQuery("(min-width: 641px) and (max-width: 1024px)");
-  const isDesktop = useMediaQuery("(min-width: 1025px)");
+  const isMobile = useMediaQuery("(max-width: 1023px)");
+  const isTablet = useMediaQuery("(min-width: 1024px) and (max-width: 1199px)");
+  const isDesktop = useMediaQuery("(min-width: 1200px)");
 
   return { isMobile, isTablet, isDesktop };
 };
