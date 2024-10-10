@@ -13,10 +13,11 @@ const Tags: React.FC<TagsProps> = ({ tags, className }) => {
       <TitleSection
         text="Tags"
         className="flex items-center justify-start text-lg"
-      />
-      <div className="flex flex-wrap gap-[14px] text-xs font-medium text-tertiary/75">
-        {tags?.map((tag) => <div key={tag.id}>{tag.name}</div>)}
-      </div>
+      >
+        <div className="flex flex-wrap gap-[14px] text-xs font-medium text-tertiary/75">
+          {tags?.map((tag) => <div key={tag.id}>{tag.name}</div>)}
+        </div>
+      </TitleSection>
     </div>
   );
 };

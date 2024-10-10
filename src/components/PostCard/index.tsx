@@ -78,9 +78,9 @@ const PostCard: React.FC<TPostCardProps> = ({
       />
       <div
         className={cn(
-          "flex w-full flex-col",
+          "flex flex-1 flex-col",
           type === EPostCardType.widget && "items-center justify-center",
-          type === EPostCardType.horizontal && "h-[190px]"
+          // type === EPostCardType.horizontal && "h-max"
         )}
       >
         <Title type={type} title={post.title} />

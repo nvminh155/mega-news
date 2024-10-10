@@ -19,6 +19,7 @@ import Tuan from "@/pages/default/Tuan/Tuan";
 import { Writer } from "@/pages/default/writer";
 import Minh from "@/pages/Minh";
 import NotFound from "@/pages/NotFound";
+import EditProfile from "@/pages/default/profile/Edit";
 
 export enum ERolePath {
   ADMIN = 2,
@@ -57,6 +58,7 @@ export const router = [
       createRoute("/posts/:id", <DetailsPost />, ERolePath.USER),
       createRoute("/minh", <Minh />, ERolePath.USER),
       createRoute("/profile/:id", <Profile />, ERolePath.USER),
+      createRoute("/profile/:id/edit", <EditProfile />, ERolePath.USER),
       createRoute("/about", <About />, ERolePath.USER),
       createRoute("/contact", <About />, ERolePath.USER),
       createRoute("/writer/:id", <Writer />, ERolePath.USER),
@@ -87,7 +89,7 @@ export const router = [
 const paths = {
   "/": ["/"],
   "/posts": ["/posts", "/posts/:id"],
-  "/profile": ["/profile/:id"],
+  "/profile": ["/profile/:id", "/profile/:id/edit"],
   "/about": ["/about"],
   "/contact": ["/contact"],
   "/writer": ["/writer/:id"],

@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import AppButton from "@/components/Button";
 import { Iconfy } from "@/components/Iconfy";
 
@@ -5,6 +7,7 @@ import AvatarNav from "./Nav/PropsNav/AvatarNav";
 import MenuNav from "./Nav/PropsNav/MenuNav";
 import NavBar from "./Navbar";
 import TypeSendNews from "./TypeSendNews";
+import YourPost from "./YourPost";
 
 const Profile = () => {
   const items = [
@@ -12,6 +15,7 @@ const Profile = () => {
     { label: "Send Post" },
     { label: "Posts" },
   ];
+  const [currentTab, setCurrentTab] = useState(0);
 
   return (
     <div>
@@ -20,7 +24,7 @@ const Profile = () => {
           containerProps={{ className: "ml-2" }}
           name={"Louis Hoebregts"}
         />
-        <MenuNav menuItems={items}></MenuNav>
+        <MenuNav menuItems={items} onChangeCallback={(n) => setCurrentTab(n)} />
         <AppButton
           className="mr-2 text-sm text-popover"
           size={"sm"}
@@ -31,7 +35,8 @@ const Profile = () => {
         </AppButton>
       </NavBar>
 
-      <TypeSendNews />
+      {currentTab === 1 && <TypeSendNews />}
+      {currentTab === 2 && <YourPost />}
     </div>
   );
 };

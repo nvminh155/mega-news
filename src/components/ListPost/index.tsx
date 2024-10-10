@@ -57,32 +57,33 @@ const ListPost = ({ title }: PostProps) => {
         </div>
       </div>
       <Carousel
+        slidesToShow={4}
         ref={sliderRef}
         // autoplay
         responsive={[
           {
-            breakpoint: 1024,
+            breakpoint: 1300,
             settings: {
               slidesToShow: 3,
             },
           },
           {
-            breakpoint: 768,
+            breakpoint: 1000,
             settings: {
               slidesToShow: 2,
             },
           },
           {
-            breakpoint: 640,
+            breakpoint: 600,
             settings: {
               slidesToShow: 1,
             },
           },
         ]}
-        slidesToShow={4}
         dots={false}
         arrows={false}
         style={{ padding: "0px" }}
+        rootClassName="*:*:*:*:*:flex *:*:*:*:*:justify-center"
       >
         {newData.length > 0 ? (
           newData.map((post, i) => (

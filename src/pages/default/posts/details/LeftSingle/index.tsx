@@ -1,6 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
+import { formatDateTime } from "@/utils/formatDatetime";
 import Information from "@/components/SingleElements/Information";
 
 import postData from "./postData.json";
@@ -15,6 +16,7 @@ const ImgProps: React.FC<TImageProps> = ({ title, mainImageUrl, alt = "" }) => {
   return (
     <div className="w-full rounded-md bg-[#F5F5F5] px-4">
       <p className="pt-[13px] text-[24px] tablet:text-[33px]">{title}</p>
+
       <img
         src={mainImageUrl}
         alt={alt}
@@ -38,11 +40,15 @@ const LeftSingle: React.FC = () => {
       />
 
       <div className="mx-auto mt-[50px] flex w-full max-w-[516px] flex-row justify-between">
-        <Information data={post.date} icon="lets-icons:date-fill" />
+        <Information
+          data={formatDateTime(post.date).MMMMDDYYYY}
+          icon="lets-icons:date-fill"
+          label={t("date")}
+        />
 
         <Information
           data={post.comments}
-          icon="lets-icons:date-fill"
+          icon="ant-design:comment-outlined"
           label={t("comments")}
         />
 

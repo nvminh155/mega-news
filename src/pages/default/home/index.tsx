@@ -1,4 +1,5 @@
 import ListPost from "@/components/ListPost";
+import ListWeatherWidget from "@/components/ListWeatherWidget";
 import CardSlider from "@/components/Slider/CardSlider";
 import Slider from "@/components/Slider/Slider";
 import SingleContent from "@/components/test";
@@ -53,8 +54,8 @@ const Home = () => {
       <div className="flex"></div>
       <div className="posts flex w-full flex-col">
         <ListPost title={"popular"} />
-        <ListPost.News />
         <ListPost title={"trendy"} />
+        <ListWeatherWidget />
         <ListPost title={"top"} />
       </div>
     </div>

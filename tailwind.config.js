@@ -13,8 +13,8 @@ export default {
     },
     extend: {
       screens: {
-        desktop: "1200px",
-        tablet: "1024px",
+        desktop: "1100px",
+        tablet: "768px",
         mobile: "800px",
       },
       colors: {
