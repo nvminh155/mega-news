@@ -13,9 +13,9 @@ type TSidebarProps = {
 
 const Sidebar: React.FC<TSidebarProps> = ({ creator, tags }) => {
   return (
-    <div className="flex max-w-[360px] flex-col gap-6 max-desktop:max-w-full">
-      <div className="flex flex-col gap-6 max-desktop:flex-row max-desktop:items-stretch max-desktop:justify-between max-tablet:flex-col-reverse">
-        <div className="flex-1 space-y-md max-desktop:basis-2/3">
+    <div className="flex max-w-[360px] flex-col gap-6 max-desktop:max-w-[760px]">
+      <div className="flex flex-col gap-6 max-desktop:flex-row max-desktop:items-stretch max-desktop:justify-between max-mobile:flex-col-reverse">
+        <div className="flex-1 space-y-md max-desktop:w-1/2 max-tablet:w-full">
           <Actions />
           <Creator
             avatar={creator.avatar}
@@ -26,7 +26,7 @@ const Sidebar: React.FC<TSidebarProps> = ({ creator, tags }) => {
 
         <Tags
           tags={tags}
-          className="max-desktop:flex-1 max-desktop:basis-1/3"
+          className="max-desktop:w-1/2 max-desktop:flex-1 max-tablet:w-full"
         />
       </div>
 

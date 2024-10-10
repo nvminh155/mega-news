@@ -6,7 +6,7 @@ import { colors, dayWeather, weatherWidgetMedium } from "./data";
 
 const ListWeatherWidget = () => {
   return (
-    <div className="flex w-full flex-row gap-6">
+    <div className="flex w-full flex-row gap-6 py-md">
       <div className="w-1/2 flex-1 rounded-lg">
         <div className="w-full">
           <WeatherWidget
