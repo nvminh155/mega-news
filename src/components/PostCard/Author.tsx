@@ -8,17 +8,17 @@ type TAuthorProps = TUser;
 
 const Author: React.FC<TAuthorProps> = ({ ...props }) => {
   return (
-    <div className="mt-auto flex items-center justify-between rounded-[12px] bg-gray-100 px-[16px] py-[13px]">
-      <div className="flex items-center">
+    <div className="mt-auto flex items-center justify-between rounded-[12px] bg-accent-gray px-[16px] py-[13px]">
+      <div className="flex items-center gap-[10px]">
         <Avatar
           avatar={props.avatarUrl}
           containerProps={{
             className: "w-[44px] h-[44px]",
           }}
         />
-        <div className="ml-3">
-          <p className="text-sm font-semibold">{`${props.firstName} ${props.lastName}`}</p>
-          <p className="text-xs text-gray-500">{props.title}</p>
+        <div className="flex flex-col justify-between">
+          <p className="text-sm font-medium text-tertiary">{`${props.firstName} ${props.lastName}`}</p>
+          <p className="text-xs text-tertiary/75">{props.title}</p>
         </div>
       </div>
       <Iconfy

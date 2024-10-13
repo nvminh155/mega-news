@@ -5,17 +5,21 @@ interface MenuItem {
 }
 interface MenuNavProps {
   menuItems: MenuItem[];
+  onChangeCallback?: (tab: number) => void;
 }
 
-const MenuNav: React.FC<MenuNavProps> = ({ menuItems }) => {
+const MenuNav: React.FC<MenuNavProps> = ({ menuItems, onChangeCallback }) => {
   const [activeItem, setActiveItem] = useState(menuItems[0]?.label);
   return (
     <div className="flex items-center space-x-9 text-md font-medium">
-      {menuItems.map((item) => (
+      {menuItems.map((item, i) => (
         <div
           key={item.label}
-          className="relative cursor-pointer text-tertiary-black"
-          onClick={() => setActiveItem(item.label)}
+          className="relative cursor-pointer text-tertiary"
+          onClick={() => {
+            setActiveItem(item.label);
+            if (onChangeCallback) onChangeCallback(i);
+          }}
         >
           {item.label}
           {activeItem === item.label && (

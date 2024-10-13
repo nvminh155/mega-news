@@ -44,10 +44,10 @@ const FormInput = <
             {...fieldProps}
             placeholder={placeholder ?? name}
             className={cn(
-              "h-full w-full rounded-md border border-none border-[#E6E6E6] !bg-accent-gray/50 p-2 outline-none ring-0 focus-visible:outline-none",
+              "h-[48px] w-full rounded-md border border-none border-[#E6E6E6] !bg-accent-gray/50 p-2 outline-none ring-0 focus-visible:outline-none",
               className,
               {
-                "!placeholder:text-tertiary/75 placeholder:text-xs":
+                "!placeholder:text-tertiary/75 placeholder:text-sm !placeholder:font-medium":
                   placeholder,
               }
             )}

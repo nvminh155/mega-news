@@ -14,6 +14,8 @@ const Information: React.FC<TInformation> = ({
   icon,
   className,
 }) => {
+
+  
   return (
     <div
       className={cn(
