@@ -1,6 +1,10 @@
 {
     "rate": "Đánh giá",
     "follower": "Người theo dõi",
-    "post" :"Bài đăng",
-    "follow": "Theo dõi"
+    "post": "Bài đăng",
+    "follow": "Theo dõi",
+    "categories": "Danh mục",
+    "category": "Danh mục",
+    "comments": "Bình luận",
+    "date": "Ngày"
 }

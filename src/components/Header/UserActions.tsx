@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Dropdown, Space } from "antd";
+import { useTranslation } from "react-i18next";
 
 import { cn } from "@/lib/cn";
 
@@ -12,13 +13,14 @@ interface TNotAuthProps {
 }
 
 const NotAuth: React.FC<TNotAuthProps> = ({ Login = "/", Register = "/" }) => {
+  const { t } = useTranslation("global");
   return (
     <div className="flex w-[168px] cursor-pointer items-center gap-2">
       <Iconfy icon="tdesign:user" className="h-[20px] w-[20px]" background />
       <div className="w-[112px] text-base font-medium text-black">
-        <a href={Login}>Login</a>
+        <a href={Login}>{t("Btn.login")}</a>
         <span className="mx-1">|</span>
-        <a href={Register}>Register</a>
+        <a href={Register}>{t("Btn.register")}</a>
       </div>
     </div>
   );

@@ -1,0 +1,10 @@
+{
+  "title": "Đánh giá mức độ hữu ích của bài viết",
+  "moods": {
+      "Angry": "Phẫn nộ",
+      "Bad": "Tệ",
+      "Neutral": "Bình thường",
+      "Happy": "Hạnh phúc",
+      "Good": "Tốt"
+    }
+}

@@ -35,13 +35,13 @@ const FormComment = () => {
             <div className="flex w-1/2 max-w-[488px] flex-col gap-3 max-desktop:w-full max-desktop:max-w-[1024px]">
               <FormInput
                 control={form.control}
-                label="Name"
+                label={t("Label.name")}
                 name="displayName"
                 placeholder={t("Placeholder.display-name")}
               />
               <FormInput
                 control={form.control}
-                label="Website"
+                label={t("Placeholder.website")}
                 name="website"
                 placeholder={t("Placeholder.website")}
               />
@@ -55,7 +55,7 @@ const FormComment = () => {
             <div className="flex-1">
               <FormTextArea
                 control={form.control}
-                label="Comment"
+                label={t("Label.comment")}
                 name="content"
                 className="flex-1"
                 placeholder={t("Placeholder.type-anything")}
@@ -75,7 +75,7 @@ const FormComment = () => {
               htmlType="submit"
               prefixIcon={<Iconfy icon={"uiw:message"} />}
             >
-              Send Comment
+              {tComment("Send Comment")}
             </AppButton>
           </div>
         </form>

@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 import AppButton from "@/components/Button";
 import { Iconfy } from "@/components/Iconfy";
 
@@ -8,20 +10,21 @@ type TAction = {
 };
 
 const Actions: React.FC = () => {
+  const { t } = useTranslation("posts");
   const items: TAction[] = [
     {
       key: "share",
-      label: "Share",
+      label: t("share"),
       icon: "system-uicons:paper-plane",
     },
     {
       key: "marking",
-      label: "Marking",
+      label: t("marking"),
       icon: "bi:bookmark",
     },
     {
       key: "comment",
-      label: "Comment",
+      label: t("comment"),
       icon: "fa-regular:comment-dots",
     },
   ];

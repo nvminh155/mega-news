@@ -20,7 +20,7 @@ const AboutMegaNews = () => (
 
 const LeftFooter = () => {
   return (
-    <div className="w-1/2 max-desktop:w-full rounded-br-[50px] rounded-tr-[50px] bg-tertiary/5">
+    <div className="w-1/2 rounded-br-[50px] rounded-tr-[50px] bg-tertiary/5 max-desktop:w-full">
       <div className="grid grid-cols-4 gap-[20px] gap-x-[152px] p-lg">
         <AboutMegaNews />
         <Categories />

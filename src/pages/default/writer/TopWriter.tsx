@@ -6,19 +6,23 @@ import Container, { EDirection } from "@/components/Container";
 import { Iconfy } from "@/components/Iconfy";
 import { Information } from "@/components/SingleElements";
 
-const informations = [
-  { label: "Rate", data: 4.2, icon: "solar:star-line-duotone" },
-  { label: "Follower", data: 1.2 + "K", icon: "solar:user-linear" },
-  { label: "Post", data: 29, icon: "tabler:news" },
-];
-
 export const TopWriter = () => {
   const { t } = useTranslation("info");
+  const informations = [
+    { label: t("rate"), data: 4.2, icon: "solar:star-line-duotone" },
+    { label: t("follower"), data: 1.2 + "K", icon: "solar:user-linear" },
+    { label: t("post"), data: 29, icon: "tabler:news" },
+  ];
+
   return (
     <Container
       className={"TopWriter gap-y-[15px] rounded-sm bg-accent-gray p-sm"}
     >
-      <img className="h-[150px] w-full object-cover" src="food01.jpg" alt="background" />
+      <img
+        className="h-[150px] w-full object-cover"
+        src="food01.jpg"
+        alt="background"
+      />
       <Container direction={EDirection.ROW}>
         <div className="flex items-center justify-center gap-x-[10px]">
           <Avatar

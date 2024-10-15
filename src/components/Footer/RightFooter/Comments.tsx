@@ -1,8 +1,11 @@
+import { useTranslation } from "react-i18next";
+
 import { TitleSection } from "@/components/TitleSection";
 
 const Comments = () => {
+  const { t } = useTranslation("comment");
   return (
-    <TitleSection text="New Comments">
+    <TitleSection text={t("new Comment")}>
       <div className="flex max-w-[360px] flex-col gap-3">
         {Array.from({ length: 4 }).map((_, i) => (
           <div key={i + 1} className="rounded-md bg-accent-gray p-md">

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { TPost } from "@/types";
+import { useTranslation } from "react-i18next";
 
 import PostCard from "@/components/PostCard";
 import { EPostCardType } from "@/components/PostCard/type";
@@ -24,10 +25,11 @@ const TopPosts: React.FC = () => {
   useEffect(() => {
     fetchTopPosts();
   }, []);
+  const { t } = useTranslation("posts");
   return (
     <div className="rounded-md bg-gray px-4 py-5">
       <TitleSection
-        text="Top Post"
+        text={t("top")}
         className="flex items-center justify-start text-lg"
       />
       <div className="flex flex-col gap-5">

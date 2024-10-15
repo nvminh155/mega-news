@@ -1,9 +1,25 @@
 {
-  "popular": "Popular Posts",
-  "trendy": "Trendy Posts",
-  "top": "Top Posts",
-  "your": "Your Posts",
-  "new": "New Posts",
-  "related": "Related Posts",
-  "LastestPosts": "Bài đăng mới nhất"
+  "popular": "Bài đăng phổ biến",
+  "trendy": "Bài đăng thịnh hành",
+  "top": "Bài đăng hàng đầu",
+  "your": "Bài đăng của bạn",
+  "new": "Bài đăng mới",
+  "related": "Bài đăng liên quan",
+  "LastestPosts": "Bài đăng mới nhất",
+  "share": "Chia sẻ",
+  "comment": "Bình luận",
+  "marking": "Đánh dấu",
+  "folow": "Theo dõi",
+  "post": "Bài đăng",
+  "posts": "Bài đăng",
+  "Tags": "Thẻ",
+  "Send Video": "Gửi video",
+    "Send Post": "Gửi bài viết",
+     "Marked": "Đánh đấu",
+     "View Posts": "Xem bài viết",
+     "Satisfaction": "Hài lòng với bài viết",
+     "Points": "Điểm"
+  
+  
+  
 }

@@ -1,6 +1,7 @@
 import { z } from "@/i18n";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 
 import { Form } from "@/components/form";
 import AppUpload from "@/components/form/AppUpload";
@@ -31,6 +32,7 @@ const EditProfile = () => {
   const onsubmit = (data: any) => {
     console.log(data);
   };
+  const { t } = useTranslation("input");
   return (
     <div>
       <Form {...form}>
@@ -41,32 +43,32 @@ const EditProfile = () => {
           <FormInput
             control={form.control}
             name="firstName"
-            label="First Name"
-            placeholder="Enter your first name .."
+            label={t("Label.First Name")}
+            placeholder={t("Placeholder.write-your-first-name")}
           />
           <FormInput
             control={form.control}
             name="lastName"
-            label="Last Name"
-            placeholder="Enter your last name .."
+            label={t("Label.Last Name")}
+            placeholder={t("Placeholder.write-your-last-name")}
           />
           <FormInput
             control={form.control}
             name="userName"
-            label="Username"
-            placeholder="Enter your username .."
+            label={t("Label.Username")}
+            placeholder={t("Placeholder.write-your-username")}
           />
           <FormInput
             control={form.control}
             name="password"
-            label="Password"
-            placeholder="Enter your password.."
+            label={t("Label.Password")}
+            placeholder={t("Placeholder.write-your-password")}
           />
           <FormInput
             control={form.control}
             name="email"
             label="Email"
-            placeholder="Enter your email .."
+            placeholder={t("Placeholder.write-your-email")}
           />
           <div className="banner">
             <AppUpload

@@ -1,5 +1,8 @@
+import { useEffect, useState } from "react";
 import { Carousel } from "antd";
+import { useTranslation } from "react-i18next";
 
+import translateDateWords from "@/utils/formatDatetime";
 import useDeviceType from "@/hooks/useDeviceType";
 import WeatherWidget, {
   EWeatherStatus,
@@ -14,22 +17,29 @@ const ListWeatherWidget = () => {
     "rgba(7, 156, 39, 0.91), rgba(192, 255, 113, 0.6)",
     "rgba(113, 28, 251, 0.91), rgba(251, 28, 148, 0.6)",
   ];
+  const [dayWeatherUpdate, setDayWeatherUpdate] = useState(dayWeather);
+  const { i18n } = useTranslation();
+  useEffect(() => {
+    const dayWeatherUpdated = dayWeatherUpdate.map((item) => {
+      return { ...item, day: translateDateWords(item.day, true) };
+    });
+    setDayWeatherUpdate(dayWeatherUpdated);
+  }, [i18n.language]);
 
   const { isDesktop } = useDeviceType();
-
   return (
     <div className="flex w-full flex-row gap-6">
       <div className="hidden w-1/2 flex-1 rounded-lg desktop:block">
         <div className="w-full">
           <WeatherWidget
-            dayWeathers={dayWeather}
+            dayWeathers={dayWeatherUpdate}
             temperatureToday={29}
             icon={EWeatherStatus.sunny}
             precipitation={2}
             humidity={70}
             wind={3}
             location="New York, NY"
-            time="Wednesday 04:00"
+            time={translateDateWords("Wednesday 04:00")}
             chartData={{
               label: [
                 "5 AM",
@@ -59,7 +69,7 @@ const ListWeatherWidget = () => {
                 humidity={item.humidity}
                 wind={item.wind}
                 location={item.location}
-                time={item.time}
+                time={translateDateWords(item.time)}
                 background={item.background}
                 backgroundColor={colors[index]}
               />

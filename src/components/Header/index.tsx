@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 import AppLink from "../AppLink";
 import { Iconfy } from "../Iconfy";
@@ -9,16 +10,20 @@ import Search from "./Search";
 import UserActions from "./UserActions";
 
 const Header: React.FC = () => {
+  const { t } = useTranslation("global");
   return (
     <div className="flex items-center justify-between">
       <div className="left flex items-center justify-between gap-16 max-desktop:gap-5">
         <DrawerHeader />
         <Logo className="text-[22px]" />
         <div className="menu flex items-center gap-8 font-medium text-tertiary max-desktop:hidden">
-          <DropdownMenu text={"Categories"} className="menu-item" />
-          <DropdownMenu text={"Pages"} className="menu-item" />
-          <AppLink to={"/contact"}>Contact Us</AppLink>
-          <AppLink to={"/about"}>About Us</AppLink>
+          <DropdownMenu
+            text={t("Title-section.categories")}
+            className="menu-item"
+          />
+          <DropdownMenu text={t("Title-section.Pages")} className="menu-item" />
+          <AppLink to={"/contact"}>{t("Title-section.contact-us")}</AppLink>
+          <AppLink to={"/about"}>{t("Title-section.about-us")}</AppLink>
         </div>
       </div>
 

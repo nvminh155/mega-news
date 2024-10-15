@@ -1,9 +1,9 @@
 {
-  "Required": "Required 1",
-  "minLength": "Min length is 1",
-  "name": "Name is required",
-  "content": "Content have at least 1 character",
-  "email": "Email is invalid",
-  "displayName": "Display name is required",
+  "Required": "Bắt buộc 1",
+  "minLength": "Độ dài tối thiểu là 1",
+  "name": "Tên là bắt buộc",
+  "content": "Nội dung phải có ít nhất 1 ký tự",
+  "email": "Email không hợp lệ",
+  "displayName": "Tên hiển thị là bắt buộc",
   "age": "111"
 }

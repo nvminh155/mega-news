@@ -1,5 +1,15 @@
 {
   "Label": {
-    "drop-image": "Drop Image Here, Past Or"
-  }
+    "drop-image": "Kéo thả hình ảnh ở đây, dán hoặc",
+    "drop-video": "Kéo thả video ở đây, dán hoặc",
+    "add-img": "Thêm hình ảnh",
+    "add-video": "Thêm video"
+  },
+  "action": {
+    "Draft": "Cắt",
+    "Preview": "Xem trước",
+    "Public": "Đăng"
+  },
+  "Image Gallery": "Thư viện ảnh",
+  "Select": "Chọn"
 }

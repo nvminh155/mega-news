@@ -1,10 +1,16 @@
+import { useTranslation } from "react-i18next";
+
 import AppButton from "@/components/Button";
 import { Iconfy } from "@/components/Iconfy";
 import { TitleSection } from "@/components/TitleSection";
 
 const SocialNetwork = () => {
+  const { t } = useTranslation("global");
   return (
-    <TitleSection text="Social Network" containerClassName="col-span-2">
+    <TitleSection
+      text={t("Title-section.social-network")}
+      containerClassName="col-span-2"
+    >
       <div className="flex flex-wrap items-center gap-sm">
         <AppButton
           className="gap-2"

@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 import Avatar from "@/components/Avatar/Avatar";
 import AppButton from "@/components/Button";
@@ -18,6 +19,7 @@ const Creator: React.FC<TCreatorProps> = ({
   name,
   posts = [],
 }) => {
+  const { t } = useTranslation("posts");
   return (
     <div className="flex w-full flex-row gap-[10px] rounded-lg bg-gray p-[15px]">
       <Avatar
@@ -30,7 +32,7 @@ const Creator: React.FC<TCreatorProps> = ({
         <div className="flex flex-1 items-center justify-between font-semibold">
           <p className="line-clamp-1 w-3/4 text-tertiary-black">{name}</p>
           <div className="w-1/4 text-xs text-tertiary/75">
-            {`${posts.length} ${posts.length > 1 ? "posts" : "post"}`}
+            {`${posts.length} ${posts.length > 1 ? t("post") : t("posts")}`}
           </div>
         </div>
         <AppButton
@@ -38,7 +40,7 @@ const Creator: React.FC<TCreatorProps> = ({
           size={"sm"}
           prefixIcon={<Iconfy icon={"ic:baseline-plus"} size={"lg"} />}
         >
-          <div>Follow</div>
+          <div>{t("folow")}</div>
         </AppButton>
       </div>
     </div>
