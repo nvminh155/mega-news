@@ -1,5 +1,7 @@
 {
     "reply": "Reply",
     "comments":"Comments",
-    "add A Comment":"Add A Comment"
+    "add A Comment":"Add A Comment",
+    "new Comment":"New Comments",
+      "Send Comment": "Send Comment"
 }

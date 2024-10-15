@@ -1,8 +1,67 @@
 {
-  "not-found": "OOPS! Page you're looking for doesn't exist. Please use search for help",
-  "hello": "Hello",
+  "not-found": "RẤT TIẾC! Trang bạn tìm kiếm không tồn tại. Vui lòng sử dụng công cụ tìm kiếm để được hỗ trợ",
+  "Auth": {
+    "login": "Đăng nhập",
+    "register": "Đăng ký"
+  },
+  "Btn": {
+    "select": "Chọn",
+    "cancel": "Hủy",
+    "save": "Lưu",
+    "delete": "Xóa",
+    "edit": "Chỉnh sửa",
+    "add": "Thêm",
+    "update": "Cập nhật",
+    "submit": "Gửi",
+    "close": "Đóng",
+    "login": "Đăng nhập",
+    "register": "Đăng ký"
+  },
+  "Title-section": {
+    "mega-news-info": "Thông tin Mege News",
+    "mega-news-team": "Đội ngũ Mege News",
+    "news-comment": "Bình luận tin tức",
+    "news-letters": "Bản tin",
+    "follow-on-insta": "Theo dõi trên Instagram",
+    "social-network": "Mạng xã hội",
+    "categories": "Danh mục",
+    "contact-us": "Liên hệ với chúng tôi",
+    "about-us": "Về chúng tôi",
+    "Pages":"Trang"
+  },
+  "Time": {
+    "day": "Ngày",
+    "week": "Tuần",
+    "month": "Tháng",
+    "year": "Năm",
+    "hour": "Giờ",
+    "minute": "Phút",
+    "second": "Giây"
+  },
+  "Map": {
+    "latitude": "Vĩ độ",
+    "longitude": "Kinh độ",
+    "text": "Bản đồ"
+  },
+  "Casing": {
+    "upper": "Chữ hoa",
+    "lower": "Chữ thường"
+  },
+  "hello": "Xin chào",
   "Course": {
-    "title": "Course",
-    "description": "This is a course"
-  }
+    "title": "Khóa học",
+    "description": "Đây là một khóa học"
+  },
+    "CopyRight": {
+      "Privacy Policy": "Chính sách bảo mật | Điều khoản & Điều kiện",
+      "CopyRight": "Bản quyền 2022 đã được bảo lưu"
+    },
+    "contact":{
+      "contact": "Đáp ứng 24 giờ một ngày, 7 ngày một tuần"
+    }
+  
+  
+   
+  
+  
 }

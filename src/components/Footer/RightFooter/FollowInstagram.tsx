@@ -1,8 +1,11 @@
+import { useTranslation } from "react-i18next";
+
 import { TitleSection } from "@/components/TitleSection";
 
 const FollowInstagram = () => {
+  const { t } = useTranslation("instagram");
   return (
-    <TitleSection text="Follow On Instagram">
+    <TitleSection text={t("Follow On Instagram")}>
       <div className="grid grid-cols-3 gap-md">
         {Array.from({ length: 9 }).map((_, i) => (
           <div key={i + 1} className="max-h-[104px] max-w-[104px] basis-1/3">

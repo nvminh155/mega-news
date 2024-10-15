@@ -4,5 +4,12 @@
     "drop-video": "Drop video here, paste or",
     "add-img": "Add Image",
     "add-video": "Add Video"
-  }
+  },
+  "action": {
+    "Draft": "Draft",
+    "Preview": "Preview",
+    "Public": "Public"
+  },
+  "Image Gallery": "Image Gallery",
+  "Select": "Select"
 }

@@ -11,6 +11,7 @@ import {
   // UploadFile,
   UploadProps,
 } from "antd";
+import { useTranslation } from "react-i18next";
 
 import Avatar from "@/components/Avatar/Avatar";
 
@@ -99,14 +100,15 @@ const AppUpload = ({
       setPreviewImage("");
     }
   };
-
+  const { t } = useTranslation("upload");
   return (
     <div
       className={cn(
         "img relative h-full w-full rounded-md bg-accent-gray p-sm",
         {
-          "min-w-[360px] desktop:max-h-[319px] desktop:max-w-[319px] tablet:max-w-[564px] tablet:min-h-[360px] ": size === "lg",
-          "w-[131px] h-[131px] ": size ==="sm",
+          "min-w-[360px] tablet:min-h-[360px] tablet:max-w-[564px] desktop:max-h-[319px] desktop:max-w-[319px]":
+            size === "lg",
+          "h-[131px] w-[131px]": size === "sm",
         },
         {
           "cursor-pointer": previewImage && isHovered,
@@ -128,7 +130,7 @@ const AppUpload = ({
         // onPreview={handlePreview}
         onChange={handleChange}
         rootClassName="w-full h-full *:!h-full *:!w-full"
-        className={cn(" *:*:!h-full *:*:!w-full")}
+        className={cn("*:*:!h-full *:*:!w-full")}
         maxCount={1}
         showUploadList={false}
         disabled={previewImage.length > 0 && size === "sm"}
@@ -150,7 +152,7 @@ const AppUpload = ({
               className="w-max text-tertiary/75"
               prefixIcon={<Iconfy icon={"ic:outline-plus"} />}
             >
-              Select
+              {t("Select")}
             </AppButton>
           </div>
         ) : (

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import AppButton from "@/components/Button";
 import { Iconfy } from "@/components/Iconfy";
@@ -10,13 +11,14 @@ import TypeSendNews from "./TypeSendNews";
 import YourPost from "./YourPost";
 
 const Profile = () => {
+  const { t } = useTranslation("posts");
   const items = [
-    { label: "Marked" },
-    { label: "Send Post" },
-    { label: "Posts" },
+    { label: t("Marked") },
+    { label: t("Send Post") },
+    { label: t("posts") },
   ];
   const [currentTab, setCurrentTab] = useState(0);
-
+  const { t: tprofile } = useTranslation("profile");
   return (
     <div>
       <NavBar bgImg="/unsplash_9XngoIpxcEo.svg">
@@ -31,7 +33,7 @@ const Profile = () => {
           variant={"outline"}
           prefixIcon={<Iconfy icon={"mingcute:user-edit-line"} size={"lg"} />}
         >
-          <div className="text-sm font-medium">Edit Profile</div>
+          <div className="text-sm font-medium">{tprofile("Edit Profile")}</div>
         </AppButton>
       </NavBar>
 

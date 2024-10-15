@@ -1,5 +1,8 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import i18n from "@/i18n";
 import * as echarts from "echarts";
+
+import translateDateWords from "@/utils/formatDatetime";
 
 import { seriesList } from "./getSeriesList";
 
@@ -16,6 +19,15 @@ const ViewPostChart: React.FC<TViewPostChartProps> = ({
   categories,
   years,
 }) => {
+  const [yearsUpdate, setYearsUpdate] = useState(years);
+
+  useEffect(() => {
+    const yearsUpdated = years.map((item: string) => {
+      return translateDateWords(item);
+    });
+    setYearsUpdate(yearsUpdated);
+  }, [i18n.language, years]);
+
   const option = {
     tooltip: {
       trigger: "item",
@@ -31,9 +43,9 @@ const ViewPostChart: React.FC<TViewPostChartProps> = ({
       splitLine: {
         show: true,
         lineStyle: {
-            width: 15,
-            color: "#F5F5F5",
-        }
+          width: 15,
+          color: "#F5F5F5",
+        },
       },
       axisLine: {
         show: false,
@@ -44,7 +56,7 @@ const ViewPostChart: React.FC<TViewPostChartProps> = ({
         fontWeight: 400,
       },
       boundaryGap: false,
-      data: years,
+      data: yearsUpdate,
     },
     yAxis: {
       type: "value",
@@ -57,15 +69,15 @@ const ViewPostChart: React.FC<TViewPostChartProps> = ({
       axisLine: {
         show: false,
         lineStype: {
-            width: 0,
-        }
+          width: 0,
+        },
       },
       inverse: true,
       interval: 1,
       min: 0,
       max: 12,
     },
-    series: seriesList({ categories, years }),
+    series: seriesList({ categories, years: yearsUpdate }),
   };
 
   const paintChart = () => {
@@ -83,7 +95,7 @@ const ViewPostChart: React.FC<TViewPostChartProps> = ({
 
   useEffect(() => {
     paintChart();
-  }, []);
+  }, [yearsUpdate]);
 
   return <div id="chart-container" className="h-[408px] w-full"></div>;
 };

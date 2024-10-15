@@ -82,7 +82,7 @@ const FormSend = ({ type = "image" }: TFormSendProps) => {
           {type === "video" && (
             <div className="mt-7 flex flex-col">
               <span className="pb-sm font-medium text-tertiary">
-                Image Gallery
+                {tUpload("Image Gallery")}
               </span>
               <div className="flex flex-row items-center justify-center gap-sm max-desktop:flex-col max-desktop:items-start">
                 <AppUpload size="lg" />
@@ -103,7 +103,7 @@ const FormSend = ({ type = "image" }: TFormSendProps) => {
           )}
         </div>
 
-        <div className="flex flex-col gap-md flex-1 desktop:max-w-[360px]">
+        <div className="flex flex-1 flex-col gap-md desktop:max-w-[360px]">
           <AppLabel
             text={tUpload(
               type === "image" ? "Label.add-img" : "Label.add-video"

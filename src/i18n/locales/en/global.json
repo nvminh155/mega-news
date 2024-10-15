@@ -26,7 +26,8 @@
     "social-network": "Social Network",
     "categories": "Categories",
     "contact-us": "Contact Us",
-    "about-us": "About Us"
+    "about-us": "About Us",
+    "Pages":"Pages"
   },
   "Time": {
     "day": "Day",
@@ -50,5 +51,12 @@
   "Course": {
     "title": "Course",
     "description": "This is a course"
+  },
+  "CopyRight": {
+    "Privacy Policy": "Privacy Policy | Terms & Conditions",
+    "CopyRight":"All Copyright 2022 Reserved"
+  },
+  "contact":{
+    "contact": "Responding 24 hours a day, 7 days a week"
   }
 }

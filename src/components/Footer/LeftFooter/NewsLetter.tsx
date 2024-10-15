@@ -16,7 +16,7 @@ type Sche = z.infer<typeof sche>;
 
 const NewsLetter = () => {
   const { t } = useTranslation("input");
-
+  const { t: t2 } = useTranslation("global");
   const form = useForm<Sche>({
     resolver: zodResolver(sche),
   });
@@ -26,17 +26,18 @@ const NewsLetter = () => {
   };
 
   return (
-    <TitleSection text="Newsletters" containerClassName="col-span-2">
+    <TitleSection
+      text={t2("Title-section.news-letters")}
+      containerClassName="col-span-2"
+    >
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)}>
           <FormInput
             control={form.control}
             name="name"
-            suffix={
-              <Iconfy icon={"ic:round-email"}  />
-            }
+            suffix={<Iconfy icon={"ic:round-email"} />}
             placeholder={t("Placeholder.write-your-email")}
-            className="!bg-white font-medium text-tertiary/75 border-none"
+            className="border-none !bg-white font-medium text-tertiary/75"
           />
         </form>
       </Form>

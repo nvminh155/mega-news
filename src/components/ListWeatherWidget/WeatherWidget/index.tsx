@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 import { cn } from "@/lib/cn";
 
@@ -41,6 +42,7 @@ const WeatherWidget: React.FC<TWeatherWidgetProps> = ({
   dayWeathers = [],
   ...props
 }) => {
+  const { t } = useTranslation("weather");
   return (
     <div
       className={cn(
@@ -73,9 +75,15 @@ const WeatherWidget: React.FC<TWeatherWidgetProps> = ({
               size === "lg" ? "text-tertiary/75" : "text-white"
             )}
           >
-            <p>Precipitation: {props.precipitation}%</p>
-            <p>Humidity: {props.humidity}%</p>
-            <p>Wind: {props.wind} Km/H</p>
+            <p>
+              {t("Precipitation")}: {props.precipitation}%
+            </p>
+            <p>
+              {t("Humidity")}: {props.humidity}%
+            </p>
+            <p>
+              {t("Wind")}: {props.wind} Km/H
+            </p>
           </div>
         </div>
         <div className={cn("ml-auto text-end", size === "md" && "text-white")}>

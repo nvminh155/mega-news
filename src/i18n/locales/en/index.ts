@@ -6,5 +6,8 @@ import input from "./input.json";
 import posts from "./posts.json";
 import upload from "./upload.json";
 import zod from "./zod.json";
-
-export { global, zod, formErrors, posts, input, comment, info, upload };
+import instagram from "./instagram.json";
+import weather from "./weather.json";
+import rate from "./rate.json";
+import profile from "./profile.json";
+export { global, zod, formErrors, posts, input, comment, info, upload,instagram ,weather,rate,profile};

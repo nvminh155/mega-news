@@ -1,6 +1,34 @@
 {
   "Placeholder": {
-    "write-your-email": "Điền email của bạn ..",
-    "search-anything": "Tìm kiếm .."
+    "write-your-email": "Nhập email của bạn ..",
+    "write-your-first-name": "Nhập tên của bạn ..",
+    "write-your-last-name": "Nhập họ của bạn ..",
+    "write-your-username": "Nhập tên người dùng của bạn ..",
+    "write-your-password": "Nhập mật khẩu của bạn ..",
+    "search-anything": "Tìm kiếm bất kỳ điều gì ..",
+    "type-anything": "Gõ bất kỳ điều gì ..",
+    "display-name": "Tên hiển thị",
+    "website": "Trang web",
+    "email": "Email",
+    "title": "Nhập tiêu đề ..",
+    "add-tags": "Chọn thẻ ..",
+    "comment": "Bình luận"
+  },
+  "Label": {
+    "type-anything": "Gõ bất kỳ điều gì ..",
+    "display-name": "Tên hiển thị",
+    "website": "Trang web",
+    "email": "Email",
+    "title": "Tiêu đề",
+    "add-tags": "Thêm thẻ",
+    "comment": "Bình luận",
+    "phone-number": "Số điện thoại",
+    "fax": "Số fax",
+    "address": "Địa chỉ",
+    "name": "Tên",
+    "First Name": "Tên",
+    "Last Name": "Họ",
+    "Password": "Mật khẩu",
+    "Username": "Tên người dùng"
   }
 }

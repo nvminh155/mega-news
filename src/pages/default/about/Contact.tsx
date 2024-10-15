@@ -51,9 +51,7 @@ const Contact: React.FC = () => {
 
         <div className="flex h-[40px] items-center justify-center gap-2 rounded-[12px] bg-[#F5F5F5]">
           <Iconfy icon="tabler:clock" size={"sm"} />
-          <span className="font-medium">
-            Responding 24 hours a day, 7 days a week
-          </span>
+          <span className="font-medium">{tGlobal("contact.contact")}</span>
         </div>
       </div>
     </div>
