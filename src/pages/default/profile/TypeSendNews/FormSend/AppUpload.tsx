@@ -149,7 +149,7 @@ const AppUpload = ({
               previewVideo={previewVideo}
             />
             <AppButton
-              className="w-max text-tertiary/75"
+              className="w-max text-tertiary/75 px-5"
               prefixIcon={<Iconfy icon={"ic:outline-plus"} />}
             >
               {t("Select")}
