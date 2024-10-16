@@ -118,7 +118,7 @@ const FormSend = ({ type = "image" }: TFormSendProps) => {
               }
             />
           </div>
-          <div className="flex justify-end max-desktop:pr-[15px]">
+          <div className="max-desktop:pr-[15px]">
             <Actions />
           </div>
         </div>

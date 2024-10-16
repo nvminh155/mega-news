@@ -18,11 +18,7 @@ export const TopWriter = () => {
     <Container
       className={"TopWriter gap-y-[15px] rounded-sm bg-accent-gray p-sm"}
     >
-      <img
-        className="h-[150px] w-full object-cover"
-        src="food01.jpg"
-        alt="background"
-      />
+      <img className="h-[150px] w-full object-cover" src="/food01.jpg" alt="background" />
       <Container direction={EDirection.ROW}>
         <div className="flex items-center justify-center gap-x-[10px]">
           <Avatar
