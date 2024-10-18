@@ -25,7 +25,6 @@ export const SliderTag = () => {
       if (divRef.current) {
         const divWidth = divRef.current.offsetWidth;
         setNumberCategory(Math.floor((divWidth - 60) / (170 + 24)));
-        console.log(divWidth);
       }
     };
 

@@ -41,7 +41,7 @@ const DrawerHeader: React.FC = () => {
         }
         size={"icon"}
         onClick={showDrawer}
-        className="bg-accent-gray hover:!bg-accent-gray"
+        className="h-[48px] w-[48px] bg-accent-gray hover:!bg-accent-gray"
       />
       <Drawer
         title={TitleDrawer}

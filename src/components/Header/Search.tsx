@@ -27,7 +27,7 @@ const Search = ({ className }: TSearchProps) => {
   });
 
   const onSubmit = (data: Sche) => {
-    console.log(data);
+    console.log(data)
   };
 
   return (

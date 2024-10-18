@@ -42,7 +42,7 @@ const SliderDots: React.FC<SliderDotsProps> = ({
   return (
     <div className={dotsVariants({ dotPosition, size, className })}>
       {Array.from({ length: amount }).map((_, i) => (
-        <div key={i} className={cn("min-w-max")}>
+        <div key={i + 1} className={cn("min-w-max")}>
           <button
             className={cn("block h-full w-full rounded-full bg-[#f5f5f5]/80", {
               "bg-white !px-3": i + 1 === currentDot,
@@ -159,7 +159,7 @@ const Slider: React.FC<SliderProps> = ({
 
       <SliderArrow
         onClick={() => {
-          console.log(ref.current);
+          ;
           ref.current?.prev();
           setCurrentSlide((prev) => (prev - 1 === 0 ? totalSlides : prev - 1));
         }}

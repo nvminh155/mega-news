@@ -1,21 +1,21 @@
 import { cn } from "@/lib/cn";
 import { Iconfy } from "@/components/Iconfy";
 
+import LabelInfomation, { TLabelInfomationProps } from "./LabelInfomation";
+
 type TInformation = {
   icon?: string;
   data: any;
-  label?: string;
+  labelProps?: TLabelInfomationProps;
   className?: string;
 };
 
 const Information: React.FC<TInformation> = ({
   data,
-  label,
+  labelProps,
   icon,
   className,
 }) => {
-
-  
   return (
     <div
       className={cn(
@@ -25,7 +25,7 @@ const Information: React.FC<TInformation> = ({
     >
       {icon && <Iconfy icon={icon} size={"md"} />}
       <div className="mt-0.5 flex items-center gap-1 font-medium">
-        <span className="content-center leading-[20px]">{label + ":"} </span>
+        <LabelInfomation {...labelProps} />
         <span>{data}</span>
       </div>
     </div>

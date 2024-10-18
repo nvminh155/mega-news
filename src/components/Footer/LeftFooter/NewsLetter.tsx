@@ -22,7 +22,7 @@ const NewsLetter = () => {
   });
 
   const onSubmit = (data: Sche) => {
-    console.log(data);
+    console.log(data)
   };
 
   return (

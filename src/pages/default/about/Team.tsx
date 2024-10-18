@@ -44,7 +44,7 @@ const MegaNewsTeam = () => {
     <div className="mt-[60px]">
       <TitleSection text={t("Title-section.mega-news-team")} />
 
-      <div className="flex flex-wrap items-center justify-center gap-md">
+      <div className="grid grid-cols-3 gap-md max-tablet:grid-cols-2">
         {team.map((member, index) => (
           <Avatar
             key={index + 1}
@@ -52,6 +52,7 @@ const MegaNewsTeam = () => {
             job={member.job}
             name={member.name}
             avatar={member.avatar}
+            containerProps={{className: "max-semi-tablet:max-w-[150px] max-tablet:basis-1/2"}}
           />
         ))}
       </div>

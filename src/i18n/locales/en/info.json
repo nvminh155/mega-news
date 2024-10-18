@@ -3,8 +3,14 @@
     "follower": "Follower",
     "post" :"Post",
     "follow": "Follow",
+    "unfollow": "Unfollow",
     "categories": "Categories",
     "category": "Category",
+    "sport": "Sport",
+    "trendy": "Trendy",
+    "popular": "Popular",
+    "top": "Top",
     "comments": "Comments",
-    "date": "Date"
+    "date": "Date",
+    "log-out": "Log out"
 }

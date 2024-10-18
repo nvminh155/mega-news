@@ -55,7 +55,7 @@ const AppUpload = ({
   //   },
   // ]);
 
-  // console.log("test -> ", previewImage, previewOpen, fileList);
+  // ;
 
   const getBase64 = (file: FileType): Promise<string> =>
     new Promise((resolve, reject) => {

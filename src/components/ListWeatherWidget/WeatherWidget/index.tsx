@@ -46,7 +46,7 @@ const WeatherWidget: React.FC<TWeatherWidgetProps> = ({
   return (
     <div
       className={cn(
-        "relative mx-auto w-full rounded-lg p-6 shadow-lg",
+        "relative mx-auto w-full rounded-lg p-6 shadow-lg text-nowrap",
         size === "lg" ? "h-[514px]" : "h-[245px]",
         props.className
       )}

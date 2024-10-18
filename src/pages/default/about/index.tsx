@@ -1,4 +1,3 @@
-import Contact from "./Contact";
 import Explanation from "./Explanation";
 import postData from "./explanationData.json";
 import Team from "./Team";
@@ -15,7 +14,6 @@ const About = () => {
         alt={post.alt}
       />
 
-      <Contact />
       <Team />
     </div>
   );

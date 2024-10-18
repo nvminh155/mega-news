@@ -3,7 +3,6 @@ import { Carousel } from "antd";
 import { useTranslation } from "react-i18next";
 
 import translateDateWords from "@/utils/formatDatetime";
-import useDeviceType from "@/hooks/useDeviceType";
 import WeatherWidget, {
   EWeatherStatus,
 } from "@/components/ListWeatherWidget/WeatherWidget";
@@ -26,10 +25,9 @@ const ListWeatherWidget = () => {
     setDayWeatherUpdate(dayWeatherUpdated);
   }, [i18n.language]);
 
-  const { isDesktop } = useDeviceType();
   return (
-    <div className="flex w-full flex-row gap-6">
-      <div className="hidden w-1/2 flex-1 rounded-lg desktop:block">
+    <div className="mb-3 flex w-full flex-row gap-6">
+      <div className="hidden rounded-lg desktop:block desktop:w-1/2">
         <div className="w-full">
           <WeatherWidget
             dayWeathers={dayWeatherUpdate}
@@ -57,10 +55,10 @@ const ListWeatherWidget = () => {
         </div>
       </div>
 
-      <div className="w-full desktop:grid desktop:w-1/2 desktop:grid-cols-2 desktop:gap-6">
-        {isDesktop ? (
-          weatherWidgetMediums.map((item, index) => (
-            <div className="w-full rounded-lg">
+      <div className="max-desktop:w-full desktop:w-1/2">
+        <div className="max-desktop:hidden desktop:grid desktop:grid-cols-2 desktop:gap-6">
+          {weatherWidgetMediums.map((item, index) => (
+            <div key={index + 1} className="w-full rounded-lg">
               <WeatherWidget
                 size="md"
                 temperatureToday={item.temperatureToday}
@@ -74,27 +72,26 @@ const ListWeatherWidget = () => {
                 backgroundColor={colors[index]}
               />
             </div>
-          ))
-        ) : (
-          <Carousel autoplay>
-            {weatherWidgetMediums.map((item, index) => (
-              <div className="w-full rounded-lg">
-                <WeatherWidget
-                  size="md"
-                  temperatureToday={item.temperatureToday}
-                  icon={item.icon}
-                  precipitation={item.precipitation}
-                  humidity={item.humidity}
-                  wind={item.wind}
-                  location={item.location}
-                  time={item.time}
-                  background={item.background}
-                  backgroundColor={colors[index]}
-                />
-              </div>
-            ))}
-          </Carousel>
-        )}
+          ))}
+        </div>
+        <Carousel autoplay rootClassName="max-desktop:block desktop:hidden">
+          {weatherWidgetMediums.map((item, index) => (
+            <div className="w-full rounded-lg" key={index + 1}>
+              <WeatherWidget
+                size="md"
+                temperatureToday={item.temperatureToday}
+                icon={item.icon}
+                precipitation={item.precipitation}
+                humidity={item.humidity}
+                wind={item.wind}
+                location={item.location}
+                time={item.time}
+                background={item.background}
+                backgroundColor={colors[index]}
+              />
+            </div>
+          ))}
+        </Carousel>
       </div>
     </div>
   );

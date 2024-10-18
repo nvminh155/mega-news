@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useAuthContext } from "@/contexts/AuthProvider";
 import { Dropdown, Space } from "antd";
 import { useTranslation } from "react-i18next";
 
@@ -7,20 +8,40 @@ import { cn } from "@/lib/cn";
 import Avatar from "../Avatar/Avatar";
 import { Iconfy } from "../Iconfy";
 
-interface TNotAuthProps {
-  Login?: string;
-  Register?: string;
-}
+interface TNotAuthProps {}
 
-const NotAuth: React.FC<TNotAuthProps> = ({ Login = "/", Register = "/" }) => {
+const NotAuth: React.FC<TNotAuthProps> = () => {
+  const auth = useAuthContext();
+
   const { t } = useTranslation("global");
+
+  const handleLogin = () => {
+    const author = {
+      id: "user1",
+      avatarUrl:
+        "https://www.vietnamworks.com/hrinsider/wp-content/uploads/2023/12/hinh-nen-3d-thien-nhien-003.jpg",
+      bannerUrl:
+        "https://www.vietnamworks.com/hrinsider/wp-content/uploads/2023/12/hinh-nen-3d-thien-nhien-003.jpg",
+      firstName: "John",
+      lastName: "Doe",
+      userName: "johndoe",
+      password: "123456",
+      email: "abc1@gmail.com",
+      title: "Hello World",
+      followerIds: ["user2"],
+      explanationHTML: "This is my explanation",
+    };
+    auth.handleLogin(author);
+  };
+
   return (
-    <div className="flex w-[168px] cursor-pointer items-center gap-2">
-      <Iconfy icon="tdesign:user" className="h-[20px] w-[20px]" background />
-      <div className="w-[112px] text-base font-medium text-black">
-        <a href={Login}>{t("Btn.login")}</a>
-        <span className="mx-1">|</span>
-        <a href={Register}>{t("Btn.register")}</a>
+    <div
+      className="flex cursor-pointer items-center gap-2"
+      onClick={handleLogin}
+    >
+      <Iconfy icon="tdesign:user" size={"md"} background />
+      <div className="text-base font-medium text-black">
+        <div>{t("Btn.login")}</div>
       </div>
     </div>
   );
@@ -32,6 +53,9 @@ type AuthenticatedProps = {
 };
 
 const Authenticated: React.FC<AuthenticatedProps> = ({ name, avatar }) => {
+  const auth = useAuthContext();
+
+  const { t } = useTranslation("info");
   const [isOpen, setIsOpen] = useState(false);
 
   const handleVisibleChange = (open: boolean) => {
@@ -45,45 +69,14 @@ const Authenticated: React.FC<AuthenticatedProps> = ({ name, avatar }) => {
           {
             key: "1",
             label: (
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.antgroup.com"
+              <div
+                onClick={() => {
+                  auth.handleLogout();
+                }}
               >
-                1st menu item
-              </a>
+                {t("log-out")}
+              </div>
             ),
-          },
-          {
-            key: "2",
-            label: (
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.aliyun.com"
-              >
-                2nd menu item (disabled)
-              </a>
-            ),
-            disabled: true,
-          },
-          {
-            key: "3",
-            label: (
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.luohanacademy.com"
-              >
-                3rd menu item (disabled)
-              </a>
-            ),
-            disabled: true,
-          },
-          {
-            key: "4",
-            danger: true,
-            label: "a danger item",
           },
         ],
       }} //data item
@@ -95,7 +88,7 @@ const Authenticated: React.FC<AuthenticatedProps> = ({ name, avatar }) => {
         <Avatar
           avatar={avatar}
           containerProps={{
-            className: "w-12 h-12 rounded-lg flex-none order-0",
+            className: "w-10 h-10 rounded-lg ",
           }}
         />
         <span className="font-roboto order-1 flex-none text-[16px] font-medium capitalize leading-[19px] text-black">
@@ -117,12 +110,13 @@ type TUserActionsProps = {
 };
 
 const UserActions = ({ isAuthenticated }: TUserActionsProps) => {
+  const { user } = useAuthContext();
   return (
     <div>
-      {!isAuthenticated ? (
+      {!user || !isAuthenticated ? (
         <NotAuth />
       ) : (
-        <Authenticated name="Behzad" avatar="/avatar.svg" />
+        <Authenticated name={user?.firstName} avatar={user.avatarUrl} />
       )}
     </div>
   );

@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 import { TFormSendNews } from "@/types/post";
+import useDeviceType from "@/hooks/useDeviceType";
 import AppLabel from "@/components/AppLabel";
 import { Form } from "@/components/form";
 import FormInput from "@/components/form/FormInput";
@@ -20,6 +21,7 @@ type TFormSendProps = {
 };
 
 const FormSend = ({ type = "image" }: TFormSendProps) => {
+  const { isMobile, isSemiTablet } = useDeviceType();
   const { t: tInput } = useTranslation("input");
   const { t: tUpload } = useTranslation("upload");
 
@@ -86,17 +88,19 @@ const FormSend = ({ type = "image" }: TFormSendProps) => {
               </span>
               <div className="flex w-full gap-md pb-20">
                 <AppUpload size="lg" />
-                <div className="list grid flex-1 grid-cols-4 gap-sm">
-                  {Array.from({ length: 8 }).map((_, i) => (
-                    <AppUpload
-                      key={i + 1}
-                      size="sm"
-                      defaultPreviewUrl={form.getValues("imageGallery")[i]}
-                      onChangeCallback={(fileUrl) => {
-                        handleChangeImageGallery(fileUrl, i);
-                      }}
-                    />
-                  ))}
+                <div className="list grid flex-1 grid-cols-4 gap-sm max-semi-tablet:grid-cols-2">
+                  {Array.from({ length: isMobile || isSemiTablet ? 4 : 8 }).map(
+                    (_, i) => (
+                      <AppUpload
+                        key={i + 1}
+                        size="sm"
+                        defaultPreviewUrl={form.getValues("imageGallery")[i]}
+                        onChangeCallback={(fileUrl) => {
+                          handleChangeImageGallery(fileUrl, i);
+                        }}
+                      />
+                    )
+                  )}
                 </div>
               </div>
             </div>

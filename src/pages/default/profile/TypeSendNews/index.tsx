@@ -9,7 +9,7 @@ const TypeSendNews = () => {
   const [active, setActive] = useState(0);
   const { t } = useTranslation("posts");
   return (
-    <div>
+    <div className="mt-md">
       <div className="flex pb-[20px]">
         {[t("Send Post"), t("Send Video")].map((text, i) => (
           <TabItem

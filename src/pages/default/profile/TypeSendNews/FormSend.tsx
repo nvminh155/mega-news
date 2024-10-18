@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 import { TFormSendNews } from "@/types/post";
+import useDeviceType from "@/hooks/useDeviceType";
 import AppLabel from "@/components/AppLabel";
 import { Form } from "@/components/form";
 import FormInput from "@/components/form/FormInput";
@@ -20,6 +21,7 @@ type TFormSendProps = {
 };
 
 const FormSend = ({ type = "image" }: TFormSendProps) => {
+  const { isMobile, isSemiTablet } = useDeviceType();
   const { t: tInput } = useTranslation("input");
   const { t: tUpload } = useTranslation("upload");
 
@@ -86,17 +88,20 @@ const FormSend = ({ type = "image" }: TFormSendProps) => {
               </span>
               <div className="flex flex-row items-center justify-center gap-sm max-desktop:flex-col max-desktop:items-start">
                 <AppUpload size="lg" />
-                <div className="list grid flex-1 grid-cols-3 gap-sm desktop:pl-[10px]">
-                  {Array.from({ length: 6 }).map((_, i) => (
-                    <AppUpload
-                      key={i + 1}
-                      size="sm"
-                      defaultPreviewUrl={form.getValues("imageGallery")[i]}
-                      onChangeCallback={(fileUrl) => {
-                        handleChangeImageGallery(fileUrl, i);
-                      }}
-                    />
-                  ))}
+                <div className="list grid flex-1 grid-cols-3 gap-sm max-semi-tablet:grid-cols-2 desktop:pl-[10px]">
+                  {Array.from({ length: isMobile || isSemiTablet ? 4 : 8 }).map(
+                    (_, i) => (
+                      <AppUpload
+                        key={i + 1}
+                        size="sm"
+                        defaultPreviewUrl={form.getValues("imageGallery")[i]}
+                        onChangeCallback={(fileUrl) => {
+                          handleChangeImageGallery(fileUrl, i);
+                        }}
+                        className="justify-center flex"
+                      />
+                    )
+                  )}
                 </div>
               </div>
             </div>

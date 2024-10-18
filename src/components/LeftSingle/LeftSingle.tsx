@@ -44,18 +44,22 @@ const LeftSingle: React.FC = () => {
           <Information
             data={post.comments}
             icon="lets-icons:date-fill"
-            label={t("comments")}
+            labelProps={{
+              text: t("comments"),
+            }}
           />
           <Information
             data={post.category}
             icon="material-symbols-light:folder"
-            label={t("category")}
+            labelProps={{
+              text: t("category"),
+            }}
           />
         </div>
 
         <div className="mx-auto mt-[40px] w-full max-w-[1068px] px-4">
           {post.content.map((section, index) => (
-            <div key={index}>
+            <div key={index + 1}>
               <p className="mb-[15px] text-[16px] capitalize leading-[23px] desktop:text-[20px]">
                 {section.heading}
               </p>
