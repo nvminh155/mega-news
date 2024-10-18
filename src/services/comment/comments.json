@@ -1,0 +1,28 @@
+{
+    "comments": [
+        {
+            "id": "comment1",
+            "content": "This is a comment",
+            "authorId": "user1",
+            "displayName": "User1",
+            "website": "",
+            "email": "",
+            "postId": "post1",
+            "rate": 5,
+            "createdAt": 1725891900000,
+            "replyTo": "comment2"
+        },
+        {
+            "id": "comment2",
+            "content": "This is another comment",
+            "authorId": "user2",
+            "displayName": "User2",
+            "website": "",
+            "email": "",
+            "postId": "post1",
+            "rate": 5,
+            "createdAt": 1725891900000,
+            "replyTo": ""
+        }
+    ]
+}

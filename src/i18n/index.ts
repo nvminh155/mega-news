@@ -1,35 +1,41 @@
+import { locales } from "@/config";
 import i18n from "i18next";
-import LanguageDetector from "i18next-browser-languagedetector";
+// import LanguageDetector from "i18next-browser-languagedetector";
 import { initReactI18next } from "react-i18next";
+import { z } from "zod";
+import { makeZodI18nMap } from "zod-i18n-map";
 
-import en from "./locales/en.json";
-import vi from "./locales/vi.json";
+import * as en from "./locales/en/index";
+import * as vi from "./locales/vi/index";
+
+export const defaultNS = "global";
+export const resources = {
+  en,
+  vi,
+} as const;
 
 // the translations
 // (tip move them in a JSON file and import them,
 // or even better, manage them separated from your code: https://react.i18next.com/guides/multiple-translation-files)
-const resources = {
-  en: {
-    translation: en,
-  },
-  vi: {
-    translation: vi,
-  },
-};
-
+z.setErrorMap(makeZodI18nMap({ ns: ["zod", "formErrors"] as const, t: i18n.t }));
 i18n
   .use(initReactI18next) // passes i18n down to react-i18next
   // detect user language
   // learn more: https://github.com/i18next/i18next-browser-languageDetector
-  .use(LanguageDetector)
+  // .use(LanguageDetector)
   .init({
     resources,
-    fallbackLng: "en",
+    lng: locales[0],
     debug: true,
-
+    fallbackLng: defaultNS,
+    defaultNS,
     interpolation: {
-      escapeValue: false, // not needed for react as it escapes by default
+      format: function (value, format) {
+        if (format === "uppercase") return value.toUpperCase();
+        return value;
+      },
     },
   });
 
 export default i18n;
+export { z };

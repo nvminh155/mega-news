@@ -1,0 +1,35 @@
+{
+  "Placeholder": {
+    "write-your-email": "Enter your email ..",
+    "write-your-first-name": "Enter your first name ..",
+    "write-your-last-name": "Enter your last name ..",
+    "write-your-username": "Enter your username ..",
+    "write-your-password": "Enter your password ..",
+    "search-anything": "Search anything ..",
+    "type-anything": "Type anything ..",
+    "display-name": "Display name",
+    "website": "Website",
+    "email": "Email",
+    "title": "Enter title..",
+    "add-tags": "Chose tags..",
+    "comment": "Comment"
+  },
+  "Label": {
+    "type-anything": "Type anything ..",
+    "display-name": "Display name",
+    "website": "Website",
+    "email": "Email",
+    "title": "Title",
+    "add-tags": "Add Tags",
+    "comment": "Comment",
+    "phone-number": "Phone number",
+    "fax": "Fax",
+    "address": "Address",
+     "name": "Name",
+     "First Name": "First Name",
+     "Last Name": "Last Name",
+     "Password": "Password",
+     "Username": "Username"
+
+  }
+}

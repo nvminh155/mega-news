@@ -1,0 +1,10 @@
+{
+  "title": "Rate the usefulness of the article",
+  "moods":{
+   "Angry": "Angry",
+   "Bad": "Bad",
+   "Neutral":"Neutral",
+   "Happy":"Happy",
+   "Good":"Good"
+  }
+}

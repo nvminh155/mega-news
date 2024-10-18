@@ -8,14 +8,18 @@ import "@/i18n";
 import { store } from "@/stores";
 import { Provider as ReduxProvider } from "react-redux";
 
+import { ConfigAntd } from "./config/antd";
+import AuthProvider from "./contexts/AuthProvider";
 import { router } from "./routes";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ReduxProvider store={store}>
-      <div className="w-[1400px]">
-        <RouterProvider router={createBrowserRouter(router)} />
-      </div>
+      <ConfigAntd>
+        <AuthProvider>
+          <RouterProvider router={createBrowserRouter(router)} />
+        </AuthProvider>
+      </ConfigAntd>
     </ReduxProvider>
   </StrictMode>
 );

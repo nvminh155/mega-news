@@ -1,0 +1,9 @@
+{
+  "Required": "This field is required",
+  "minLength": "Min length is 1",
+  "name": "Name is required",
+  "content": "Content have at least 1 character",
+  "email": "Email is invalid",
+  "displayName": "Display name is required",
+  "age": "111"
+}
