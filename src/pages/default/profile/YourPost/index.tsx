@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 
+import useDeviceType from "@/hooks/useDeviceType";
 import ListPost from "@/components/ListPost";
 import Satisfaction from "@/components/Satisfaction";
 import { TitleSection } from "@/components/TitleSection";
@@ -9,7 +10,7 @@ import ViewPostChart from "../ViewPostChart";
 
 const YourPost = () => {
   const { t } = useTranslation("posts");
-
+  const { isTablet, isSemiTablet } = useDeviceType();
   return (
     <div>
       <div className="flex gap-md max-desktop:flex-col">
@@ -19,8 +20,8 @@ const YourPost = () => {
         </div>
         <div>
           <TitleSection text={t("Satisfaction")} />
-          <div className="grid grid-cols-3 gap-md rounded-md bg-accent-gray bg-white p-sm max-desktop:grid-cols-5">
-            {Array.from({ length: 9 }).map((_, index) => (
+          <div className="grid gap-sm rounded-md bg-accent-gray bg-white p-sm desktop:grid-cols-3  max-semi-tablet:grid-cols-3 semi-tablet:grid-cols-5">
+            {Array.from({ length: isTablet || isSemiTablet ? 10 : 9 }).map((_, index) => (
               <Satisfaction key={index + 1} />
             ))}
           </div>

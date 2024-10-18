@@ -11,7 +11,7 @@ interface MenuNavProps {
 const MenuNav: React.FC<MenuNavProps> = ({ menuItems, onChangeCallback }) => {
   const [activeItem, setActiveItem] = useState(menuItems[0]?.label);
   return (
-    <div className="flex items-center space-x-9 text-md font-medium">
+    <div className="flex flex-1 items-center justify-center max-semi-tablet:gap-sm gap-md text-md font-medium">
       {menuItems.map((item, i) => (
         <div
           key={item.label}

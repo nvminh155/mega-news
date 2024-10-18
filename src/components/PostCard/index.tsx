@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 // import { userAPI } from "@/services";
 import { TUser } from "@/types";
+import { useNavigate } from "react-router-dom";
 
 import { cn } from "@/lib/cn";
 
@@ -23,6 +24,8 @@ const PostCard: React.FC<TPostCardProps> = ({
   actions,
   className,
 }) => {
+  const navigate = useNavigate();
+
   const [author, setAuthor] = useState<TUser>();
 
   const fetchAuthorData = async () => {
@@ -58,6 +61,7 @@ const PostCard: React.FC<TPostCardProps> = ({
   return (
     <div
       className={cn(
+        "cursor-pointer",
         type === EPostCardType.widget
           ? "flex"
           : "flex rounded-lg p-[10px] shadow-md",
@@ -67,6 +71,9 @@ const PostCard: React.FC<TPostCardProps> = ({
         type === EPostCardType.vertical ? "flex-col" : "flex-row gap-[10px]",
         className
       )}
+      onClick={() => {
+        navigate("/posts/" + post.id);
+      }}
     >
       <Background
         type={type}
@@ -79,7 +86,7 @@ const PostCard: React.FC<TPostCardProps> = ({
       <div
         className={cn(
           "flex flex-1 flex-col",
-          type === EPostCardType.widget && "items-center justify-center",
+          type === EPostCardType.widget && "items-center justify-center"
           // type === EPostCardType.horizontal && "h-max"
         )}
       >

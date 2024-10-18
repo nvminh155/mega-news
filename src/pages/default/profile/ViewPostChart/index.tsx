@@ -97,7 +97,7 @@ const ViewPostChart: React.FC<TViewPostChartProps> = ({
     paintChart();
   }, [yearsUpdate]);
 
-  return <div id="chart-container" className="h-[408px] w-full"></div>;
+  return <div id="chart-container" className="h-[408px]"></div>;
 };
 
 export default ViewPostChart;

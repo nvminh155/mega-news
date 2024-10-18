@@ -15,7 +15,8 @@ export default {
       screens: {
         desktop: "1100px",
         tablet: "768px",
-        mobile: "800px",
+        "semi-tablet": "560px",
+        mobile: "358px",
       },
       colors: {
         border: "hsla(var(--border))",

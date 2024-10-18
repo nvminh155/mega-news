@@ -1,8 +1,8 @@
-import TestPostCard from "@/components/PostCard/TestPostCard";
+import TopCategory from "@/components/Category/TopCategory";
 
 const Minh = () => {
   return <div>
-    <TestPostCard />
+    <TopCategory />
   </div>;
 };
 

@@ -13,6 +13,7 @@ const Layout = () => {
       <AppButton
         onClick={() => {
           i18n.changeLanguage(i18n.language === "en" ? "vi" : "en");
+          // i18n.changeLanguage(i18n.language === "en" ? "vi" : "en");
         }}
         className="fixed left-1/2 top-1/2 z-10"
       >

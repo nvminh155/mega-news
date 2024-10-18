@@ -1,18 +1,29 @@
+import { cn } from "@/lib/cn";
+import AppLink from "@/components/AppLink";
 import { Iconfy } from "@/components/Iconfy";
 
 import { filter, icons } from "./items";
+
+// type TTopCategoryProps = {
+// };
 
 const TopCategory: React.FC = () => {
   return (
     <div className="flex w-full items-center justify-between rounded-md bg-accent-gray px-4 py-1 text-tertiary/75">
       <div className="flex items-center gap-4">
         {filter.map((item) => (
-          <span
+          <AppLink
+            to={`/category/${item.label}` as any}
             key={item.key}
-            className="cursor-pointer text-xs font-medium hover:text-primary"
+            className={cn(
+              "cursor-pointer text-xs font-medium hover:text-primary",
+              {
+                "text-primary": window.location.pathname.includes(item.label),
+              }
+            )}
           >
             {item.label}
-          </span>
+          </AppLink>
         ))}
       </div>
       <div className="flex items-center gap-1">

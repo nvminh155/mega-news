@@ -30,6 +30,7 @@ export type TAppUploadProps = {
   size?: "sm" | "lg";
   defaultPreviewUrl?: string;
   onChangeCallback?: (value: any, type?: "video" | "image") => void;
+  className?: string;
 };
 
 const AppUpload = ({
@@ -37,6 +38,7 @@ const AppUpload = ({
   size = "sm",
   defaultPreviewUrl,
   onChangeCallback,
+  className,
 }: TAppUploadProps) => {
   // const [previewOpen, setPreviewOpen] = useState(false);
   const [previewImage, setPreviewImage] = useState<string>(
@@ -56,7 +58,7 @@ const AppUpload = ({
   //   },
   // ]);
 
-  // console.log("test -> ", previewImage, previewOpen, fileList);
+  // ;
 
   const getBase64 = (file: FileType): Promise<string> =>
     new Promise((resolve, reject) => {
@@ -112,7 +114,8 @@ const AppUpload = ({
         },
         {
           "cursor-pointer": previewImage && isHovered,
-        }
+        },
+        className
       )}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -149,7 +152,7 @@ const AppUpload = ({
               previewVideo={previewVideo}
             />
             <AppButton
-              className="w-max text-tertiary/75 px-5"
+              className="w-max px-5 text-tertiary/75"
               prefixIcon={<Iconfy icon={"ic:outline-plus"} />}
             >
               {t("Select")}

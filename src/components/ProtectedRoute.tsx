@@ -10,7 +10,7 @@ export const ProtectedRouteAdmin: React.FC<ProtectedRouteProps> = ({
 }) => {
   const location = useLocation();
   useEffect(() => {
-    console.log("ProtectedRouteAdmin", location);
+    ;
   }, [location]);
 
   return children;
@@ -21,7 +21,7 @@ export const ProtectedRouteUser: React.FC<ProtectedRouteProps> = ({
 }) => {
   const location = useLocation();
   useEffect(() => {
-    console.log("ProtectedRouteUser", location);
+    ;
   }, [location]);
 
   return children;

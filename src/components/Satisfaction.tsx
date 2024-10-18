@@ -20,16 +20,17 @@ const Satisfaction = ({
 }: TSatisfactionProps) => {
   const { t } = useTranslation("posts");
   return (
-    <div className="flex w-max flex-col items-center gap-sm rounded-md bg-accent-gray p-sm text-tertiary">
+    <div className="flex max-w-[104px] flex-col items-center gap-sm rounded-md bg-accent-gray px-sm py-[15px] text-xs text-tertiary">
       <span>
         {translateDateWords(month)} {year}
       </span>
       <Iconfy
         icon={moods[mood].name}
-        size={"xl"}
+        size={"lg"}
         style={{
           color: moods[mood].color,
         }}
+        className="h-[32px] w-[32px]"
       />
       <span>
         {points} {t("Points")}

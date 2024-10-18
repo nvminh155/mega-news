@@ -46,7 +46,7 @@ const Avatar: React.FC<AvatarWrapperProps> = ({
       {type === "default" && (
         <img
           className={cn(
-            "h-full w-full rounded-md object-cover",
+            "h-full w-full max-w-[232px] rounded-md object-cover",
             containerProps?.className
           )}
           src={avatar}

@@ -15,12 +15,14 @@ type TImageProps = {
 const ImgProps: React.FC<TImageProps> = ({ title, mainImageUrl, alt = "" }) => {
   return (
     <div className="w-full rounded-md bg-[#F5F5F5] px-4">
-      <p className="pt-[13px] text-[24px] tablet:text-[33px]">{title}</p>
+      <p className="pt-[13px] font-medium max-semi-tablet:text-xl tablet:text-[33px]">
+        {title}
+      </p>
 
       <img
         src={mainImageUrl}
         alt={alt}
-        className="mt-[-27px] max-h-[600px] w-full translate-y-[40px] rounded-md object-cover"
+        className="mt-[-27px] max-h-[600px] w-full translate-y-[40px] rounded-md object-cover max-semi-tablet:max-h-[198px]"
       />
     </div>
   );
@@ -39,23 +41,32 @@ const LeftSingle: React.FC = () => {
         alt={post.altImageUrl}
       />
 
-      <div className="mx-auto mt-[50px] flex w-full max-w-[516px] flex-row justify-between">
+      <div className="mt-[50px] flex w-full justify-center gap-md">
         <Information
           data={formatDateTime(post.date).MMMMDDYYYY}
           icon="lets-icons:date-fill"
-          label={t("date")}
+          labelProps={{
+            className: "max-semi-tablet:hidden",
+            text: t("date"),
+          }}
         />
 
         <Information
           data={post.comments}
           icon="ant-design:comment-outlined"
-          label={t("comments")}
+          labelProps={{
+            className: "max-semi-tablet:hidden",
+            text: t("comments"),
+          }}
         />
 
         <Information
           data={post.category}
           icon="material-symbols-light:folder"
-          label={t("category")}
+          labelProps={{
+            className: "max-semi-tablet:hidden",
+            text: t("category"),
+          }}
         />
       </div>
 
@@ -71,7 +82,7 @@ const LeftSingle: React.FC = () => {
                 <img
                   src={post.subImages}
                   alt={post.subImageUrl}
-                  className="max-h-[600px] w-full rounded-md object-cover"
+                  className="max-h-[600px] max-semi-tablet:max-h-[198px] w-full rounded-md object-cover"
                 />
               </div>
             )}

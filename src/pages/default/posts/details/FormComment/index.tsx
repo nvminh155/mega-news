@@ -20,7 +20,7 @@ const FormComment = () => {
   });
 
   const onSubmit = (data: TCommentForm) => {
-    console.log(data);
+    console.log(data)
   };
 
   return (

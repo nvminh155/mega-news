@@ -7,7 +7,7 @@ type TTextEditorProps = {
   onChangeCallBack: (value: string) => void;
 };
 const TextEditor = ({ value = "", onChangeCallBack }: TTextEditorProps) => {
-  console.log(value);
+  // ;
   return <ReactQuill theme="snow" value={value} onChange={onChangeCallBack} />;
 };
 
