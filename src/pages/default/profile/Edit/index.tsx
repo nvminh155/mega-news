@@ -70,27 +70,12 @@ const EditProfile = () => {
             label="Email"
             placeholder={t("Placeholder.write-your-email")}
           />
-          <div className="banner">
-            <AppUpload
-              onChangeCallback={(url, type) => {
-                if (type === "image") {
-                  form.setValue("bannerUrl", url);
-                }
-              }}
-            />
-          </div>
+          <div></div>
           <TextEditor
             value={form.getValues("explanationHTML")}
             onChangeCallBack={(val) => form.setValue("explanationHTML", val)}
           />
 
-          <AppUpload
-            onChangeCallback={(url, type) => {
-              if (type === "image") {
-                form.setValue("avatarUrl", url);
-              }
-            }}
-          />
         </form>
       </Form>
     </div>
