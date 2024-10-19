@@ -1,5 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 import Avatar from "@/components/Avatar/Avatar";
 import AppButton from "@/components/Button";
@@ -19,7 +20,12 @@ const Creator: React.FC<TCreatorProps> = ({
   name,
   posts = [],
 }) => {
+  const navigate = useNavigate();
+
   const { t } = useTranslation("posts");
+  const { t: tInfo } = useTranslation("info");
+  const [isFollowed, setIsFollowed] = React.useState(false);
+
   return (
     <div className="flex w-full flex-row gap-[10px] rounded-lg bg-gray p-[15px]">
       <Avatar
@@ -30,7 +36,14 @@ const Creator: React.FC<TCreatorProps> = ({
       />
       <div className="flex w-full flex-col">
         <div className="flex flex-1 items-center justify-between font-semibold">
-          <p className="line-clamp-1 w-3/4 text-tertiary-black">{name}</p>
+          <p
+            className="line-clamp-1 w-3/4 cursor-pointer text-tertiary-black"
+            onClick={() => {
+              navigate("/writer/12");
+            }}
+          >
+            {name}
+          </p>
           <div className="w-1/4 text-xs text-tertiary/75">
             {`${posts.length} ${posts.length > 1 ? t("post") : t("posts")}`}
           </div>
@@ -39,8 +52,11 @@ const Creator: React.FC<TCreatorProps> = ({
           className="mt-auto w-max gap-2 text-sm text-popover"
           size={"sm"}
           prefixIcon={<Iconfy icon={"ic:baseline-plus"} size={"lg"} />}
+          onClick={() => {
+            setIsFollowed(!isFollowed);
+          }}
         >
-          <div>{t("folow")}</div>
+          <div>{isFollowed ? tInfo("follow") : tInfo("unfollow")}</div>
         </AppButton>
       </div>
     </div>
