@@ -4,7 +4,6 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 import { Form } from "@/components/form";
-import AppUpload from "@/components/form/AppUpload";
 import FormInput from "@/components/form/FormInput";
 import TextEditor from "@/components/TextEditor";
 
