@@ -8,6 +8,7 @@ import { cn } from "@/lib/cn";
 
 import Avatar from "../Avatar/Avatar";
 import { Iconfy } from "../Iconfy";
+import { useNavigate } from "react-router-dom";
 
 interface TNotAuthProps {}
 
@@ -55,6 +56,7 @@ type AuthenticatedProps = {
 
 const Authenticated: React.FC<AuthenticatedProps> = ({ name, avatar }) => {
   const auth = useAuthContext();
+  const navigate = useNavigate();
 
   const { t } = useTranslation("info");
   const [isOpen, setIsOpen] = useState(false);
@@ -76,6 +78,18 @@ const Authenticated: React.FC<AuthenticatedProps> = ({ name, avatar }) => {
                 }}
               >
                 {t("change-lang")}
+              </div>
+            ),
+          },
+          {
+            key: "3",
+            label: (
+              <div
+                onClick={() => {
+                  navigate("/profile/12");
+                }}
+              >
+                {t("profile")}
               </div>
             ),
           },

@@ -4,7 +4,6 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 import { Form } from "@/components/form";
-import AppUpload from "@/components/form/AppUpload";
 import FormInput from "@/components/form/FormInput";
 import TextEditor from "@/components/TextEditor";
 
@@ -70,27 +69,12 @@ const EditProfile = () => {
             label="Email"
             placeholder={t("Placeholder.write-your-email")}
           />
-          <div className="banner">
-            <AppUpload
-              onChangeCallback={(url, type) => {
-                if (type === "image") {
-                  form.setValue("bannerUrl", url);
-                }
-              }}
-            />
-          </div>
+          <div></div>
           <TextEditor
             value={form.getValues("explanationHTML")}
             onChangeCallBack={(val) => form.setValue("explanationHTML", val)}
           />
 
-          <AppUpload
-            onChangeCallback={(url, type) => {
-              if (type === "image") {
-                form.setValue("avatarUrl", url);
-              }
-            }}
-          />
         </form>
       </Form>
     </div>
