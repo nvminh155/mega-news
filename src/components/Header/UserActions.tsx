@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useAuthContext } from "@/contexts/AuthProvider";
+import i18n from "@/i18n";
 import { Dropdown, Space } from "antd";
 import { useTranslation } from "react-i18next";
 
@@ -66,6 +67,18 @@ const Authenticated: React.FC<AuthenticatedProps> = ({ name, avatar }) => {
     <Dropdown
       menu={{
         items: [
+          {
+            key: "2",
+            label: (
+              <div
+                onClick={() => {
+                  i18n.changeLanguage(i18n.language === "en" ? "vi" : "en");
+                }}
+              >
+                {t("change-lang")}
+              </div>
+            ),
+          },
           {
             key: "1",
             label: (
